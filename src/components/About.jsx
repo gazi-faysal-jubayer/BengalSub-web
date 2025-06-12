@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import teamPhoto from "../assets/team-photo.webp";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
@@ -37,25 +38,53 @@ const ServiceCard = ({ index, title, icon }) => (
 
 const About = () => {
   return (
-    <>
+    <div className="relative">
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <h2 className={styles.sectionHeadText}>We Are Team BengalSub.</h2>
       </motion.div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-        I am an enthusiastic software developer with a strong foundation in computer fundamentals. I have worked on projects addressing real-world challenges and possess a keen interest in Machine Learning. I like understanding the underlying intricacies and architectures. Committed and diligent, I have been actively involved in projects and continuous learning throughout my college journey. I am looking for an opportunity to work in a challenging environment to prove my skills and utilize my knowledge and intelligence in the growth of the organization.
-      </motion.p>
+      <div className="mt-10 flex flex-col md:flex-row gap-10 items-center">
+        {/* Team Photo */}
+        <motion.div
+          variants={fadeIn("right", "spring", 0.2, 1)}
+          className="w-full"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#915EFF]/20 to-transparent rounded-2xl" />
+            <img
+              src={teamPhoto}
+              alt="Team BengalSub"
+              className="w-full h-auto object-cover rounded-2xl shadow-2xl"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl" />
+          </div>
+        </motion.div>
+
+        {/* Text Content */}
+        <motion.div
+          variants={fadeIn("left", "spring", 0.3, 1)}
+          className="w-full mt-10 md:mt-0"
+        >
+          <motion.p
+            variants={fadeIn("", "", 0.1, 1)}
+            className='text-secondary text-[17px] leading-[30px]'
+          >
+            BengalSub, a passionate student-led robotics team from Bangladesh, is dedicated to advancing underwater robotics and innovation.
+
+            As participants in RoboNation's RoboSub AUV competition, we unite diverse talents to design, build, and program autonomous underwater vehicles (AUVs). BengalSub is a concern of Tech Autocrats, a youth-led organization empowering students through hands-on learning in robotics, electronics, and software.
+
+            Founded to represent Bangladesh globally, BengalSub offers real-world experience in engineering, computer science, and teamwork, inspiring future innovators by tackling complex challenges in underwater autonomy.
+          </motion.p>
+        </motion.div>
+      </div>
 
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
