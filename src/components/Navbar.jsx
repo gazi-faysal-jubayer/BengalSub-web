@@ -12,13 +12,14 @@ const Navbar = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
 
-    handleResize(); // Initial check
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
@@ -39,6 +40,48 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isMobile]);
+
+  const handleDropdownClick = (id) => {
+    setOpenDropdown(openDropdown === id ? null : id);
+  };
+
+  const dropdownVariants = {
+    hidden: { 
+      opacity: 0,
+      y: 10,
+      scale: 0.95,
+    },
+    visible: { 
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 25
+      }
+    },
+    exit: { 
+      opacity: 0,
+      y: 10,
+      scale: 0.95,
+      transition: {
+        duration: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.05,
+        duration: 0.3
+      }
+    })
+  };
 
   return (
     <motion.nav
@@ -109,11 +152,40 @@ const Navbar = () => {
               className={`relative ${
                 active === nav.title ? "text-white" : "text-secondary"
               } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onMouseEnter={() => setHoveredItem(nav.id)}
-              onMouseLeave={() => setHoveredItem(null)}
-              onClick={() => setActive(nav.title)}
+              onMouseEnter={() => {
+                setHoveredItem(nav.id);
+                if (nav.dropdown) setOpenDropdown(nav.id);
+              }}
+              onMouseLeave={() => {
+                setHoveredItem(null);
+                if (nav.dropdown) setOpenDropdown(null);
+              }}
+              onClick={() => {
+                if (!nav.dropdown) {
+                  setActive(nav.title);
+                }
+              }}
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <div className="flex items-center gap-1">
+                <a href={`#${nav.id}`}>{nav.title}</a>
+                {nav.dropdown && (
+                  <motion.svg
+                    animate={{ rotate: openDropdown === nav.id ? 180 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </motion.svg>
+                )}
+              </div>
               <motion.div
                 className="absolute bottom-0 left-0 w-full h-0.5 bg-[#915EFF]"
                 initial={{ scaleX: 0 }}
@@ -122,6 +194,42 @@ const Navbar = () => {
                 }}
                 transition={{ duration: 0.3 }}
               />
+              <AnimatePresence>
+                {nav.dropdown && openDropdown === nav.id && (
+                  <motion.div
+                    variants={dropdownVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-primary/95 backdrop-blur-md rounded-xl shadow-2xl py-2 overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#915EFF]/20 to-transparent" />
+                    {nav.dropdown.map((item, index) => (
+                      <motion.a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        custom={index}
+                        variants={itemVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="relative block px-6 py-3 text-sm text-secondary hover:text-white group"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActive(item.title);
+                          setOpenDropdown(null);
+                        }}
+                      >
+                        <span className="relative z-10">{item.title}</span>
+                        <motion.div
+                          className="absolute inset-0 bg-[#915EFF]/10 opacity-0 group-hover:opacity-100"
+                          initial={false}
+                          transition={{ duration: 0.2 }}
+                        />
+                      </motion.a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.li>
           ))}
         </motion.ul>
@@ -144,7 +252,7 @@ const Navbar = () => {
                 exit={{ opacity: 0, x: 300 }}
                 transition={{ duration: 0.3 }}
                 className="fixed right-0 top-0 h-screen w-[70%] bg-primary/95 backdrop-blur-md p-6 shadow-2xl"
-          >
+              >
                 <div className="flex justify-end">
                   <motion.img
                     whileTap={{ scale: 0.9 }}
@@ -156,23 +264,85 @@ const Navbar = () => {
                 </div>
 
                 <ul className="list-none flex flex-col gap-8 mt-10">
-              {navLinks.map((nav) => (
+                  {navLinks.map((nav) => (
                     <motion.li
-                  key={nav.id}
+                      key={nav.id}
                       className={`${
-                    active === nav.title ? "text-white" : "text-secondary"
+                        active === nav.title ? "text-white" : "text-secondary"
                       } hover:text-white text-[24px] font-medium cursor-pointer`}
-                  onClick={() => {
-                    setToggle(!toggle);
-                    setActive(nav.title);
-                  }}
+                      onClick={() => {
+                        if (nav.dropdown) {
+                          handleDropdownClick(nav.id);
+                        } else {
+                          setToggle(!toggle);
+                          setActive(nav.title);
+                        }
+                      }}
                       whileHover={{ x: 10 }}
                       transition={{ duration: 0.2 }}
-                >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                    >
+                      <div className="flex items-center justify-between">
+                        <a href={`#${nav.id}`}>{nav.title}</a>
+                        {nav.dropdown && (
+                          <motion.svg
+                            animate={{ rotate: openDropdown === nav.id ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </motion.svg>
+                        )}
+                      </div>
+                      <AnimatePresence>
+                        {nav.dropdown && openDropdown === nav.id && (
+                          <motion.ul
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="mt-4 ml-4 space-y-4 overflow-hidden"
+                          >
+                            {nav.dropdown.map((item, index) => (
+                              <motion.li
+                                key={item.id}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ x: 10 }}
+                                className="relative"
+                              >
+                                <a
+                                  href={`#${item.id}`}
+                                  className="text-[20px] text-secondary hover:text-white block py-2"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setToggle(!toggle);
+                                    setActive(item.title);
+                                    setOpenDropdown(null);
+                                  }}
+                                >
+                                  {item.title}
+                                </a>
+                                <motion.div
+                                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#915EFF]"
+                                  whileHover={{ width: "100%" }}
+                                  transition={{ duration: 0.3 }}
+                                />
+                              </motion.li>
+                            ))}
+                          </motion.ul>
+                        )}
+                      </AnimatePresence>
                     </motion.li>
-              ))}
-            </ul>
+                  ))}
+                </ul>
               </motion.div>
             )}
           </AnimatePresence>

@@ -29,15 +29,47 @@ import {
     {
       id: "about",
       title: "About",
+      dropdown: [
+        {
+          id: "team",
+          title: "Team"
+        },
+        {
+          id: "progress",
+          title: "Progress"
+        }
+      ]
     },
     {
-      id: "work",
-      title: "Work",
+      id: "auv",
+      title: "AUV"
+    },
+    {
+      id: "library",
+      title: "Library",
+      dropdown: [
+        {
+          id: "blogs",
+          title: "Blogs"
+        },
+        {
+          id: "gallery",
+          title: "Gallery"
+        },
+        {
+          id: "technical-documentation",
+          title: "Technical Documentation"
+        }
+      ]
+    },
+    {
+      id: "sponsors",
+      title: "Sponsors"
     },
     {
       id: "contact",
-      title: "Contact",
-    },
+      title: "Contact Us"
+    }
   ];
   
   const services = [
