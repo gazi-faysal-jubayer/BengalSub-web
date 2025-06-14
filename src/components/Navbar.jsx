@@ -167,7 +167,7 @@ const Navbar = () => {
               }}
             >
               <div className="flex items-center gap-1">
-                <a href={`#${nav.id}`}>{nav.title}</a>
+              <a href={`#${nav.id}`}>{nav.title}</a>
                 {nav.dropdown && (
                   <motion.svg
                     animate={{ rotate: openDropdown === nav.id ? 180 : 0 }}
@@ -252,7 +252,7 @@ const Navbar = () => {
                 exit={{ opacity: 0, x: 300 }}
                 transition={{ duration: 0.3 }}
                 className="fixed right-0 top-0 h-screen w-[70%] bg-primary/95 backdrop-blur-md p-6 shadow-2xl"
-              >
+          >
                 <div className="flex justify-end">
                   <motion.img
                     whileTap={{ scale: 0.9 }}
@@ -264,25 +264,25 @@ const Navbar = () => {
                 </div>
 
                 <ul className="list-none flex flex-col gap-8 mt-10">
-                  {navLinks.map((nav) => (
+              {navLinks.map((nav) => (
                     <motion.li
-                      key={nav.id}
+                  key={nav.id}
                       className={`${
-                        active === nav.title ? "text-white" : "text-secondary"
+                    active === nav.title ? "text-white" : "text-secondary"
                       } hover:text-white text-[24px] font-medium cursor-pointer`}
-                      onClick={() => {
+                  onClick={() => {
                         if (nav.dropdown) {
                           handleDropdownClick(nav.id);
                         } else {
-                          setToggle(!toggle);
-                          setActive(nav.title);
+                    setToggle(!toggle);
+                    setActive(nav.title);
                         }
-                      }}
+                  }}
                       whileHover={{ x: 10 }}
                       transition={{ duration: 0.2 }}
-                    >
+                >
                       <div className="flex items-center justify-between">
-                        <a href={`#${nav.id}`}>{nav.title}</a>
+                  <a href={`#${nav.id}`}>{nav.title}</a>
                         {nav.dropdown && (
                           <motion.svg
                             animate={{ rotate: openDropdown === nav.id ? 180 : 0 }}
@@ -341,8 +341,8 @@ const Navbar = () => {
                         )}
                       </AnimatePresence>
                     </motion.li>
-                  ))}
-                </ul>
+              ))}
+            </ul>
               </motion.div>
             )}
           </AnimatePresence>

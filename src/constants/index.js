@@ -35,7 +35,7 @@ import {
           title: "Team"
         },
         {
-          id: "progress",
+          id: "work",
           title: "Progress"
         }
       ]
@@ -148,57 +148,60 @@ import {
   
   const experiences = [
     {
-      title: "Outreach Manager Intern",
-      company_name: "Flurno",
+      title: "RoboSub Competition",
+      company_name: "RoboNation",
       icon: starbucks,
       iconBg: "#383E56",
-      date: "Jan 2022 - Feb 2022",
+      date: "2023 - Present",
       points: [
-      "Helped the company in setting up a Discord community of over 1k college students",
-      "Managed events and community engagement on Discord.",
-      "Invited guest speakers from top tech companies.",
-      "Developed targeted marketing assets for Flurno Programs.",
+        "Participating in the prestigious RoboSub AUV competition",
+        "Designing and developing autonomous underwater vehicles",
+        "Implementing computer vision and control systems",
+        "Collaborating with international teams and experts",
       ],
+      link: "/auv"
     },
     {
-      title: "Community Head",
-      company_name: "StartNow",
+      title: "Tech Autocrats",
+      company_name: "Youth Organization",
       icon: tesla,
       iconBg: "#E6DEDD",
-      date: "Feb 2022 - Oct 2022",
+      date: "2023 - Present",
       points: [
-      "Founded global community for young entrepreneurs, fostering connections and knowledge-sharing.",
-      "Recognized as Top 5 Startup Community on Discord within 6 months.",
-      "Organized events, facilitated team connections, explored business opportunities.",
-      "Hosted sessions with industry leaders, provided valuable insights to members.",
-      "Implemented effective outreach strategies, ensuring vibrant community engagement.",
+        "Part of a youth-led organization promoting robotics education",
+        "Conducting workshops and training sessions",
+        "Mentoring students in robotics and electronics",
+        "Organizing community outreach programs",
       ],
+      link: "/about/team"
     },
     {
-      title: "Founder & CEO",
-      company_name: "Startic Field",
+      title: "Research & Development",
+      company_name: "BengalSub",
       icon: shopify,
       iconBg: "#383E56",
-      date: "Jul 2022 - March 2023",
+      date: "2023 - Present",
       points: [
-      "Created an application suite of gamified task management for startups and LP portfolio startup investment tracking.",
-      "Led focussed product development, enhancing user experience and satisfaction.",
-      "Directed agile product development, driving rapid innovation in startup building.",
-      "Devised strategy to expand market reach by leveraging existing customer base.",
+        "Developing innovative solutions for underwater robotics",
+        "Researching advanced control systems and algorithms",
+        "Testing and optimizing AUV performance",
+        "Documenting technical specifications and procedures",
       ],
+      link: "/library/technical-documentation"
     },
     {
-      title: "Software Engineer Intern",
-      company_name: "PredCo AI",
+      title: "Community Outreach",
+      company_name: "BengalSub",
       icon: meta,
       iconBg: "#E6DEDD",
-      date: "Apr 2023 - Present",
+      date: "2023 - Present",
       points: [
-      "Designed the framework of IOT sensor data integration to an end-to-end ML based analytics software.",
-      "Created PRD and wireframes for the product, and developed the frontend using ReactJS.",
-      "Developed Rest APIs, aligning with frontend flow.",
-      "Integrated Elastic Search and Kibana Dashboards via dynamic APIs.",
+        "Representing Bangladesh in international competitions",
+        "Promoting STEM education in local communities",
+        "Building partnerships with educational institutions",
+        "Sharing knowledge through workshops and seminars",
       ],
+      link: "/about/progress"
     },
   ];
   
