@@ -167,7 +167,11 @@ const Navbar = () => {
               }}
             >
               <div className="flex items-center gap-1">
-              <a href={`#${nav.id}`}>{nav.title}</a>
+                {nav.id === "about" ? (
+                  <Link to="/team">{nav.title}</Link>
+                ) : (
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                )}
                 {nav.dropdown && (
                   <motion.svg
                     animate={{ rotate: openDropdown === nav.id ? 180 : 0 }}
@@ -207,7 +211,7 @@ const Navbar = () => {
                     {nav.dropdown.map((item, index) => (
                       <motion.a
                         key={item.id}
-                        href={`#${item.id}`}
+                        href={item.id === "team" ? "/team" : `#${item.id}`}
                         custom={index}
                         variants={itemVariants}
                         initial="hidden"
@@ -319,7 +323,7 @@ const Navbar = () => {
                                 className="relative"
                               >
                                 <a
-                                  href={`#${item.id}`}
+                                  href={item.id === "team" ? "/team" : `#${item.id}`}
                                   className="text-[20px] text-secondary hover:text-white block py-2"
                                   onClick={(e) => {
                                     e.stopPropagation();

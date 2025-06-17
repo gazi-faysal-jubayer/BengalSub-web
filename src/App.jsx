@@ -1,6 +1,6 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Team } from "./components";
 import MouseFollower from "./components/MouseFollower";
 
 const App = () => {
@@ -8,20 +8,27 @@ const App = () => {
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
         <MouseFollower />
-        <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center relative'>
-          <div className='absolute inset-0 bg-black/50'></div>
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className='relative z-0'>
-          <Contact />
-          <StarsCanvas />
-        </div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center relative'>
+                <div className='absolute inset-0 bg-black/50'></div>
+                <Hero />
+              </div>
+              <About />
+              <Experience />
+              <Tech />
+              <Works />
+              <Feedbacks />
+              <div className='relative z-0'>
+                <Contact />
+                <StarsCanvas />
+              </div>
+            </>
+          } />
+          <Route path="/team" element={<Team />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
