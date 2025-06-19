@@ -168,9 +168,9 @@ const Navbar = () => {
             >
               <div className="flex items-center gap-1">
                 {nav.id === "about" ? (
-                  <Link to="/team">{nav.title}</Link>
+                  <a href="/#about">{nav.title}</a>
                 ) : (
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  <a href={`/#${nav.id}`}>{nav.title}</a>
                 )}
                 {nav.dropdown && (
                   <motion.svg
@@ -233,7 +233,7 @@ const Navbar = () => {
                       ) : (
                         <motion.a
                           key={item.id}
-                          href={`#${item.id}`}
+                          href={`/#${item.id}`}
                           custom={index}
                           variants={itemVariants}
                           initial="hidden"
@@ -310,9 +310,9 @@ const Navbar = () => {
                 >
                       <div className="flex items-center justify-between">
                   {nav.id === "about" ? (
-                    <Link to="/team">{nav.title}</Link>
+                    <a href="/#about">{nav.title}</a>
                   ) : (
-                    <a href={`#${nav.id}`}>{nav.title}</a>
+                    <a href={`/#${nav.id}`}>{nav.title}</a>
                   )}
                         {nav.dropdown && (
                           <motion.svg
@@ -364,7 +364,7 @@ const Navbar = () => {
                                   </Link>
                                 ) : (
                                   <a
-                                    href={`#${item.id}`}
+                                    href={`/#${item.id}`}
                                     className="text-[20px] text-secondary hover:text-white block py-2"
                                     onClick={(e) => {
                                       e.stopPropagation();
