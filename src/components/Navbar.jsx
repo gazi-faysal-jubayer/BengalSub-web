@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 import { logo, menu, close } from "../assets";
@@ -13,6 +13,8 @@ const Navbar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -81,6 +83,14 @@ const Navbar = () => {
         duration: 0.3
       }
     })
+  };
+
+  // Helper to scroll to section smoothly
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -167,10 +177,54 @@ const Navbar = () => {
               }}
             >
               <div className="flex items-center gap-1">
-                {nav.id === "about" ? (
-                  <a href="/#about">{nav.title}</a>
+                {nav.id === "home" ? (
+                  <a
+                    href="/"
+                    onClick={e => {
+                      if (location.pathname === "/") {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
+                  >
+                    {nav.title}
+                  </a>
+                ) : nav.id === "about" ? (
+                  <a
+                    href="/#about"
+                    onClick={e => {
+                      if (location.pathname === "/") {
+                        e.preventDefault();
+                        scrollToSection("about");
+                      }
+                    }}
+                  >
+                    {nav.title}
+                  </a>
+                ) : nav.id === "team" ? (
+                  <a
+                    href="/team"
+                    onClick={e => {
+                      if (location.pathname === "/team") {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
+                  >
+                    {nav.title}
+                  </a>
                 ) : (
-                  <a href={`/#${nav.id}`}>{nav.title}</a>
+                  <a
+                    href={`/#${nav.id}`}
+                    onClick={e => {
+                      if (location.pathname === "/") {
+                        e.preventDefault();
+                        scrollToSection(nav.id);
+                      }
+                    }}
+                  >
+                    {nav.title}
+                  </a>
                 )}
                 {nav.dropdown && (
                   <motion.svg
@@ -223,7 +277,18 @@ const Navbar = () => {
                             setOpenDropdown(null);
                           }}
                         >
-                          <Link to="/team" className="relative z-10">{item.title}</Link>
+                          <a
+                            href="/team"
+                            className="relative z-10"
+                            onClick={e => {
+                              if (location.pathname === "/team") {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                              }
+                            }}
+                          >
+                            {item.title}
+                          </a>
                           <motion.div
                             className="absolute inset-0 bg-[#915EFF]/10 opacity-0 group-hover:opacity-100"
                             initial={false}
@@ -309,10 +374,54 @@ const Navbar = () => {
                       transition={{ duration: 0.2 }}
                 >
                       <div className="flex items-center justify-between">
-                  {nav.id === "about" ? (
-                    <a href="/#about">{nav.title}</a>
+                  {nav.id === "home" ? (
+                    <a
+                      href="/"
+                      onClick={e => {
+                        if (location.pathname === "/") {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
+                      }}
+                    >
+                      {nav.title}
+                    </a>
+                  ) : nav.id === "about" ? (
+                    <a
+                      href="/#about"
+                      onClick={e => {
+                        if (location.pathname === "/") {
+                          e.preventDefault();
+                          scrollToSection("about");
+                        }
+                      }}
+                    >
+                      {nav.title}
+                    </a>
+                  ) : nav.id === "team" ? (
+                    <a
+                      href="/team"
+                      onClick={e => {
+                        if (location.pathname === "/team") {
+                          e.preventDefault();
+                          window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
+                      }}
+                    >
+                      {nav.title}
+                    </a>
                   ) : (
-                    <a href={`/#${nav.id}`}>{nav.title}</a>
+                    <a
+                      href={`/#${nav.id}`}
+                      onClick={e => {
+                        if (location.pathname === "/") {
+                          e.preventDefault();
+                          scrollToSection(nav.id);
+                        }
+                      }}
+                    >
+                      {nav.title}
+                    </a>
                   )}
                         {nav.dropdown && (
                           <motion.svg
@@ -350,27 +459,27 @@ const Navbar = () => {
                                 className="relative"
                               >
                                 {item.id === "team" ? (
-                                  <Link
-                                    to="/team"
+                                  <a
+                                    href="/team"
                                     className="text-[20px] text-secondary hover:text-white block py-2"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      setToggle(!toggle);
-                                      setActive(item.title);
-                                      setOpenDropdown(null);
+                                    onClick={e => {
+                                      if (location.pathname === "/team") {
+                                        e.preventDefault();
+                                        window.scrollTo({ top: 0, behavior: "smooth" });
+                                      }
                                     }}
                                   >
                                     {item.title}
-                                  </Link>
+                                  </a>
                                 ) : (
                                   <a
                                     href={`/#${item.id}`}
                                     className="text-[20px] text-secondary hover:text-white block py-2"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      setToggle(!toggle);
-                                      setActive(item.title);
-                                      setOpenDropdown(null);
+                                    onClick={e => {
+                                      if (location.pathname === "/") {
+                                        e.preventDefault();
+                                        scrollToSection(item.id);
+                                      }
                                     }}
                                   >
                                     {item.title}
