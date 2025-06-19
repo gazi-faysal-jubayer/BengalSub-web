@@ -209,27 +209,50 @@ const Navbar = () => {
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#915EFF]/20 to-transparent" />
                     {nav.dropdown.map((item, index) => (
-                      <motion.a
-                        key={item.id}
-                        href={item.id === "team" ? "/team" : `#${item.id}`}
-                        custom={index}
-                        variants={itemVariants}
-                        initial="hidden"
-                        animate="visible"
-                        className="relative block px-6 py-3 text-sm text-secondary hover:text-white group"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setActive(item.title);
-                          setOpenDropdown(null);
-                        }}
-                      >
-                        <span className="relative z-10">{item.title}</span>
+                      item.id === "team" ? (
                         <motion.div
-                          className="absolute inset-0 bg-[#915EFF]/10 opacity-0 group-hover:opacity-100"
-                          initial={false}
-                          transition={{ duration: 0.2 }}
-                        />
-                      </motion.a>
+                          key={item.id}
+                          custom={index}
+                          variants={itemVariants}
+                          initial="hidden"
+                          animate="visible"
+                          className="relative block px-6 py-3 text-sm text-secondary hover:text-white group"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setActive(item.title);
+                            setOpenDropdown(null);
+                          }}
+                        >
+                          <Link to="/team" className="relative z-10">{item.title}</Link>
+                          <motion.div
+                            className="absolute inset-0 bg-[#915EFF]/10 opacity-0 group-hover:opacity-100"
+                            initial={false}
+                            transition={{ duration: 0.2 }}
+                          />
+                        </motion.div>
+                      ) : (
+                        <motion.a
+                          key={item.id}
+                          href={`#${item.id}`}
+                          custom={index}
+                          variants={itemVariants}
+                          initial="hidden"
+                          animate="visible"
+                          className="relative block px-6 py-3 text-sm text-secondary hover:text-white group"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setActive(item.title);
+                            setOpenDropdown(null);
+                          }}
+                        >
+                          <span className="relative z-10">{item.title}</span>
+                          <motion.div
+                            className="absolute inset-0 bg-[#915EFF]/10 opacity-0 group-hover:opacity-100"
+                            initial={false}
+                            transition={{ duration: 0.2 }}
+                          />
+                        </motion.a>
+                      )
                     ))}
                   </motion.div>
                 )}
@@ -286,7 +309,11 @@ const Navbar = () => {
                       transition={{ duration: 0.2 }}
                 >
                       <div className="flex items-center justify-between">
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  {nav.id === "about" ? (
+                    <Link to="/team">{nav.title}</Link>
+                  ) : (
+                    <a href={`#${nav.id}`}>{nav.title}</a>
+                  )}
                         {nav.dropdown && (
                           <motion.svg
                             animate={{ rotate: openDropdown === nav.id ? 180 : 0 }}
@@ -322,18 +349,33 @@ const Navbar = () => {
                                 whileHover={{ x: 10 }}
                                 className="relative"
                               >
-                                <a
-                                  href={item.id === "team" ? "/team" : `#${item.id}`}
-                                  className="text-[20px] text-secondary hover:text-white block py-2"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    setToggle(!toggle);
-                                    setActive(item.title);
-                                    setOpenDropdown(null);
-                                  }}
-                                >
-                                  {item.title}
-                                </a>
+                                {item.id === "team" ? (
+                                  <Link
+                                    to="/team"
+                                    className="text-[20px] text-secondary hover:text-white block py-2"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setToggle(!toggle);
+                                      setActive(item.title);
+                                      setOpenDropdown(null);
+                                    }}
+                                  >
+                                    {item.title}
+                                  </Link>
+                                ) : (
+                                  <a
+                                    href={`#${item.id}`}
+                                    className="text-[20px] text-secondary hover:text-white block py-2"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setToggle(!toggle);
+                                      setActive(item.title);
+                                      setOpenDropdown(null);
+                                    }}
+                                  >
+                                    {item.title}
+                                  </a>
+                                )}
                                 <motion.div
                                   className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#915EFF]"
                                   whileHover={{ width: "100%" }}
