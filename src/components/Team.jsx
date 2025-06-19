@@ -2,17 +2,11 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import TeamCard from './TeamCard';
 import TeamDetailCard from './TeamDetailCard';
+import Hyperspeed from './Hyperspeed';
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: none; }
-`;
-
-const TeamContainer = styled.div`
-  padding: 8rem 2rem 4rem;
-  min-height: 100vh;
-  background: linear-gradient(120deg, #232526 0%, #414345 100%);
-  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 `;
 
 const PageTitle = styled.h1`
@@ -20,6 +14,7 @@ const PageTitle = styled.h1`
   font-size: 3.5rem;
   text-align: center;
   margin-bottom: 3rem;
+  padding-top: 7rem;
   background: linear-gradient(90deg, #915EFF 0%, #FF8E53 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -106,17 +101,44 @@ const TeamGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-  flex: 3;
   justify-content: center;
   justify-items: center;
   align-items: center;
+  margin: 0 auto;
   padding: 1rem 0;
+  max-width: 900px;
 `;
 
 const Team = () => {
   // Team members data organized by sections with additional metadata
   const teamSections = {
-    "Mentors": {
+    "Senior Advisor Panel": {
+      members: [
+        {
+          name: "Prof. Golam Kader",
+          role: "CEO",
+          email: "john@example.com",
+          description: "Professor, Department of Mechanical Engineering, KUET, Bangladesh",
+          github: "https://github.com/johndoe",
+          linkedin: "https://linkedin.com/in/johndoe",
+          whatsapp: "https://wa.me/1234567890",
+          image: "/assets/team/3.png"
+        },
+        {
+          name: "John Doe",
+          role: "CEO",
+          email: "john@example.com",
+          description: "Visionary leader and founder.",
+          github: "https://github.com/johndoe",
+          linkedin: "https://linkedin.com/in/johndoe",
+          whatsapp: "https://wa.me/1234567890",
+          image: "/assets/team/6.png"
+        },
+      ],
+      description: "Our leadership team drives the vision and strategy of BengalSub, ensuring we deliver exceptional value to our users while maintaining the highest standards of quality and innovation.",
+      image: "/assets/team/advisors.png"
+    },
+    "Advisor & Mentor Panel": {
       members: [
         {
           name: "John Doe",
@@ -126,7 +148,7 @@ const Team = () => {
           github: "https://github.com/johndoe",
           linkedin: "https://linkedin.com/in/johndoe",
           whatsapp: "https://wa.me/1234567890",
-          image: "/assets/team/gazi.jpg"
+          image: "/assets/team/4.png"
         },
         {
           name: "Jane Smith",
@@ -136,13 +158,13 @@ const Team = () => {
           github: "https://github.com/janesmith",
           linkedin: "https://linkedin.com/in/janesmith",
           whatsapp: "https://wa.me/1234567891",
-          image: "/images/jane.jpg"
+          image: "/assets/team/5.png"
         },
       ],
       description: "Our leadership team drives the vision and strategy of BengalSub, ensuring we deliver exceptional value to our users while maintaining the highest standards of quality and innovation.",
       image: "/assets/team/mentors.png"
     },
-    "Development": {
+    "Design Team": {
       members: [
         {
           name: "Mike Johnson",
@@ -168,7 +190,7 @@ const Team = () => {
       description: "Our development team builds robust, scalable solutions using cutting-edge technologies to create seamless user experiences and powerful backend systems.",
       image: "/assets/team/development-cover.jpg"
     },
-    "Design": {
+    "Mechanical Team": {
       members: [
         {
           name: "Alex Brown",
@@ -194,7 +216,7 @@ const Team = () => {
       description: "Our design team creates visually stunning and intuitive interfaces that enhance user experience and bring our vision to life through creative and innovative design solutions.",
       image: "/assets/team/design-cover.jpg"
     },
-    "Marketing": {
+    "Electrical Team": {
       members: [
         {
           name: "Chris Lee",
@@ -220,7 +242,7 @@ const Team = () => {
       description: "Our marketing team develops strategic campaigns and creates compelling content that connects with our audience and drives growth for BengalSub.",
       image: "/assets/team/marketing-cover.jpg"
     },
-    "Support": {
+    "Software Team": {
       members: [
         {
           name: "David Kim",
@@ -249,42 +271,49 @@ const Team = () => {
   };
 
   return (
-    <TeamContainer>
-      <PageTitle>Our Team</PageTitle>
-      {Object.entries(teamSections).map(([section, data], idx, arr) => (
-        <React.Fragment key={section}>
-          <Section>
-            <SectionTitle>{section}</SectionTitle>
-            <SectionContent>
-              <DetailCardContainer>
-                <TeamDetailCard
-                  sectionName={section}
-                  description={data.description}
-                  memberCount={data.members.length}
-                  image={data.image}
-                />
-              </DetailCardContainer>
-              <TeamGrid>
-                {data.members.map((member, index) => (
-                  <TeamCard
-                    key={index}
-                    name={member.name}
-                    role={member.role}
-                    email={member.email}
-                    description={member.description}
-                    github={member.github}
-                    linkedin={member.linkedin}
-                    whatsapp={member.whatsapp}
-                    image={member.image}
+    <div style={{ position: 'relative', minHeight: '100vh', width: '100vw', overflow: 'hidden' }}>
+      {/* Hyperspeed background */}
+      <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
+        <Hyperspeed />
+      </div>
+      {/* Team content */}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <PageTitle>Our Team</PageTitle>
+        {Object.entries(teamSections).map(([section, data], idx, arr) => (
+          <React.Fragment key={section}>
+            <Section>
+              <SectionTitle>{section}</SectionTitle>
+              <SectionContent>
+                <DetailCardContainer>
+                  <TeamDetailCard
+                    sectionName={section}
+                    description={data.description}
+                    memberCount={data.members.length}
+                    image={data.image}
                   />
-                ))}
-              </TeamGrid>
-            </SectionContent>
-          </Section>
-          {idx < arr.length - 1 && <SectionDivider />}
-        </React.Fragment>
-      ))}
-    </TeamContainer>
+                </DetailCardContainer>
+                <TeamGrid>
+                  {data.members.map((member, index) => (
+                    <TeamCard
+                      key={index}
+                      name={member.name}
+                      role={member.role}
+                      email={member.email}
+                      description={member.description}
+                      github={member.github}
+                      linkedin={member.linkedin}
+                      whatsapp={member.whatsapp}
+                      image={member.image}
+                    />
+                  ))}
+                </TeamGrid>
+              </SectionContent>
+            </Section>
+            {idx < arr.length - 1 && <SectionDivider />}
+          </React.Fragment>
+        ))}
+      </div>
+    </div>
   );
 };
 

@@ -130,7 +130,10 @@ const StyledWrapper = styled.div`
     display: block;
     font-size: 0.9rem;
     color: white;
-    margin-top: 1rem;
+    margin-top: 0rem;
+    min-height: 3.6em;
+    line-height: 1.2;
+    overflow: hidden;
   }
 
   .card .bottom .bottom-bottom {
