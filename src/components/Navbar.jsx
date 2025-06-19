@@ -202,8 +202,8 @@ const Navbar = () => {
                     {nav.title}
                   </a>
                 ) : nav.id === "team" ? (
-                  <a
-                    href="/team"
+                  <Link
+                    to="/team"
                     onClick={e => {
                       if (location.pathname === "/team") {
                         e.preventDefault();
@@ -212,7 +212,7 @@ const Navbar = () => {
                     }}
                   >
                     {nav.title}
-                  </a>
+                  </Link>
                 ) : (
                   <a
                     href={`/#${nav.id}`}
@@ -277,8 +277,8 @@ const Navbar = () => {
                             setOpenDropdown(null);
                           }}
                         >
-                          <a
-                            href="/team"
+                          <Link
+                            to="/team"
                             className="relative z-10"
                             onClick={e => {
                               if (location.pathname === "/team") {
@@ -288,7 +288,7 @@ const Navbar = () => {
                             }}
                           >
                             {item.title}
-                          </a>
+                          </Link>
                           <motion.div
                             className="absolute inset-0 bg-[#915EFF]/10 opacity-0 group-hover:opacity-100"
                             initial={false}
@@ -344,7 +344,7 @@ const Navbar = () => {
                 exit={{ opacity: 0, x: 300 }}
                 transition={{ duration: 0.3 }}
                 className="fixed right-0 top-0 h-screen w-[70%] bg-primary/95 backdrop-blur-md p-6 shadow-2xl"
-          >
+              >
                 <div className="flex justify-end">
                   <motion.img
                     whileTap={{ scale: 0.9 }}
@@ -356,73 +356,73 @@ const Navbar = () => {
                 </div>
 
                 <ul className="list-none flex flex-col gap-8 mt-10">
-              {navLinks.map((nav) => (
+                  {navLinks.map((nav) => (
                     <motion.li
-                  key={nav.id}
+                      key={nav.id}
                       className={`${
-                    active === nav.title ? "text-white" : "text-secondary"
+                        active === nav.title ? "text-white" : "text-secondary"
                       } hover:text-white text-[24px] font-medium cursor-pointer`}
-                  onClick={() => {
+                      onClick={() => {
                         if (nav.dropdown) {
                           handleDropdownClick(nav.id);
                         } else {
-                    setToggle(!toggle);
-                    setActive(nav.title);
+                          setToggle(!toggle);
+                          setActive(nav.title);
                         }
-                  }}
+                      }}
                       whileHover={{ x: 10 }}
                       transition={{ duration: 0.2 }}
-                >
+                    >
                       <div className="flex items-center justify-between">
-                  {nav.id === "home" ? (
-                    <a
-                      href="/"
-                      onClick={e => {
-                        if (location.pathname === "/") {
-                          e.preventDefault();
-                          window.scrollTo({ top: 0, behavior: "smooth" });
-                        }
-                      }}
-                    >
-                      {nav.title}
-                    </a>
-                  ) : nav.id === "about" ? (
-                    <a
-                      href="/#about"
-                      onClick={e => {
-                        if (location.pathname === "/") {
-                          e.preventDefault();
-                          scrollToSection("about");
-                        }
-                      }}
-                    >
-                      {nav.title}
-                    </a>
-                  ) : nav.id === "team" ? (
-                    <a
-                      href="/team"
-                      onClick={e => {
-                        if (location.pathname === "/team") {
-                          e.preventDefault();
-                          window.scrollTo({ top: 0, behavior: "smooth" });
-                        }
-                      }}
-                    >
-                      {nav.title}
-                    </a>
-                  ) : (
-                    <a
-                      href={`/#${nav.id}`}
-                      onClick={e => {
-                        if (location.pathname === "/") {
-                          e.preventDefault();
-                          scrollToSection(nav.id);
-                        }
-                      }}
-                    >
-                      {nav.title}
-                    </a>
-                  )}
+                        {nav.id === "home" ? (
+                          <a
+                            href="/"
+                            onClick={e => {
+                              if (location.pathname === "/") {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                              }
+                            }}
+                          >
+                            {nav.title}
+                          </a>
+                        ) : nav.id === "about" ? (
+                          <a
+                            href="/#about"
+                            onClick={e => {
+                              if (location.pathname === "/") {
+                                e.preventDefault();
+                                scrollToSection("about");
+                              }
+                            }}
+                          >
+                            {nav.title}
+                          </a>
+                        ) : nav.id === "team" ? (
+                          <Link
+                            to="/team"
+                            onClick={e => {
+                              if (location.pathname === "/team") {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                              }
+                            }}
+                          >
+                            {nav.title}
+                          </Link>
+                        ) : (
+                          <a
+                            href={`/#${nav.id}`}
+                            onClick={e => {
+                              if (location.pathname === "/") {
+                                e.preventDefault();
+                                scrollToSection(nav.id);
+                              }
+                            }}
+                          >
+                            {nav.title}
+                          </a>
+                        )}
                         {nav.dropdown && (
                           <motion.svg
                             animate={{ rotate: openDropdown === nav.id ? 180 : 0 }}
@@ -459,8 +459,8 @@ const Navbar = () => {
                                 className="relative"
                               >
                                 {item.id === "team" ? (
-                                  <a
-                                    href="/team"
+                                  <Link
+                                    to="/team"
                                     className="text-[20px] text-secondary hover:text-white block py-2"
                                     onClick={e => {
                                       if (location.pathname === "/team") {
@@ -470,7 +470,7 @@ const Navbar = () => {
                                     }}
                                   >
                                     {item.title}
-                                  </a>
+                                  </Link>
                                 ) : (
                                   <a
                                     href={`/#${item.id}`}
@@ -496,8 +496,8 @@ const Navbar = () => {
                         )}
                       </AnimatePresence>
                     </motion.li>
-              ))}
-            </ul>
+                  ))}
+                </ul>
               </motion.div>
             )}
           </AnimatePresence>
