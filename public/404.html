@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BengalSub</title>
-    <script type="text/javascript">
-      // SPA redirect for GitHub Pages
-      if (window.location.pathname !== '/' && !window.location.pathname.includes('.')) {
-        window.location.replace('/?redirect=' + window.location.pathname);
-      }
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // This script preserves the path for client-side routing
+      var l = window.location;
+      var path = l.pathname + l.search + l.hash;
+      window.location.replace('/' + path.replace(/^\//, ''));
     </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <h1>Redirecting...</h1>
   </body>
 </html> 
