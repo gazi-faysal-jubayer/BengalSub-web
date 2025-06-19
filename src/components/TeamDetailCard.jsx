@@ -1,5 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+`;
 
 const TeamDetailCard = ({ sectionName, description, memberCount, image }) => {
   return (
@@ -21,13 +26,14 @@ const TeamDetailCard = ({ sectionName, description, memberCount, image }) => {
 }
 
 const StyledWrapper = styled.div`
+  animation: ${fadeIn} 1.2s cubic-bezier(0.23, 1, 0.32, 1);
   .book {
     position: relative;
-    border-radius: 20px;
+    border-radius: 28px;
     width: 280px;
     height: 350px;
-    background: linear-gradient(135deg, #5C5C5CFF 0%, #413730FF 100%);
-    box-shadow: 0 10px 30px rgba(145, 94, 255, 0.3);
+    background: linear-gradient(135deg, #915EFF 0%, #FF8E53 100%);
+    box-shadow: 0 12px 40px 0 rgba(145, 94, 255, 0.18), 0 2px 8px 0 rgba(0,0,0,0.08);
     transform: preserve-3d;
     perspective: 600px;
     display: flex;
@@ -36,26 +42,38 @@ const StyledWrapper = styled.div`
     color: white;
     transition-duration: 0.5s;
     margin: 0 auto;
+    border: 1.5px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(16px);
+    overflow: visible;
   }
 
   .cover,
   .inner {
     top: 0;
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(12px);
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 28px;
     cursor: pointer;
     transition: all 0.5s;
     transform-origin: 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 24px 0 rgba(145, 94, 255, 0.10);
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
     overflow: hidden;
+  }
+
+  .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 28px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
   }
 
   .cover {
@@ -65,13 +83,6 @@ const StyledWrapper = styled.div`
   .inner {
     z-index: 1;
     transform: translateZ(-1px);
-  }
-
-  .cover-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
   }
 
   .book:hover .cover {
@@ -93,26 +104,32 @@ const StyledWrapper = styled.div`
 
   .content {
     text-align: center;
-    padding: 2rem;
+    padding: 2.2rem 1.2rem 1.2rem 1.2rem;
   }
 
   .section-name {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.35rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    letter-spacing: 0.5px;
   }
 
   .member-count {
-    font-size: 1rem;
-    opacity: 0.8;
+    font-size: 1.05rem;
+    opacity: 0.85;
     margin-bottom: 1rem;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-weight: 500;
   }
 
   .description {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    opacity: 0.9;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    opacity: 0.93;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-weight: 400;
   }
 `;
 

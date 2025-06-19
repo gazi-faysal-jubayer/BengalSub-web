@@ -1,12 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import TeamCard from './TeamCard';
 import TeamDetailCard from './TeamDetailCard';
 
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: none; }
+`;
+
 const TeamContainer = styled.div`
   padding: 8rem 2rem 4rem;
-  background: #0a0a0a;
   min-height: 100vh;
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 `;
 
 const PageTitle = styled.h1`
@@ -17,14 +23,31 @@ const PageTitle = styled.h1`
   background: linear-gradient(90deg, #915EFF 0%, #FF8E53 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  letter-spacing: 2px;
+  font-weight: 800;
+  animation: ${fadeIn} 1s ease;
 `;
 
 const Section = styled.div`
   margin-bottom: 4rem;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
+  padding: 2.5rem 2rem 2rem 2rem;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  position: relative;
+  animation: ${fadeIn} 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+`;
+
+const SectionDivider = styled.div`
+  width: 80%;
+  height: 2px;
+  margin: 2rem auto 3rem auto;
+  background: linear-gradient(90deg, #915EFF 0%, #FF8E53 100%);
+  border-radius: 2px;
+  opacity: 0.25;
 `;
 
 const SectionTitle = styled.h2`
@@ -33,6 +56,10 @@ const SectionTitle = styled.h2`
   margin-bottom: 2rem;
   text-align: center;
   position: relative;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: ${fadeIn} 1.3s cubic-bezier(0.23, 1, 0.32, 1);
   
   &:after {
     content: '';
@@ -54,10 +81,16 @@ const SectionContent = styled.div`
   justify-content: center;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 2rem 0;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 4px 24px 0 rgba(145, 94, 255, 0.07);
+  animation: ${fadeIn} 1.4s cubic-bezier(0.23, 1, 0.32, 1);
   
   @media (max-width: 1200px) {
     flex-direction: column;
     align-items: center;
+    padding: 1rem 0;
   }
 `;
 
@@ -66,20 +99,18 @@ const DetailCardContainer = styled.div`
   max-width: 500px;
   display: flex;
   justify-content: center;
-  
-  @media (max-width: 1200px) {
-    margin-bottom: 2rem;
-    max-width: 280px;
-  }
+  align-items: center;
 `;
 
 const TeamGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   flex: 3;
   justify-content: center;
   justify-items: center;
+  align-items: center;
+  padding: 1rem 0;
 `;
 
 const Team = () => {
@@ -220,35 +251,38 @@ const Team = () => {
   return (
     <TeamContainer>
       <PageTitle>Our Team</PageTitle>
-      {Object.entries(teamSections).map(([section, data]) => (
-        <Section key={section}>
-          <SectionTitle>{section}</SectionTitle>
-          <SectionContent>
-            <DetailCardContainer>
-              <TeamDetailCard
-                sectionName={section}
-                description={data.description}
-                memberCount={data.members.length}
-                image={data.image}
-              />
-            </DetailCardContainer>
-            <TeamGrid>
-              {data.members.map((member, index) => (
-                <TeamCard
-                  key={index}
-                  name={member.name}
-                  role={member.role}
-                  email={member.email}
-                  description={member.description}
-                  github={member.github}
-                  linkedin={member.linkedin}
-                  whatsapp={member.whatsapp}
-                  image={member.image}
+      {Object.entries(teamSections).map(([section, data], idx, arr) => (
+        <React.Fragment key={section}>
+          <Section>
+            <SectionTitle>{section}</SectionTitle>
+            <SectionContent>
+              <DetailCardContainer>
+                <TeamDetailCard
+                  sectionName={section}
+                  description={data.description}
+                  memberCount={data.members.length}
+                  image={data.image}
                 />
-              ))}
-            </TeamGrid>
-          </SectionContent>
-        </Section>
+              </DetailCardContainer>
+              <TeamGrid>
+                {data.members.map((member, index) => (
+                  <TeamCard
+                    key={index}
+                    name={member.name}
+                    role={member.role}
+                    email={member.email}
+                    description={member.description}
+                    github={member.github}
+                    linkedin={member.linkedin}
+                    whatsapp={member.whatsapp}
+                    image={member.image}
+                  />
+                ))}
+              </TeamGrid>
+            </SectionContent>
+          </Section>
+          {idx < arr.length - 1 && <SectionDivider />}
+        </React.Fragment>
       ))}
     </TeamContainer>
   );
