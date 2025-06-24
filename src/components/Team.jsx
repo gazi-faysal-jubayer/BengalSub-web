@@ -116,8 +116,8 @@ const Team = () => {
       members: [
         {
           name: "Prof. Golam Kader",
-          role: "CEO",
-          email: "john@example.com",
+          role: "Advisor",
+          email: "gkader@me.kuet.ac.bd",
           description: "Professor, Department of Mechanical Engineering, KUET, Bangladesh",
           github: "https://github.com/johndoe",
           linkedin: "https://linkedin.com/in/johndoe",
@@ -125,13 +125,13 @@ const Team = () => {
           image: "/assets/team/3.png"
         },
         {
-          name: "John Doe",
-          role: "CEO",
-          email: "john@example.com",
-          description: "Visionary leader and founder.",
-          github: "https://github.com/johndoe",
-          linkedin: "https://linkedin.com/in/johndoe",
-          whatsapp: "https://wa.me/1234567890",
+          name: "Jahedul Hoque",
+          role: "Advisor",
+          email: "jahed.drmc@gmail.com",
+          description: "Associate Professor at Dept. of Chemistry, Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "NULL",
+          whatsapp: "https://wa.me/8801689553501",
           image: "/assets/team/6.png"
         },
       ],
