@@ -112,8 +112,18 @@ const TeamGrid = styled.div`
 const Team = () => {
   // Team members data organized by sections with additional metadata
   const teamSections = {
-    "Senior Advisor Panel": {
+    "Advisor Panel": {
       members: [
+        {
+          name: "Rasel Ahmed",
+          role: "Advisor",
+          email: "raselahmedcse2012@gmail.com",
+          description: "Assistant Professor at ICT Dept. , Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "NULL",
+          whatsapp: "https://wa.me/8801720210229",
+          image: "/assets/team/4.png"
+        },
         {
           name: "Prof. Golam Kader",
           role: "Advisor",
@@ -122,7 +132,7 @@ const Team = () => {
           github: "https://github.com/johndoe",
           linkedin: "https://linkedin.com/in/johndoe",
           whatsapp: "https://wa.me/1234567890",
-          image: "/assets/team/3.png"
+          image: "/assets/team/7.png"
         },
         {
           name: "Jahedul Hoque",
@@ -138,18 +148,8 @@ const Team = () => {
       description: "Our leadership team drives the vision and strategy of BengalSub, ensuring we deliver exceptional value to our users while maintaining the highest standards of quality and innovation.",
       image: "/assets/team/advisors.png"
     },
-    "Advisor & Mentor Panel": {
+    "Mentor Panel": {
       members: [
-        {
-          name: "John Doe",
-          role: "CEO",
-          email: "john@example.com",
-          description: "Visionary leader and founder.",
-          github: "https://github.com/johndoe",
-          linkedin: "https://linkedin.com/in/johndoe",
-          whatsapp: "https://wa.me/1234567890",
-          image: "/assets/team/4.png"
-        },
         {
           name: "Jane Smith",
           role: "CTO",
@@ -163,6 +163,42 @@ const Team = () => {
       ],
       description: "Our leadership team drives the vision and strategy of BengalSub, ensuring we deliver exceptional value to our users while maintaining the highest standards of quality and innovation.",
       image: "/assets/team/mentors.png"
+    },
+    "Tech Autocrats": {
+      members: [
+        {
+          name: "An Nafew",
+          role: "Project Manager",
+          email: "annafewdrmc@gmail.com",
+          description: "Chief Executive Officer and Project Manager at Team BengalSub",
+          github: "NULL",
+          linkedin: "https://www.linkedin.com/in/an-nafew-72053a254 ",
+          whatsapp: " https://wa.me/8801886892326",
+          image: "/assets/team/1.png"
+        },
+        {
+          name: "Rubaiyat H Rahman",
+          role: "Software Team Member",
+          email: "rubaiyathrahman.robo@gmail.com",
+          description: "Managing Director",
+          github: "https://github.com/Rubaiyat29",
+          linkedin: "https://www.linkedin.com/in/rubaiyat-h-rahman-10211a263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+          whatsapp: " https://wa.me/8801827131041",
+          image: "/assets/team/2.png"
+        },
+        {
+          name: "Hasin Israque Chowdhury Taha",
+          role: "Electrical Team Member",
+          email: "tahahasin0@gmail.com",
+          description: "Chief Technology Officer",
+          github: "https://github.com/Taha-the-coder",
+          linkedin: "https://www.linkedin.com/in/hasin-israque-chowdhury-taha-b47173360",
+          whatsapp: " https://wa.me/8801814223746",
+          image: "/assets/team/3.png"
+        },
+      ],
+      description: "Our leadership team drives the vision and strategy of BengalSub, ensuring we deliver exceptional value to our users while maintaining the highest standards of quality and innovation.",
+      image: "/assets/team/autocrats.png"
     },
     "Design Team": {
       members: [

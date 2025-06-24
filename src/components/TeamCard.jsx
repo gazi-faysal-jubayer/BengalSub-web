@@ -55,7 +55,7 @@ const StyledWrapper = styled.div`
   }
 
   .card .mail svg {
-    stroke: #fbb9b6;
+    stroke: #9f745e;
     stroke-width: 3px;
   }
 
@@ -71,7 +71,7 @@ const StyledWrapper = styled.div`
     left: 3px;
     border-radius: 29px;
     z-index: 1;
-    border: 0px solid #fbb9b6;
+    border: 0px solid #9f745e;
     overflow: hidden;
     transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
   }
@@ -102,7 +102,7 @@ const StyledWrapper = styled.div`
     bottom: 3px;
     left: 3px;
     right: 3px;
-    background: #fbb9b6;
+    background: #9f745e;
     top: 80%;
     border-radius: 29px;
     z-index: 2;
@@ -116,7 +116,9 @@ const StyledWrapper = styled.div`
     bottom: 0;
     left: 1.5rem;
     right: 1.5rem;
-    height: 160px;
+    height: 175px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
   }
 
   .card .bottom .content .name {
@@ -164,7 +166,7 @@ const StyledWrapper = styled.div`
 
   .card .bottom .bottom-bottom .button {
     background: white;
-    color: #fbb9b6;
+    color: #9f745e;
     border: none;
     border-radius: 20px;
     font-size: 0.6rem;
@@ -195,7 +197,7 @@ const StyledWrapper = styled.div`
     left: 10px;
     border-radius: 50%;
     z-index: 3;
-    border: 7px solid #fbb9b6;
+    border: 7px solid #9f745e;
     box-shadow: rgba(96, 75, 74, 0.1882352941) 0px 5px 5px 0px;
     transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
   }
