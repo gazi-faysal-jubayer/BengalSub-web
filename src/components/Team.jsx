@@ -118,7 +118,7 @@ const Team = () => {
           name: "Mr. Shish Haider Chowdhury",
           role: "Honorary Advisor",
           email: "secretary@ict.gov.bd",
-          description: "Secretary, Information and Communication Division, Ministry of Posts, Telecommunication and Information Technology",
+          description: "Secretary, ICT Division",
           github: "NULL",
           linkedin: "https://www.linkedin.com/in/shish-haider-chowdhury-ndc-mcips-cs-44ba0069?originalSubdomain=bd",
           whatsapp: "https://wa.me/8801819225594",

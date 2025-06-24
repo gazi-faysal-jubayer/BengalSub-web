@@ -123,7 +123,7 @@ const StyledWrapper = styled.div`
 
   .card .bottom .content .name {
     display: block;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: white;
     font-weight: bold;
   }
