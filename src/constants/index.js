@@ -39,8 +39,8 @@ import {
           title: "Team"
         },
         {
-          id: "work",
-          title: "Progress"
+          id: "tech-autocrats",
+          title: "Tech Autocrats"
         }
       ]
     },
@@ -68,7 +68,17 @@ import {
     },
     {
       id: "sponsors",
-      title: "Sponsors"
+      title: "Sponsors",
+      dropdown: [
+        {
+          id: "partners",
+          title: "Partners"
+        },
+        {
+          id: "community-outreach",
+          title: "Community Outreach"
+        }
+      ]
     },
     {
       id: "contact",
