@@ -112,6 +112,22 @@ const TeamGrid = styled.div`
 const Team = () => {
   // Team members data organized by sections with additional metadata
   const teamSections = {
+    "Honorary Advisor": {
+      members: [
+        {
+          name: "Mr. Shish Haider Chowdhury",
+          role: "Honorary Advisor",
+          email: "secretary@ict.gov.bd",
+          description: "Secretary, Information and Communication Division, Ministry of Posts, Telecommunication and Information Technology",
+          github: "NULL",
+          linkedin: "https://www.linkedin.com/in/shish-haider-chowdhury-ndc-mcips-cs-44ba0069?originalSubdomain=bd",
+          whatsapp: "https://wa.me/8801819225594",
+          image: "/assets/team/0.png"
+        },
+      ],
+      description: "Our leadership team drives the vision and strategy of BengalSub, ensuring we deliver exceptional value to our users while maintaining the highest standards of quality and innovation.",
+      image: "/assets/team/honorary-advisor.png"
+    },
     "Advisor Panel": {
       members: [
         {
@@ -131,7 +147,7 @@ const Team = () => {
           description: "Professor, Department of Mechanical Engineering, KUET, Bangladesh",
           github: "https://github.com/johndoe",
           linkedin: "https://linkedin.com/in/johndoe",
-          whatsapp: "https://wa.me/1234567890",
+          whatsapp: "https://wa.me/8801714002300",
           image: "/assets/team/7.png"
         },
         {
@@ -151,13 +167,13 @@ const Team = () => {
     "Mentor Panel": {
       members: [
         {
-          name: "Jane Smith",
-          role: "CTO",
-          email: "jane@example.com",
-          description: "Tech enthusiast and architect.",
-          github: "https://github.com/janesmith",
-          linkedin: "https://linkedin.com/in/janesmith",
-          whatsapp: "https://wa.me/1234567891",
+          name: "MD. Asique Iqbal",
+          role: "Advsior",
+          email: "asique.iqbaldrmc@gmail.com",
+          description: "Assistant Professor at  ICT Dept. , Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "NULL",
+          whatsapp: "https://wa.me/8801731767933",
           image: "/assets/team/5.png"
         },
       ],
