@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import teamPhoto from "../assets/team-photo.webp";
 
 const About = () => {
   return (
@@ -23,7 +22,7 @@ const About = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-[#915EFF]/20 to-transparent rounded-2xl" />
             <img
-              src={teamPhoto}
+              src="/assets/team-photo.webp"
               alt="Team BengalSub"
               className="w-full h-auto object-cover rounded-2xl shadow-2xl"
             />

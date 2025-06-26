@@ -4,7 +4,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { Tilt } from "react-tilt";
 
 import "react-vertical-timeline-component/style.min.css";
@@ -92,8 +91,8 @@ const ExperienceCard = ({ experience, id }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
-        <Link
-          to={experience.link || "#"}
+        <a
+          href={experience.link || "#"}
           className="relative group"
         >
           <div className="absolute -inset-0.5 bg-gradient-to-r from-[#915EFF] to-[#00cea8] rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-gradient-xy"></div>
@@ -115,7 +114,7 @@ const ExperienceCard = ({ experience, id }) => {
               />
             </svg>
           </div>
-        </Link>
+        </a>
       </motion.div>
     </VerticalTimelineElement>
   );
@@ -139,18 +138,6 @@ const Experience = () => {
           Workflow & Experience.
         </h2>
       </motion.div>
-
-      {/* Service Cards */}
-      <div className='mt-20 flex flex-nowrap gap-1 justify-center overflow-x-auto pb-4 px-1 md:flex-wrap md:gap-10'>
-        {services.map((service, index) => (
-          <ServiceCard 
-            key={service.title} 
-            index={index} 
-            {...service} 
-            onClick={() => scrollToExperience(index)}
-          />
-        ))}
-      </div>
 
       {/* Experience Timeline */}
       <div className='mt-20 flex flex-col'>

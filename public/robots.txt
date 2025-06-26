@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gazi-faysal-jubayer.github.io/BengalSub-web/sitemap.xml 
