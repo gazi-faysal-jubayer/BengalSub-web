@@ -140,18 +140,6 @@ const Experience = () => {
         </h2>
       </motion.div>
 
-      {/* Service Cards */}
-      <div className='mt-20 flex flex-nowrap gap-1 justify-center overflow-x-auto pb-4 px-1 md:flex-wrap md:gap-10'>
-        {services.map((service, index) => (
-          <ServiceCard 
-            key={service.title} 
-            index={index} 
-            {...service} 
-            onClick={() => scrollToExperience(index)}
-          />
-        ))}
-      </div>
-
       {/* Experience Timeline */}
       <div className='mt-20 flex flex-col'>
         <VerticalTimeline>

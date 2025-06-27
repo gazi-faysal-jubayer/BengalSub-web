@@ -4,8 +4,8 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+const AUV = ({ isMobile }) => {
+  const auv = useGLTF("./AUV/scene.gltf");
   const meshRef = useRef();
 
   useFrame((state, delta) => {
@@ -27,7 +27,7 @@ const Computers = ({ isMobile }) => {
       />
       <pointLight intensity={1} />
       <primitive
-        object={computer.scene}
+        object={auv.scene}
         scale={isMobile ? 2.7 : 8.75}
         position={isMobile ? [0, -3, -2.2] : [0, -1.5, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
@@ -36,7 +36,7 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const ComputersCanvas = () => {
+const AUVCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -74,7 +74,7 @@ const ComputersCanvas = () => {
           enablePan={true}
           rotateSpeed={0.5}
         />
-        <Computers isMobile={isMobile} />
+        <AUV isMobile={isMobile} />
       </Suspense>
 
       <Preload all />
@@ -82,4 +82,4 @@ const ComputersCanvas = () => {
   );
 };
 
-export default ComputersCanvas;
+export default AUVCanvas;

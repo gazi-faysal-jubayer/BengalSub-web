@@ -4,15 +4,15 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Earth = () => {
-  const earth = useGLTF("./planet/scene.gltf");
+const Shark = () => {
+  const shark = useGLTF("./Shark/scene.gltf");
 
   return (
-    <primitive object={earth.scene} scale={2.5} position-y={0} rotation-y={0} />
+    <primitive object={shark.scene} scale={2.5} position-y={0} rotation-y={0} />
   );
 };
 
-const EarthCanvas = () => {
+const SharkCanvas = () => {
   return (
     <Canvas
       shadows
@@ -41,12 +41,11 @@ const EarthCanvas = () => {
           castShadow
           shadow-mapSize={1024}
         />
-        <Earth />
-
+        <Shark />
         <Preload all />
       </Suspense>
     </Canvas>
   );
 };
 
-export default EarthCanvas;
+export default SharkCanvas;
