@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { styles } from "../styles";
-import { navLinks, assets } from "../constants";
+import { navLinks } from "../constants";
+import { logo, menu, close } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -13,7 +13,8 @@ const Navbar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const router = useRouter();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -109,7 +110,7 @@ const Navbar = () => {
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
-          href="/"
+          to="/"
           className="flex items-center gap-2 group relative"
           onClick={() => {
             setActive("");
@@ -124,7 +125,7 @@ const Navbar = () => {
               duration: 0.5,
               ease: "easeInOut",
             }}
-            src={assets.logo}
+            src={logo}
             alt="logo"
             className="w-12 h-12 object-contain"
           />
@@ -180,7 +181,7 @@ const Navbar = () => {
                   <a
                     href="/"
                     onClick={e => {
-                      if (router.pathname === "/") {
+                      if (location.pathname === "/") {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }
@@ -192,7 +193,7 @@ const Navbar = () => {
                   <a
                     href="/#about"
                     onClick={e => {
-                      if (router.pathname === "/") {
+                      if (location.pathname === "/") {
                         e.preventDefault();
                         scrollToSection("about");
                       }
@@ -202,9 +203,9 @@ const Navbar = () => {
                   </a>
                 ) : nav.id === "team" ? (
                   <Link
-                    href="/team"
+                    to="/team"
                     onClick={e => {
-                      if (router.pathname === "/team") {
+                      if (location.pathname === "/team") {
                         e.preventDefault();
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }
@@ -216,7 +217,7 @@ const Navbar = () => {
                   <a
                     href={`/#${nav.id}`}
                     onClick={e => {
-                      if (router.pathname === "/") {
+                      if (location.pathname === "/") {
                         e.preventDefault();
                         scrollToSection(nav.id);
                       }
@@ -277,10 +278,10 @@ const Navbar = () => {
                           }}
                         >
                           <Link
-                            href="/team"
+                            to="/team"
                             className="relative z-10"
                             onClick={e => {
-                              if (router.pathname === "/team") {
+                              if (location.pathname === "/team") {
                                 e.preventDefault();
                                 window.scrollTo({ top: 0, behavior: "smooth" });
                               }
@@ -329,7 +330,7 @@ const Navbar = () => {
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <motion.img
             whileTap={{ scale: 0.9 }}
-            src={toggle ? assets.close : assets.menu}
+            src={toggle ? close : menu}
             alt="menu"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
             onClick={() => setToggle(!toggle)}
@@ -347,7 +348,7 @@ const Navbar = () => {
                 <div className="flex justify-end">
                   <motion.img
                     whileTap={{ scale: 0.9 }}
-                    src={assets.close}
+                    src={close}
                     alt="close"
                     className="w-[28px] h-[28px] object-contain cursor-pointer"
                     onClick={() => setToggle(!toggle)}
@@ -377,7 +378,7 @@ const Navbar = () => {
                           <a
                             href="/"
                             onClick={e => {
-                              if (router.pathname === "/") {
+                              if (location.pathname === "/") {
                                 e.preventDefault();
                                 window.scrollTo({ top: 0, behavior: "smooth" });
                               }
@@ -389,7 +390,7 @@ const Navbar = () => {
                           <a
                             href="/#about"
                             onClick={e => {
-                              if (router.pathname === "/") {
+                              if (location.pathname === "/") {
                                 e.preventDefault();
                                 scrollToSection("about");
                               }
@@ -399,9 +400,9 @@ const Navbar = () => {
                           </a>
                         ) : nav.id === "team" ? (
                           <Link
-                            href="/team"
+                            to="/team"
                             onClick={e => {
-                              if (router.pathname === "/team") {
+                              if (location.pathname === "/team") {
                                 e.preventDefault();
                                 window.scrollTo({ top: 0, behavior: "smooth" });
                               }
@@ -413,7 +414,7 @@ const Navbar = () => {
                           <a
                             href={`/#${nav.id}`}
                             onClick={e => {
-                              if (router.pathname === "/") {
+                              if (location.pathname === "/") {
                                 e.preventDefault();
                                 scrollToSection(nav.id);
                               }
@@ -459,10 +460,10 @@ const Navbar = () => {
                               >
                                 {item.id === "team" ? (
                                   <Link
-                                    href="/team"
+                                    to="/team"
                                     className="text-[20px] text-secondary hover:text-white block py-2"
                                     onClick={e => {
-                                      if (router.pathname === "/team") {
+                                      if (location.pathname === "/team") {
                                         e.preventDefault();
                                         window.scrollTo({ top: 0, behavior: "smooth" });
                                       }
@@ -475,7 +476,7 @@ const Navbar = () => {
                                     href={`/#${item.id}`}
                                     className="text-[20px] text-secondary hover:text-white block py-2"
                                     onClick={e => {
-                                      if (router.pathname === "/") {
+                                      if (location.pathname === "/") {
                                         e.preventDefault();
                                         scrollToSection(item.id);
                                       }
