@@ -213,6 +213,18 @@ const Navbar = () => {
                   >
                     {nav.title}
                   </Link>
+                ) : nav.id === "auv" ? (
+                  <Link
+                    to="/auv"
+                    onClick={e => {
+                      if (location.pathname === "/auv") {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
+                  >
+                    {nav.title}
+                  </Link>
                 ) : (
                   <a
                     href={`/#${nav.id}`}
@@ -403,6 +415,18 @@ const Navbar = () => {
                             to="/team"
                             onClick={e => {
                               if (location.pathname === "/team") {
+                                e.preventDefault();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                              }
+                            }}
+                          >
+                            {nav.title}
+                          </Link>
+                        ) : nav.id === "auv" ? (
+                          <Link
+                            to="/auv"
+                            onClick={e => {
+                              if (location.pathname === "/auv") {
                                 e.preventDefault();
                                 window.scrollTo({ top: 0, behavior: "smooth" });
                               }

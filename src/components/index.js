@@ -8,6 +8,7 @@ import Works from './Works';
 import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Team from './Team';
+import { AUVPage } from './AUVPage';
 
 export {
   Hero,
@@ -19,6 +20,7 @@ export {
   Feedbacks,
   Contact,
   Team,
+  AUVPage,
   SharkCanvas,
   BallCanvas, 
   AUVCanvas, 
