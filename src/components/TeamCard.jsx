@@ -130,7 +130,7 @@ const StyledWrapper = styled.div`
 
   .card .bottom .content .about-me {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: white;
     margin-top: 0rem;
     min-height: 3.6em;

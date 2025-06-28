@@ -216,109 +216,275 @@ const Team = () => {
       description: "Our leadership team drives the vision and strategy of BengalSub, ensuring we deliver exceptional value to our users while maintaining the highest standards of quality and innovation.",
       image: "/assets/team/autocrats.png"
     },
-    "Design Team": {
+    "Team Leads": {
       members: [
         {
-          name: "Mike Johnson",
-          role: "Senior Developer",
-          email: "mike@example.com",
-          description: "Full-stack developer.",
-          github: "https://github.com/mikejohnson",
-          linkedin: "https://linkedin.com/in/mikejohnson",
-          whatsapp: "https://wa.me/1234567892",
-          image: "/images/mike.jpg"
+          name: "Md Toslim",
+          role: "Team Leader",
+          email: "miraztoslim111@gmail.com",
+          description: "Student, Department of Mechatronics Engineering, KUET, Bangladesh",
+          github: "NULL",
+          linkedin: "https://www.linkedin.com/in/miraztoslim99 ",
+          whatsapp: "https://wa.me/8801700977464",
+          image: "/assets/team/17.png"
         },
         {
-          name: "Sarah Wilson",
-          role: "Frontend Developer",
-          email: "sarah@example.com",
-          description: "UI/UX and frontend specialist.",
-          github: "https://github.com/sarahwilson",
-          linkedin: "https://linkedin.com/in/sarahwilson",
-          whatsapp: "https://wa.me/1234567893",
-          image: "/images/sarah.jpg"
+          name: "Sudipto Mondal",
+          role: "Team Co-Lead",
+          email: "sudipto3331@gmail.com",
+          description: "Student, Department of Electronics and Telecommunication Engineering, RUET, Bangladesh",
+          github: "https://github.com/sudipto3331",
+          linkedin: "https://www.linkedin.com/in/sudipto3331/",
+          whatsapp: "https://wa.me/8801735493331",
+          image: "/assets/team/23.png"
+        },
+        {
+          name: "Md Masrul Khan",
+          role: "Mechanical Team Lead",
+          email: "masrulkhan2020@gmail.com",
+          description: "Student, Department of Mechatronics Engineering, KUET",
+          github: "https://github.com/md-masrul-khan",
+          linkedin: "linkedin.com/in/md-masrul-khan-50b9a91b6",
+          whatsapp: "https://wa.me/8801636414084",
+          image: "/assets/team/20.png"
+        },
+        {
+          name: "Khondokar Radwanur Rahman",
+          role: "Software Team Lead",
+          email: "radwankhondokar20@gmail.com",
+          description: "Student, Department of Electrical and Computer Engineering, RUET",
+          github: "https://github.com/rakukanteki",
+          linkedin: "https://www.linkedin.com/in/khradwan",
+          whatsapp: "https://wa.me/8801834277119",
+          image: "/assets/team/19.png"
+        },
+        {
+          name: "Ariyan Siddique",
+          role: "Electrical Team Lead",
+          email: "ariyan29sr@gmail.com",
+          description: "Student, Department of Electrical and Electronic Engineering, AUST, Bangladesh",
+          github: "https://github.com/aaariyann",
+          linkedin: "https://www.linkedin.com/in/aaariyan21",
+          whatsapp: "https://wa.me/8801890318552",
+          image: "/assets/team/25.png"
+        },
+        {
+          name: "A.K.M Faiaz",
+          role: "Documentation Team Lead",
+          email: "faiazjuhan@gmail.com",
+          description: "Student at Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "www.linkedin.com/in/faiaz-juhan-6b9746370",
+          whatsapp: "https://wa.me/8801757330040",
+          image: "/assets/team/8.png"
         },
       ],
       description: "Our development team builds robust, scalable solutions using cutting-edge technologies to create seamless user experiences and powerful backend systems.",
-      image: "/assets/team/development-cover.jpg"
+      image: "/assets/team/leads.png"
     },
     "Mechanical Team": {
       members: [
         {
-          name: "Alex Brown",
-          role: "UI/UX Designer",
-          email: "alex@example.com",
-          description: "Designs beautiful interfaces.",
-          github: "https://github.com/alexbrown",
-          linkedin: "https://linkedin.com/in/alexbrown",
-          whatsapp: "https://wa.me/1234567894",
-          image: "/images/alex.jpg"
+          name: "Md Masrul Khan",
+          role: "Mechanical Team Lead",
+          email: "masrulkhan2020@gmail.com",
+          description: "Student, Department of Mechatronics Engineering, KUET",
+          github: "https://github.com/md-masrul-khan",
+          linkedin: "linkedin.com/in/md-masrul-khan-50b9a91b6",
+          whatsapp: "https://wa.me/8801636414084",
+          image: "/assets/team/20.png"
         },
         {
-          name: "Emma Davis",
-          role: "Graphic Designer",
-          email: "emma@example.com",
-          description: "Creates stunning graphics.",
-          github: "https://github.com/emmadavis",
-          linkedin: "https://linkedin.com/in/emmadavis",
-          whatsapp: "https://wa.me/1234567895",
-          image: "/images/emma.jpg"
+          name: "Md Toslim",
+          role: "Member",
+          email: "miraztoslim111@gmail.com",
+          description: "Student, Department of Mechatronics Engineering, KUET, Bangladesh",
+          github: "NULL",
+          linkedin: "https://www.linkedin.com/in/miraztoslim99 ",
+          whatsapp: "https://wa.me/8801700977464",
+          image: "/assets/team/17.png"
+        },
+        {
+          name: "An Nafew",
+          role: "Member",
+          email: "annafewdrmc@gmail.com",
+          description: "Chief Executive Officer and Project Manager at Team BengalSub",
+          github: "NULL",
+          linkedin: "https://www.linkedin.com/in/an-nafew-72053a254 ",
+          whatsapp: " https://wa.me/8801886892326",
+          image: "/assets/team/1.png"
+        },
+        {
+          name: "Samim Ahnaf Tahmid",
+          role: "Member",
+          email: "ahanafsamim@gmail.com",
+          description: "Senior Officer at Tech Autocrats and Student at Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "https://www.linkedin.com/in/samim-ahanaf-77b018333",
+          whatsapp: "https://wa.me/8801841155887",
+          image: "/assets/team/14.png"
+        },
+        {
+          name: "Md. Tanvir Rahman Saad ",
+          role: "Member",
+          email: "tanvirrahmansaad15@gmail.com",
+          description: "Senior Officer at Tech Autocrats and Student at Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "https://www.linkedin.com/in/tanvir-rahman-saad-018958272 ",
+          whatsapp: "https://wa.me/8801944350519",
+          image: "/assets/team/12.png"
+        },
+        {
+          name: "Sanjeed Rahman",
+          role: "Member",
+          email: "sanjeeddrmc@gmail.com",
+          description: "Cheif Operating Officer at Tech Autocrats and Student at Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "NULL",
+          whatsapp: "https://wa.me/8801709747050",
+          image: "/assets/team/13.png"
         },
       ],
       description: "Our design team creates visually stunning and intuitive interfaces that enhance user experience and bring our vision to life through creative and innovative design solutions.",
-      image: "/assets/team/design-cover.jpg"
+      image: "/assets/team/mechanical.png"
     },
     "Electrical Team": {
       members: [
         {
-          name: "Chris Lee",
-          role: "Marketing Manager",
-          email: "chris@example.com",
-          description: "Marketing and outreach expert.",
-          github: "https://github.com/chrislee",
-          linkedin: "https://linkedin.com/in/chrislee",
-          whatsapp: "https://wa.me/1234567896",
-          image: "/images/chris.jpg"
+          name: "Ariyan Siddique",
+          role: "Electrical Team Lead",
+          email: "ariyan29sr@gmail.com",
+          description: "Student, Department of Electrical and Electronic Engineering, AUST, Bangladesh",
+          github: "https://github.com/aaariyann",
+          linkedin: "https://www.linkedin.com/in/aaariyan21",
+          whatsapp: "https://wa.me/8801890318552",
+          image: "/assets/team/25.png"
         },
         {
-          name: "Lisa Chen",
-          role: "Content Writer",
-          email: "lisa@example.com",
-          description: "Writes engaging content.",
-          github: "https://github.com/lisachen",
-          linkedin: "https://linkedin.com/in/lisachen",
-          whatsapp: "https://wa.me/1234567897",
-          image: "/images/lisa.jpg"
+          name: "Sudipto Mondal",
+          role: "Member",
+          email: "sudipto3331@gmail.com",
+          description: "Student, Department of Electronics and Telecommunication Engineering, RUET, Bangladesh",
+          github: "https://github.com/sudipto3331",
+          linkedin: "https://www.linkedin.com/in/sudipto3331/",
+          whatsapp: "https://wa.me/8801735493331",
+          image: "/assets/team/23.png"
+        },
+        {
+          name: "Hasin Israque Chowdhury Taha",
+          role: "Member",
+          email: "tahahasin0@gmail.com",
+          description: "Chief Technology Officer",
+          github: "https://github.com/Taha-the-coder",
+          linkedin: "https://www.linkedin.com/in/hasin-israque-chowdhury-taha-b47173360",
+          whatsapp: " https://wa.me/8801814223746",
+          image: "/assets/team/3.png"
+        },
+        {
+          name: "Muaz Ibn Bashar",
+          role: "Member",
+          email: "muazdrmc17854@gmail.com",
+          description: "Student at Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "NULL",
+          whatsapp: "NULL",
+          image: "/assets/team/22.png"
         },
       ],
       description: "Our marketing team develops strategic campaigns and creates compelling content that connects with our audience and drives growth for BengalSub.",
-      image: "/assets/team/marketing-cover.jpg"
+      image: "/assets/team/electrical.png"
     },
     "Software Team": {
       members: [
         {
-          name: "David Kim",
-          role: "Customer Support",
-          email: "david@example.com",
-          description: "Helps our users succeed.",
-          github: "https://github.com/davidkim",
-          linkedin: "https://linkedin.com/in/davidkim",
-          whatsapp: "https://wa.me/1234567898",
-          image: "/images/david.jpg"
+          name: "Khondokar Radwanur Rahman",
+          role: "Software Team Lead",
+          email: "radwankhondokar20@gmail.com",
+          description: "Student, Department of Electrical and Computer Engineering, RUET",
+          github: "https://github.com/rakukanteki",
+          linkedin: "https://www.linkedin.com/in/khradwan",
+          whatsapp: "https://wa.me/8801834277119",
+          image: "/assets/team/19.png"
         },
         {
-          name: "Maria Garcia",
-          role: "Community Manager",
-          email: "maria@example.com",
-          description: "Builds our community.",
-          github: "https://github.com/mariagarcia",
-          linkedin: "https://linkedin.com/in/mariagarcia",
-          whatsapp: "https://wa.me/1234567899",
-          image: "/images/maria.jpg"
+          name: "Gazi Faysal Jubayer",
+          role: "Website Developer",
+          email: "gazi.faysal.jubayer@gmail.com",
+          description: "Student, Department of Mechanical Engineering, KUET, Bangladesh",
+          github: "https://github.com/gazi-faysal-jubayer",
+          linkedin: "https://linkedin.com/in/gazi-faysal-jubayer",
+          whatsapp: "https://wa.me/8801315669261",
+          image: "/assets/team/11.png"
+        },
+        {
+          name: "Fatin Al Habib Nafis",
+          role: "Member",
+          email: "nafishabib360@gmail.com",
+          description: "Student at Mastermind English Medium School",
+          github: "https://github.com/nafis-exe",
+          linkedin: "https://www.linkedin.com/in/fatin-al-habib-nafis/",
+          whatsapp: "https://wa.me/8801707082489",
+          image: "/assets/team/24.png"
+        },
+        {
+          name: "Rubaiyat H Rahman",
+          role: "Member",
+          email: "rubaiyathrahman.robo@gmail.com",
+          description: "Managing Director",
+          github: "https://github.com/Rubaiyat29",
+          linkedin: "https://www.linkedin.com/in/rubaiyat-h-rahman-10211a263",
+          whatsapp: " https://wa.me/8801827131041",
+          image: "/assets/team/2.png"
         },
       ],
       description: "Our support team ensures every user receives exceptional assistance and builds a thriving community around BengalSub's mission and values.",
-      image: "/assets/team/support-cover.jpg"
+      image: "/assets/team/software.png"
+    },
+    "Documentation Team": {
+      members: [
+        {
+          name: "A.K.M Faiaz",
+          role: "Documentation Team Lead",
+          email: "faiazjuhan@gmail.com",
+          description: "Student at Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "www.linkedin.com/in/faiaz-juhan-6b9746370",
+          whatsapp: "https://wa.me/8801757330040",
+          image: "/assets/team/8.png"
+        },
+        {
+          name: "Ahnaf Safwan Islam",
+          role: "Member",
+          email: "ahnafislam059@gmail.com",
+          description: "Student at Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "NULL",
+          whatsapp: "https://wa.me/8801745993311",
+          image: "/assets/team/21.png"
+        },
+        {
+          name: "Jarar Mahbir Jahedi", 
+          role: "Member",
+          email: "corgsacorgsa@gmail.com",
+          description: "Student at Dhaka Residential Model College",
+          github: "NULL",
+          linkedin: "NULL",
+          whatsapp: "https://wa.me/8801971166328",
+          image: "/assets/team/15.png"
+        },
+        {
+          name: "MD.Mahdi Islam", 
+          role: "Member",
+          email: "mahdimridul@gmail.com",
+          description: "Student at Dhaka Residential Model College",
+	        github: "NULL",
+	        linkedin: "NULL",
+       	  whatsapp: "https://wa.me/8801628551654",
+          image: "/assets/team/18.png"
+        },
+      ],
+      description: "Our support team ensures every user receives exceptional assistance and builds a thriving community around BengalSub's mission and values.",
+      image: "/assets/team/documentation.png"
     }
   };
 
