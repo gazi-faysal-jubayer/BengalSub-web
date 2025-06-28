@@ -230,7 +230,7 @@ const Team = () => {
         },
         {
           name: "Sudipto Mondal",
-          role: "Team Co-Lead",
+          role: "Team Co- Lead and Electrical Lead",
           email: "sudipto3331@gmail.com",
           description: "Student, Department of Electronics and Telecommunication Engineering, RUET, Bangladesh",
           github: "https://github.com/sudipto3331",
@@ -260,7 +260,7 @@ const Team = () => {
         },
         {
           name: "Ariyan Siddique",
-          role: "Electrical Team Lead",
+          role: "Electrical Team Co-Lead",
           email: "ariyan29sr@gmail.com",
           description: "Student, Department of Electrical and Electronic Engineering, AUST, Bangladesh",
           github: "https://github.com/aaariyann",
@@ -351,24 +351,24 @@ const Team = () => {
     "Electrical Team": {
       members: [
         {
-          name: "Ariyan Siddique",
-          role: "Electrical Team Lead",
-          email: "ariyan29sr@gmail.com",
-          description: "Student, Department of Electrical and Electronic Engineering, AUST, Bangladesh",
-          github: "https://github.com/aaariyann",
-          linkedin: "https://www.linkedin.com/in/aaariyan21",
-          whatsapp: "https://wa.me/8801890318552",
-          image: "/assets/team/25.png"
-        },
-        {
           name: "Sudipto Mondal",
-          role: "Member",
+          role: "Electrical Team Lead",
           email: "sudipto3331@gmail.com",
           description: "Student, Department of Electronics and Telecommunication Engineering, RUET, Bangladesh",
           github: "https://github.com/sudipto3331",
           linkedin: "https://www.linkedin.com/in/sudipto3331/",
           whatsapp: "https://wa.me/8801735493331",
           image: "/assets/team/23.png"
+        },
+        {
+          name: "Ariyan Siddique",
+          role: "Electrical Team Co-Lead",
+          email: "ariyan29sr@gmail.com",
+          description: "Student, Department of Electrical and Electronic Engineering, AUST, Bangladesh",
+          github: "https://github.com/aaariyann",
+          linkedin: "https://www.linkedin.com/in/aaariyan21",
+          whatsapp: "https://wa.me/8801890318552",
+          image: "/assets/team/25.png"
         },
         {
           name: "Hasin Israque Chowdhury Taha",
