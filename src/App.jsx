@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Team, AUVPage } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Team, AUVPage, Footer } from "./components";
 import MouseFollower from "./components/MouseFollower";
 
 const App = () => {
@@ -30,6 +30,7 @@ const App = () => {
           <Route path="/team" element={<Team />} />
           <Route path="/auv" element={<AUVPage />} />
         </Routes>
+        <Footer />
       </div>
     </HashRouter>
   );

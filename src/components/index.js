@@ -9,6 +9,7 @@ import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Team from './Team';
 import { AUVPage } from './AUVPage';
+import Footer from './Footer';
 
 export {
   Hero,
@@ -21,6 +22,7 @@ export {
   Contact,
   Team,
   AUVPage,
+  Footer,
   SharkCanvas,
   BallCanvas, 
   AUVCanvas, 
