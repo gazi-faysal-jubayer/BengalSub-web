@@ -4,7 +4,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const AUV = ({ isMobile }) => {
+const AUV = ({ isMobile, scale }) => {
   const auv = useGLTF("./AUV/scene.gltf");
   const meshRef = useRef();
 
@@ -14,29 +14,20 @@ const AUV = ({ isMobile }) => {
     }
   });
 
+  const defaultScale = isMobile ? 2.7 : 8.75;
+  const finalScale = scale || defaultScale;
+
   return (
-    <mesh ref={meshRef}>
-      <hemisphereLight intensity={0.15} groundColor='black' />
-      <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
-        penumbra={1}
-        intensity={1}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <pointLight intensity={1} />
-      <primitive
-        object={auv.scene}
-        scale={isMobile ? 2.7 : 8.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -1.5, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
-      />
-    </mesh>
+    <primitive
+      object={auv.scene}
+      scale={finalScale}
+      position={isMobile ? [0, -3, -2.2] : [0, -1.5, -1.5]}
+      rotation={[-0.01, -0.2, -0.1]}
+    />
   );
 };
 
-const AUVCanvas = () => {
+const AUVCanvas = ({ scale }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -74,7 +65,29 @@ const AUVCanvas = () => {
           enablePan={true}
           rotateSpeed={0.5}
         />
-        <AUV isMobile={isMobile} />
+        
+        {/* Improved lighting setup */}
+        <ambientLight intensity={0.3} />
+        <spotLight
+          position={[-20, 50, 10]}
+          angle={0.15}
+          penumbra={1}
+          intensity={1.5}
+          castShadow
+          shadow-mapSize={1024}
+        />
+        <spotLight
+          position={[20, 30, -10]}
+          angle={0.15}
+          penumbra={1}
+          intensity={1}
+          castShadow
+        />
+        <pointLight position={[0, 20, 0]} intensity={0.8} />
+        <pointLight position={[10, 10, 10]} intensity={0.5} />
+        <pointLight position={[-10, 10, -10]} intensity={0.5} />
+        
+        <AUV isMobile={isMobile} scale={scale} />
       </Suspense>
 
       <Preload all />

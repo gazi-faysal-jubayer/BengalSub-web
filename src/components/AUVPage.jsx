@@ -24,6 +24,9 @@ export const AUVPage = () => {
           <BoldCopy text="HANGOR 1.0" />
         </div>
         <Hero />
+        <div className="w-full h-screen flex items-center justify-center py-20">
+          <AUVCanvas scale={12} />
+        </div>
         <Specifications />
       </ReactLenis>
     </div>
