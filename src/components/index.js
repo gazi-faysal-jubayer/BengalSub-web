@@ -8,7 +8,6 @@ import Works from './Works';
 import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Team from './Team';
-import { AUVPage } from './AUVPage';
 import Footer from './Footer';
 
 export {
@@ -21,10 +20,15 @@ export {
   Feedbacks,
   Contact,
   Team,
-  AUVPage,
   Footer,
   SharkCanvas,
   BallCanvas, 
   AUVCanvas, 
-  StarsCanvas
-}
+  StarsCanvas,
+};
+
+// Export all AUV-related components
+export * from './AUV';
+
+export { default as AUVPage } from './AUV/AUVPage';
+export { default as BoldCopy } from './AUV/BoldCopy';
