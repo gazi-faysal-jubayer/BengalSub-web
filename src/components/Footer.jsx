@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { styles } from "../styles";
@@ -6,28 +6,9 @@ import { navLinks } from "../constants";
 import { logo } from "../assets";
 
 const Footer = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
   const [currentYear] = useState(new Date().getFullYear());
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      
-      // Show footer when user is near the bottom
-      if (scrollTop + windowHeight >= documentHeight - 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const socialLinks = [
     {
@@ -139,172 +120,170 @@ const Footer = () => {
 
   return (
     <AnimatePresence>
-      {isVisible && (
-        <motion.footer
-          variants={footerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          className="relative bg-black-200 border-t border-tertiary/30 overflow-hidden"
-        >
-          {/* Animated background elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-          </div>
+      <motion.footer
+        variants={footerVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="relative bg-black-200 border-t border-tertiary/30 overflow-hidden"
+      >
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
 
-          <div className={`${styles.paddingX} relative z-10`}>
-            <div className="max-w-7xl mx-auto">
-              {/* Main footer content */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">
-                
-                {/* Logo and description */}
-                <motion.div variants={itemVariants} className="lg:col-span-1">
-                  <Link to="/" className="flex items-center gap-3 mb-6 group">
-                    <motion.img
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                      src={logo}
-                      alt="BengalSub Logo"
-                      className="w-12 h-12 object-contain"
-                    />
-                    <div>
-                      <h3 className="text-white text-xl font-bold group-hover:text-[#915EFF] transition-colors">
-                        Bengal<span className="text-[#915EFF]">Sub</span>
-                      </h3>
-                      <p className="text-secondary text-sm">Innovating Underwater Robotics</p>
-                    </div>
-                  </Link>
-                  <p className="text-secondary text-sm leading-relaxed mb-6">
-                    Pioneering autonomous underwater vehicle technology and fostering innovation in marine robotics research and development.
-                  </p>
-                  
-                  {/* Social Links */}
-                  <div className="flex space-x-4">
-                    {socialLinks.map((social, index) => (
-                      <motion.a
-                        key={social.name}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        variants={socialVariants}
-                        whileHover="hover"
-                        className="w-10 h-10 bg-tertiary/50 rounded-lg flex items-center justify-center text-secondary hover:text-[#915EFF] hover:bg-tertiary transition-all duration-300 border border-tertiary/30 hover:border-[#915EFF]/30"
-                      >
-                        {social.icon}
-                      </motion.a>
-                    ))}
+        <div className={`${styles.paddingX} relative z-10`}>
+          <div className="max-w-7xl mx-auto">
+            {/* Main footer content */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-16">
+              
+              {/* Logo and description */}
+              <motion.div variants={itemVariants} className="lg:col-span-1">
+                <Link to="/" className="flex items-center gap-3 mb-6 group">
+                  <motion.img
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                    src={logo}
+                    alt="BengalSub Logo"
+                    className="w-12 h-12 object-contain"
+                  />
+                  <div>
+                    <h3 className="text-white text-xl font-bold group-hover:text-[#915EFF] transition-colors">
+                      Bengal<span className="text-[#915EFF]">Sub</span>
+                    </h3>
+                    <p className="text-secondary text-sm">Innovating Underwater Robotics</p>
                   </div>
-                </motion.div>
-
-                {/* Quick Links */}
-                <motion.div variants={itemVariants} className="lg:col-span-1">
-                  <h4 className="text-white font-semibold text-lg mb-6">Quick Links</h4>
-                  <ul className="space-y-3">
-                    {quickLinks.map((link, index) => (
-                      <motion.li
-                        key={link.name}
-                        variants={itemVariants}
-                        custom={index}
-                      >
-                        <motion.a
-                          href={link.href}
-                          variants={linkVariants}
-                          whileHover="hover"
-                          className="text-secondary hover:text-white transition-colors duration-300 text-sm flex items-center group"
-                        >
-                          <span className="w-2 h-2 bg-[#915EFF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                          {link.name}
-                        </motion.a>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </motion.div>
-
-                {/* Navigation Links */}
-                <motion.div variants={itemVariants} className="lg:col-span-1">
-                  <h4 className="text-white font-semibold text-lg mb-6">Navigation</h4>
-                  <ul className="space-y-3">
-                    {navLinks.slice(0, 4).map((nav, index) => (
-                      <motion.li
-                        key={nav.id}
-                        variants={itemVariants}
-                        custom={index}
-                      >
-                        <motion.a
-                          href={nav.id === "home" ? "/" : `/#${nav.id}`}
-                          variants={linkVariants}
-                          whileHover="hover"
-                          className="text-secondary hover:text-white transition-colors duration-300 text-sm flex items-center group"
-                        >
-                          <span className="w-2 h-2 bg-[#915EFF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                          {nav.title}
-                        </motion.a>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </motion.div>
-
-                {/* Contact Info */}
-                <motion.div variants={itemVariants} className="lg:col-span-1">
-                  <h4 className="text-white font-semibold text-lg mb-6">Get In Touch</h4>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-[#915EFF]/20 rounded-full flex items-center justify-center mt-0.5">
-                        <svg className="w-3 h-3 text-[#915EFF]" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-white text-sm font-medium">Location</p>
-                        <p className="text-secondary text-sm">Dhaka, Bangladesh</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-[#915EFF]/20 rounded-full flex items-center justify-center mt-0.5">
-                        <svg className="w-3 h-3 text-[#915EFF]" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <p className="text-white text-sm font-medium">Email</p>
-                        <p className="text-secondary text-sm">info@bengalsub.com</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-
-              {/* Bottom section */}
-              <motion.div 
-                variants={itemVariants}
-                className="border-t border-tertiary/30 py-6 flex flex-col md:flex-row justify-between items-center"
-              >
-                <p className="text-secondary text-sm text-center md:text-left">
-                  © {currentYear} BengalSub. All rights reserved.
+                </Link>
+                <p className="text-secondary text-sm leading-relaxed mb-6">
+                  Pioneering autonomous underwater vehicle technology and fostering innovation in marine robotics research and development.
                 </p>
-                <div className="flex items-center space-x-6 mt-4 md:mt-0">
-                  <motion.a
-                    href="/privacy"
-                    whileHover={{ scale: 1.05, color: "#915EFF" }}
-                    className="text-secondary hover:text-white text-sm transition-colors duration-300"
-                  >
-                    Privacy Policy
-                  </motion.a>
-                  <motion.a
-                    href="/terms"
-                    whileHover={{ scale: 1.05, color: "#915EFF" }}
-                    className="text-secondary hover:text-white text-sm transition-colors duration-300"
-                  >
-                    Terms of Service
-                  </motion.a>
+                
+                {/* Social Links */}
+                <div className="flex space-x-4">
+                  {socialLinks.map((social, index) => (
+                    <motion.a
+                      key={social.name}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variants={socialVariants}
+                      whileHover="hover"
+                      className="w-10 h-10 bg-tertiary/50 rounded-lg flex items-center justify-center text-secondary hover:text-[#915EFF] hover:bg-tertiary transition-all duration-300 border border-tertiary/30 hover:border-[#915EFF]/30"
+                    >
+                      {social.icon}
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Quick Links */}
+              <motion.div variants={itemVariants} className="lg:col-span-1">
+                <h4 className="text-white font-semibold text-lg mb-6">Quick Links</h4>
+                <ul className="space-y-3">
+                  {quickLinks.map((link, index) => (
+                    <motion.li
+                      key={link.name}
+                      variants={itemVariants}
+                      custom={index}
+                    >
+                      <motion.a
+                        href={link.href}
+                        variants={linkVariants}
+                        whileHover="hover"
+                        className="text-secondary hover:text-white transition-colors duration-300 text-sm flex items-center group"
+                      >
+                        <span className="w-2 h-2 bg-[#915EFF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        {link.name}
+                      </motion.a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Navigation Links */}
+              <motion.div variants={itemVariants} className="lg:col-span-1">
+                <h4 className="text-white font-semibold text-lg mb-6">Navigation</h4>
+                <ul className="space-y-3">
+                  {navLinks.slice(0, 4).map((nav, index) => (
+                    <motion.li
+                      key={nav.id}
+                      variants={itemVariants}
+                      custom={index}
+                    >
+                      <motion.a
+                        href={nav.id === "home" ? "/" : `/#${nav.id}`}
+                        variants={linkVariants}
+                        whileHover="hover"
+                        className="text-secondary hover:text-white transition-colors duration-300 text-sm flex items-center group"
+                      >
+                        <span className="w-2 h-2 bg-[#915EFF] rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        {nav.title}
+                      </motion.a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              {/* Contact Info */}
+              <motion.div variants={itemVariants} className="lg:col-span-1">
+                <h4 className="text-white font-semibold text-lg mb-6">Get In Touch</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-[#915EFF]/20 rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-[#915EFF]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white text-sm font-medium">Location</p>
+                      <p className="text-secondary text-sm">Dhaka, Bangladesh</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-[#915EFF]/20 rounded-full flex items-center justify-center mt-0.5">
+                      <svg className="w-3 h-3 text-[#915EFF]" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-white text-sm font-medium">Email</p>
+                      <p className="text-secondary text-sm">info@bengalsub.com</p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
+
+            {/* Bottom section */}
+            <motion.div 
+              variants={itemVariants}
+              className="border-t border-tertiary/30 py-6 flex flex-col md:flex-row justify-between items-center"
+            >
+              <p className="text-secondary text-sm text-center md:text-left">
+                © {currentYear} BengalSub. All rights reserved.
+              </p>
+              <div className="flex items-center space-x-6 mt-4 md:mt-0">
+                <motion.a
+                  href="/privacy"
+                  whileHover={{ scale: 1.05, color: "#915EFF" }}
+                  className="text-secondary hover:text-white text-sm transition-colors duration-300"
+                >
+                  Privacy Policy
+                </motion.a>
+                <motion.a
+                  href="/terms"
+                  whileHover={{ scale: 1.05, color: "#915EFF" }}
+                  className="text-secondary hover:text-white text-sm transition-colors duration-300"
+                >
+                  Terms of Service
+                </motion.a>
+              </div>
+            </motion.div>
           </div>
-        </motion.footer>
-      )}
+        </div>
+      </motion.footer>
     </AnimatePresence>
   );
 };
