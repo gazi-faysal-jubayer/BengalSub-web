@@ -1,5 +1,4 @@
 import {
-    autocad,
     mobile,
     backend,
     creator,
@@ -12,7 +11,8 @@ import {
     redux,
     tailwind,
     nodejs,
-    plecs,
+    mongodb,
+    git,
     figma,
     docker,
     meta,
@@ -23,10 +23,6 @@ import {
     jobit,
     tripguide,
     threejs,
-    python,
-    ros,
-    opencv,
-
   } from "../assets";
   
   export const navLinks = [
@@ -111,28 +107,16 @@ import {
   
   const technologies = [
     {
-      name: "Python",
-      icon: python,
-    },
-    {
       name: "figma",
       icon: figma,
     },
     {
-      name: "ROS",
-      icon: ros,
+      name: "MongoDB",
+      icon: mongodb,
     },
     {
-      name: "opencv",
-      icon: opencv,
-    },
-    {
-      name: "plecs",
-      icon: plecs,
-    },
-    {
-      name: "autocad",
-      icon: autocad,
+      name: "git",
+      icon: git,
     },
     {
       name: "JavaScript",
@@ -260,26 +244,26 @@ import {
   const testimonials = [
     {
       testimonial:
-        "Priyansh has very visible passion for his idea and it was great to witness his clarity of thoughts. He is also a good team player, ready to mould his skills if that helps him improve. These are some qualities that can go a long way in charting out a path towards success. I wish him the very best",
-      name: "Khyati Bhatt",
-      designation: "CEO",
-      company: "Simply Body Talk",
+        "It has been a privilege to support Team BengalSub in their pursuit of excellence at RoboSub 2025. As a government-backed initiative, their project reflects the promise of our youth in the field of advanced robotics. Through the Research and Innovation Grant, and with official support from our Ministry and the Ministry of Foreign Affairs, I am proud to have enabled their journey. Their dedication truly embodies the spirit of Digital Bangladesh.",
+      name: "Shish Haider Chowdhury, ndc, MCIPS",
+      designation: "Secretary",
+      company: "Information and Communication Division, Ministry of Posts, Telecommunication and Information Technology",
       image: "https://media.licdn.com/dms/image/C4D03AQEpBQFei2OEtQ/profile-displayphoto-shrink_400_400/0/1650362145770?e=1694044800&v=beta&t=DQlFIbXqEC2uj_sx91baM_7e7QMpBKli03NgxYaQqbc",
     },
     {
       testimonial:
-        "I highly recommend Priyansh for any future endeavors. His dedication, hard work, and passion for his work are truly inspiring. Priyansh is a rare talent, and I am confident that he will continue to make great strides in his career and achieve even greater success in the future.",
-      name: "Anup Robins",
-      designation: "HR Business Partner",
-      company: "Experian",
+        "Team BengalSub is a symbol of unity, innovation, and youthful potential. Bringing together passionate students from various universities under one vision was a challenge—but one that blossomed into a powerful collaboration. From managing official procedures to guiding their R&D approach, I've witnessed this team evolve into a truly synchronized force. They are not just building a robot—they are building the future of Bangladesh's marine technology.",
+      name: "Rasel Ahmed",
+      designation: "Assistant Professor",
+      company: "Department of ICT, Dhaka Residential Model College",
       image: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
     },
     {
       testimonial:
-        "This guy has what it takes for the first unicorn. Just wait and watch.",
-      name: "Aman Sharma",
-      designation: "CTO",
-      company: "Dinnerfy",
+        "Supporting Team BengalSub from behind the scenes has been an inspiring experience. I saw firsthand how a group of students, armed with vision and determination, overcame countless challenges—especially in the manufacturing phase. From connecting with local workshops to helping coordinate fabrication logistics, it was my honor to contribute to a team that represents hope, skill, and progress for our next generation.",
+      name: "Md Akbar Hossan",
+      designation: "Guardian of a Team Member",
+      company: "Team BengalSub",
       image: "https://media.licdn.com/dms/image/D4E03AQFrs3BhOhnt5A/profile-displayphoto-shrink_400_400/0/1683687300051?e=1693440000&v=beta&t=BKh8L96K5xzfbcOMTznFCep4PPAuwTr5iIBNtiTJBEQ",
     },
   ];
