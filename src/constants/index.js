@@ -1,4 +1,5 @@
 import {
+    autocad,
     mobile,
     backend,
     creator,
@@ -11,8 +12,7 @@ import {
     redux,
     tailwind,
     nodejs,
-    mongodb,
-    git,
+    plecs,
     figma,
     docker,
     meta,
@@ -23,6 +23,10 @@ import {
     jobit,
     tripguide,
     threejs,
+    python,
+    ros,
+    opencv,
+
   } from "../assets";
   
   export const navLinks = [
@@ -107,16 +111,28 @@ import {
   
   const technologies = [
     {
+      name: "Python",
+      icon: python,
+    },
+    {
       name: "figma",
       icon: figma,
     },
     {
-      name: "MongoDB",
-      icon: mongodb,
+      name: "ROS",
+      icon: ros,
     },
     {
-      name: "git",
-      icon: git,
+      name: "opencv",
+      icon: opencv,
+    },
+    {
+      name: "plecs",
+      icon: plecs,
+    },
+    {
+      name: "autocad",
+      icon: autocad,
     },
     {
       name: "JavaScript",

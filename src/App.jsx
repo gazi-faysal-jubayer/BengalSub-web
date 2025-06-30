@@ -1,14 +1,12 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Team, AUVPage, Footer } from "./components";
-import MouseFollower from "./components/MouseFollower";
 import ScrollProgress from "./components/ScrollProgress";
 
 const App = () => {
   return (
     <HashRouter>
       <div className='relative z-0 bg-primary'>
-        <MouseFollower />
         <ScrollProgress />
         <Navbar />
         <Routes>
