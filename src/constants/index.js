@@ -76,7 +76,7 @@ import {
         },
         {
           id: "community-outreach",
-          title: "Community Outreach"
+          title: "Community Outreach"
         }
       ]
     },
@@ -270,71 +270,41 @@ import {
   
   const projects = [
     {
-      name: "Volt",
+      name: "Team BengalSub Featured in Prothom Alo!",
       description:
-        "Volt is a comprehensive portfolio management software which offers a holistic solution for managing startup portfolios. Seamlessly manage your portfolio, track investments, and analyze performance all in one place with Volt's latest industry standards and best practices. Say goodbye to inefficiencies, embrace Volt!",
+        "We are honored to be featured by Prothom Alo, one of the leading national newspapers of Bangladesh! 📰\nOur team, Tech Autocrats – BengalSub, is proudly representing Bangladesh in the RoboSub 2025 competition in California, USA. With students ranging from school to university, we're building an advanced underwater robot named হাঙর (Hangor) 1.0 to take on the global challenge.\nThis recognition fuels our passion to push the boundaries of innovation, robotics, and national pride! 🇧🇩🤖🌊",
       tags: [
-        {
-          name: "web dev",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "data visualization",
-          color: "green-text-gradient",
-        },
-        {
-          name: "software engineering",
-          color: "pink-text-gradient",
-        },
+        { name: "media", color: "blue-text-gradient" },
+        { name: "recognition", color: "green-text-gradient" },
+        { name: "national", color: "pink-text-gradient" },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/StarticField",
+      image: "/assets/prothom.png",
+      source_code_link: "https://www.prothomalo.com/technology/3knm96r6a7",
     },
     {
-      name: "PredCo",
+      name: "Team BengalSub on Jamuna Television!",
       description:
-        "Web application that processes real-time data coming from IoT sensors installed in various industries. It serves as a powerful tool for Predictive Maintenance, enabling the detection of potential issues and triggering alerts. By optimizing scheduled maintenance activities, the application helps companies achieve significant cost savings.",
+        "Great news! Team BengalSub got the opportunity at the prestigious Jamuna Television presents 'Sokaler BD'. Md Toslim, Sudipto Mondol, An-Nafew & Rubaiyat H Rahman were the speakers for this programme.",
       tags: [
-        {
-          name: "internet of things",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "elastic search",
-          color: "green-text-gradient",
-        },
-        {
-          name: "kibana",
-          color: "pink-text-gradient",
-        },
-        {
-          name: "aws-ec2",
-          color: "orange-text-gradient",
-        },
+        { name: "media", color: "blue-text-gradient" },
+        { name: "television", color: "green-text-gradient" },
+        { name: "recognition", color: "pink-text-gradient" },
       ],
-      image: jobit,
-      source_code_link: "https://github.com/PriyanshNegi/PredCo",
+      image: "/assets/jomuna.jpg",
+      source_code_link: "https://www.youtube.com/watch?v=WOhKfXl-HvM",
     },
     {
-      name: "Prompt-X",
+      name: "Team BengalSub Featured in MeshNews!",
       description:
-        "Prompt-X is an undergoing project designed to train language models and enhance prompt engineering. It will offer productivity analytics, personalized recommendations and insights for Chat GPT users. With its focus on training LLM models, Prompt-X is a powerful tool for optimizing workflows and advancing natural language understanding. ",
+        "Add a caption... What if the Bay of Bengal shaped Bangladesh's future economy? That's the mission behind 'Shark', a robot made by 15 students aged 13 to 23, competing at RoboSub 2025 in California. Built by the 'Tech Autocrats–Bengal Sub' team, the robot can dodge underwater obstacles, identify objects, and map pollution zones. The team's goal? Build an autonomous underwater vehicle (AUV) for real-world use: sea rescue, river pollution mapping, and even mineral detection. They're now prepping for a live test at St. Martin's Island. It's Bangladesh's first entry into RoboSub, where schools like MIT and Stanford compete. With support from the ICT Division and a dream bigger than the ocean, these students are showing what young minds can engineer, when given a deep enough dive.",
       tags: [
-        {
-          name: "machine learning",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "web dev",
-          color: "green-text-gradient",
-        },
-        {
-          name: "prompt engineering",
-          color: "pink-text-gradient",
-        },
+        { name: "media", color: "blue-text-gradient" },
+        { name: "recognition", color: "green-text-gradient" },
+        { name: "instagram", color: "pink-text-gradient" },
+        { name: "bengalsub", color: "orange-text-gradient" },
       ],
-      image: tripguide,
-      source_code_link: "https://github.com/PriyanshNegi/Prompt-X-Website",
+      image: "/assets/meshdhaka.png",
+      source_code_link: "https://www.instagram.com/p/DLSKVu7Sd6S/",
     },
   ];
   

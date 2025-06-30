@@ -8,7 +8,6 @@ const App = () => {
   return (
     <HashRouter>
       <div className='relative z-0 bg-primary'>
-        <MouseFollower />
         <ScrollProgress />
         <Navbar />
         <Routes>
