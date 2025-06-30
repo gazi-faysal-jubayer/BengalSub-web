@@ -1,4 +1,5 @@
 import {
+    document,
     mobile,
     backend,
     creator,
@@ -16,7 +17,7 @@ import {
     figma,
     docker,
     meta,
-    starbucks,
+    cad,
     tesla,
     shopify,
     carrent,
@@ -163,10 +164,10 @@ import {
   const experiences = [
     {
       title: "Mechanical Design Workflow",
-      company_name: "RoboNation",
-      icon: starbucks,
+      company_name: "Md Masrul Khan, Gazi Faysal Jubayer",
+      icon: cad,
       iconBg: "#383E56",
-      date: "2023 - Present",
+      date: "Nov 2024 - JAN 2025",
       points: [
         "Analyzing Rulebook & Requirements",
         "Testing Basic Shape & Hydro",
@@ -179,10 +180,10 @@ import {
     },
     {
       title: "Mechanical Fabrication Workflow",
-      company_name: "Youth Organization",
+      company_name: "Mechanical Team",
       icon: tesla,
       iconBg: "#E6DEDD",
-      date: "2023 - Present",
+      date: "Feb 2025 - April  2025",
       points: [
         "Selecting Material & Component",
         "Calculating the required Weight to submerge.",
@@ -194,10 +195,10 @@ import {
     },
     {
       title: "Electrical Workflow",
-      company_name: "BengalSub",
+      company_name: "Electrical Team",
       icon: shopify,
       iconBg: "#383E56",
-      date: "2023 - Present",
+      date: "April 2025 - Present",
       points: [
         "Selecting Batteries & Designing Power Distribution",
         "Designing Control, Actuation & Safety PCBS",
@@ -209,10 +210,10 @@ import {
     },
     {
       title: "Software Workflow",
-      company_name: "BengalSub",
+      company_name: "Software Team",
       icon: meta,
       iconBg: "#E6DEDD",
-      date: "2023 - Present",
+      date: "May 2025 - Present",
       points: [
         "Mission Planning with State Machine (Gate, Pinger, Trash, Surfacing)",
         "Initializing & Calibrating Sensors (Jetson, Pixhawk, Vectornav)",
@@ -225,10 +226,10 @@ import {
     },
     {
       title: "Documentation Workflow",
-      company_name: "BengalSub",
-      icon: meta,
+      company_name: "Documentation Team",
+      icon: document,
       iconBg: "#E6DEDD",
-      date: "2023 - Present",
+      date: "March 2025 - Present",
       points: [
         "Analysing Team Hand Book & Rule Book for a detailed workflow",
         "Analysing past RoboSub program's TDR",

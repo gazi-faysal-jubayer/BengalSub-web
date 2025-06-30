@@ -23,7 +23,8 @@ import threejs from "./tech/threejs.svg";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
+import cad from "./company/cad.png";
+import document from "./company/document.png";
 import tesla from "./company/tesla.png";
 
 import carrent from "./carrent.png";
@@ -34,6 +35,7 @@ import youtube from "./youtube.png";
 import link from "./link.png";
 
 export {
+  document,
   logo,
   backend,
   creator,
@@ -57,7 +59,7 @@ export {
   threejs,
   meta,
   shopify,
-  starbucks,
+  cad,
   tesla,
   carrent,
   jobit,
