@@ -4,6 +4,7 @@ import {
   useMotionTemplate,
   useScroll,
   useTransform,
+  AnimatePresence,
 } from "framer-motion";
 import { FiArrowRight, FiMapPin } from "react-icons/fi";
 import { useRef, useState } from "react";
@@ -172,26 +173,37 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
 
 // Reusable fullscreen image modal
 const FullscreenImageModal = ({ open, onClose, src, alt }) => {
-  if (!open) return null;
   return (
-    <div
-      className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm animate-fadeIn"
-      onClick={onClose}
-    >
-      <img
-        src={src}
-        alt={alt}
-        className="w-full h-full max-w-full max-h-full object-contain rounded-lg shadow-2xl border-4 border-white"
-        onClick={e => e.stopPropagation()}
-      />
-      <button
-        className="absolute top-8 right-8 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full px-4 py-2 hover:bg-opacity-80 transition"
-        onClick={onClose}
-        aria-label="Close fullscreen image"
-      >
-        &times;
-      </button>
-    </div>
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm"
+          onClick={onClose}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+          <motion.img
+            src={src}
+            alt={alt}
+            className="w-full h-full max-w-full max-h-full object-contain rounded-lg shadow-2xl border-4 border-white"
+            onClick={e => e.stopPropagation()}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+          />
+          <button
+            className="absolute top-8 right-8 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full px-4 py-2 hover:bg-opacity-80 transition"
+            onClick={onClose}
+            aria-label="Close fullscreen image"
+          >
+            &times;
+          </button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 
@@ -231,37 +243,72 @@ const Specifications = () => {
       <p className="mb-16 text-lg text-zinc-300 max-w-5xl mx-auto text-justify">
         This subsystem handles all computing, sensing, communication, and power distribution tasks:
       </p>
-      <ul className="mb-16 max-w-5xl mx-auto text-zinc-300 space-y-10">
-        <li>
+      <motion.ul
+        className="mb-16 max-w-5xl mx-auto text-zinc-300 space-y-10"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.15 }
+          }
+        }}
+      >
+        <motion.li
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+          }}
+        >
           <h3 className="text-xl font-bold text-zinc-100 mb-2">Computing Units:</h3>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <div className="md:w-1/2">
               <ul className="list-disc list-inside ml-6 mb-2">
-                <li>The <span className="font-bold">Jetson Orin Nano</span> acts as the high-performance onboard computer, running ROS 2, image processing, and mission logic</li>
-                <li>A <span className="font-bold">Raspberry Pi</span> <span className="italic">(COM3)</span> assists in high-level control, tethered communication, and environmental sensing.</li>
-                <li><span className="font-bold">Pixhawk</span> <span className="italic">(COM1)</span> handles low-level control like sensor fusion, actuator commands, and PWM signals for thrusters.</li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
+                  The <span className="font-bold">Jetson Orin Nano</span> acts as the high-performance onboard computer, running ROS 2, image processing, and mission logic
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } } }}>
+                  A <span className="font-bold">Raspberry Pi</span> <span className="italic">(COM3)</span> assists in high-level control, tethered communication, and environmental sensing.
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } } }}>
+                  <span className="font-bold">Pixhawk</span> <span className="italic">(COM1)</span> handles low-level control like sensor fusion, actuator commands, and PWM signals for thrusters.
+                </motion.li>
               </ul>
             </div>
             <div className="md:w-1/2 flex-shrink-0 flex justify-center">
-              <img
+              <motion.img
                 src="/assets/Electronics setup.webp"
                 alt="Computing Units"
                 className="rounded-lg shadow-md w-full mb-2 md:mb-0 cursor-pointer transition-transform duration-200 hover:scale-105"
                 onClick={() => setModalOpenComputing(true)}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true }}
               />
               <FullscreenImageModal open={modalOpenComputing} onClose={() => setModalOpenComputing(false)} src="/assets/Electronics setup.webp" alt="Computing Units Fullscreen" />
             </div>
           </div>
-        </li>
-        <li>
-        <h3 className="text-xl font-bold text-zinc-100 mb-2">Sensors & Perception:</h3>
+        </motion.li>
+        <motion.li
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+          }}
+        >
+          <h3 className="text-xl font-bold text-zinc-100 mb-2">Sensors & Perception:</h3>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          <div className="md:w-1/2 flex-shrink-0 flex justify-center">
-              <img
+            <div className="md:w-1/2 flex-shrink-0 flex justify-center">
+              <motion.img
                 src="/assets/Sensors-Perceptio.webp"
                 alt="Computing Units"
                 className="rounded-lg shadow-md w-full mb-2 md:mb-0 cursor-pointer transition-transform duration-200 hover:scale-105"
                 onClick={() => setModalOpenSensors(true)}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true }}
               />
               <FullscreenImageModal open={modalOpenSensors} onClose={() => setModalOpenSensors(false)} src="/assets/Sensors-Perceptio.webp" alt="Computing Units Fullscreen" />
             </div>
@@ -282,38 +329,66 @@ const Specifications = () => {
               </ul>
             </div>
           </div>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+          }}
+        >
           <h3 className="text-xl font-bold text-zinc-100 mb-2">Power Distribution:</h3>
           <ul className="list-disc list-inside ml-6 mb-2 w-full">
-            <li>A <span className="font-bold">tether interface</span> via CAT6/Ethernet enables PC-based testing, ROV mode, and debugging.</li>
-            <li>An <span className="font-bold">Xbox controller</span> or similar can be used during manual control/testing.</li>
-            <li><span className="font-bold">PWM signals</span> are sent from Pixhawk to the <span className="font-bold">eight T200 thrusters,</span> allowing full 6-DOF motion control.</li>
-            <li>Control signals for the marker dropper, torpedo launcher, and actuators are routed from the <span className="font-bold">Power Distribution System</span> via low-voltage lines.</li>
+            <motion.li
+              variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}
+            >A <span className="font-bold">tether interface</span> via CAT6/Ethernet enables PC-based testing, ROV mode, and debugging.</motion.li>
+            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } } }}>
+              An <span className="font-bold">Xbox controller</span> or similar can be used during manual control/testing.
+            </motion.li>
+            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } } }}>
+              <span className="font-bold">PWM signals</span> are sent from Pixhawk to the <span className="font-bold">eight T200 thrusters,</span> allowing full 6-DOF motion control.
+            </motion.li>
+            <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.3 } } }}>
+              Control signals for the marker dropper, torpedo launcher, and actuators are routed from the <span className="font-bold">Power Distribution System</span> via low-voltage lines.
+            </motion.li>
           </ul>
-        </li>
-        <li>
+        </motion.li>
+        <motion.li
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+          }}
+        >
           <h3 className="text-xl font-bold text-zinc-100 mb-2">Computing Units:</h3>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <div className="md:w-1/2">
               <ul className="list-disc list-inside ml-6 mb-2">
-                <li>The central <span className="font-bold">Power Distribution</span> Module manages high-voltage and low-voltage power supply across components.</li>
-                <li>Power is split into buck (LV) and high voltage (HV) rails, protected by <span className="font-bold">fuses</span> and connected to ESCs, sensors, lights, and actuators.</li>
-                <li>A <span className="font-bold">Power Sensing Module</span> tracks current and voltage status in real time.</li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
+                  The central <span className="font-bold">Power Distribution</span> Module manages high-voltage and low-voltage power supply across components.
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } } }}>
+                  Power is split into buck (LV) and high voltage (HV) rails, protected by <span className="font-bold">fuses</span> and connected to ESCs, sensors, lights, and actuators.
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } } }}>
+                  A <span className="font-bold">Power Sensing Module</span> tracks current and voltage status in real time.
+                </motion.li>
               </ul>
             </div>
             <div className="md:w-1/2 flex-shrink-0 flex justify-center">
-              <img
+              <motion.img
                 src="/assets/dgm.webp"
                 alt="Computing Units"
                 className="rounded-lg shadow-md w-full mb-2 md:mb-0 cursor-pointer transition-transform duration-200 hover:scale-105"
                 onClick={() => setModalOpenPower(true)}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true }}
               />
               <FullscreenImageModal open={modalOpenPower} onClose={() => setModalOpenPower(false)} src="/assets/dgm.webp" alt="Computing Units Fullscreen" />
             </div>
           </div>
-        </li>
-      </ul>
+        </motion.li>
+      </motion.ul>
       
     </section>
   );
