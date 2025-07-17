@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Team, AUVPage, Footer } from "./components";
 import MouseFollower from "./components/MouseFollower";
 import ScrollProgress from "./components/ScrollProgress";
+import { TechnicalDocumentation } from "./components/library";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           } />
           <Route path="/team" element={<Team />} />
           <Route path="/auv" element={<AUVPage />} />
+          <Route path="/technical-documentation" element={<TechnicalDocumentation />} />
         </Routes>
         <Footer />
       </div>
