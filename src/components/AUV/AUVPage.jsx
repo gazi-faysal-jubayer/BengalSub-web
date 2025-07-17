@@ -213,6 +213,7 @@ const Specifications = () => {
   const [modalOpenSensors, setModalOpenSensors] = useState(false);
   const [modalOpenComm, setModalOpenComm] = useState(false);
   const [modalOpenPower, setModalOpenPower] = useState(false);
+  const [modalOpenMech, setModalOpenMech] = useState(false); // Add this line
   return (
     <section
       id="auv-specifications"
@@ -239,7 +240,9 @@ const Specifications = () => {
       <p className="mb-16 text-lg text-zinc-300 max-w-3xl mx-auto text-justify">
         The system is divided into two main subsystems: the <span className="font-bold">Electrical and Control Subsystem</span> and the <span className="font-bold">Mechanical Subsystem</span>, working together to power, sense, and control the AUV during autonomous underwater operations.
       </p>
-      <h2 className="mb-8 text-3xl font-black uppercase text-zinc-50">Electrical Subsystem</h2>
+      <h2 className="mb-8 text-3xl font-black uppercase text-zinc-50 flex items-center gap-2">
+        <span role="img" aria-label="electrical" className="text-yellow-400 text-2xl">⚡️</span> Electrical Subsystem
+      </h2>
       <p className="mb-16 text-lg text-zinc-300 max-w-5xl mx-auto text-justify">
         This subsystem handles all computing, sensing, communication, and power distribution tasks:
       </p>
@@ -389,6 +392,80 @@ const Specifications = () => {
           </div>
         </motion.li>
       </motion.ul>
+      {/* Mechanical Subsystem Section */}
+      <h2 className="mb-8 text-3xl font-black uppercase text-zinc-50 flex items-center gap-2">
+        <span role="img" aria-label="mechanical" className="text-green-400 text-2xl">🛠️</span> Mechanical Subsystem
+      </h2>
+      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 mb-16">
+        <div className="md:w-3/5">
+          <p className="mb-6 text-lg text-zinc-300 text-justify">
+            The mechanical architecture integrates the control electronics with a robust and modular frame, supporting core mission functionality:
+          </p>
+          <ul className="list-disc list-inside ml-6 space-y-4 text-zinc-300">
+            <li>
+              <span className="font-bold">Main Frame:</span>
+              <ul className="list-[circle] ml-8 mt-1">
+                <li>Made of <span className="font-bold">marine-grade aluminum</span>, housing enclosures and mountings for mission modules.</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-bold">Electronics Hull:</span>
+              <ul className="list-[circle] ml-8 mt-1">
+                <li>Watertight cylindrical acrylic enclosures protect computing and control hardware.</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-bold">Mission Tools:</span>
+              <ul className="list-[circle] ml-8 mt-1">
+                <li><span className="font-bold">Torpedo launcher</span> (motorized or spring-loaded)</li>
+                <li><span className="font-bold">Marker dropper</span> (servo-actuated)</li>
+                <li><span className="font-bold">Gripper arm or solenoids</span> (not shown but potentially attached)</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-bold">Mobility:</span>
+              <ul className="list-[circle] ml-8 mt-1">
+                <li>Eight <span className="font-bold">T200 thrusters</span> provide movement in all directions (surge, sway, heave, yaw, pitch, and roll).</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-bold">Buoyancy & Balance:</span>
+              <ul className="list-[circle] ml-8 mt-1">
+                <li><span className="font-bold">Ballast blocks and buoyancy foam</span> are placed for stable, neutrally buoyant operation.</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-bold">Lighting & Safety:</span>
+              <ul className="list-[circle] ml-8 mt-1">
+                <li>Lumen <span className="font-bold">subsea lights</span> aid vision in dark water.</li>
+                <li>A <span className="font-bold">kill switch</span> provides emergency cutoff.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div className="md:w-2/5 flex flex-col items-center">
+          <img
+            src="/assets/Hangor 1.0 CAD model.webp"
+            alt="Mechanical Subsystem Overview"
+            className="rounded-lg shadow-lg w-full max-w-xs object-contain cursor-pointer transition-transform duration-200 hover:scale-105 mb-4"
+            onClick={() => setModalOpenMech(true)}
+          />
+        </div>
+      </div>
+      <FullscreenImageModal open={modalOpenMech} onClose={() => setModalOpenMech(false)} src="/assets/Hangor 1.0 CAD model.webp" alt="Mechanical Subsystem Fullscreen" />
+      {/* Integration Section */}
+      <h2 className="mb-4 mt-16 text-3xl font-black uppercase text-zinc-50 flex items-center gap-2">
+        <span role="img" aria-label="integration" className="text-blue-400 text-2xl">🧩</span> Integration
+      </h2>
+      <p className="mb-4 text-lg text-zinc-300">All components are tightly integrated:</p>
+      <ul className="list-disc list-inside ml-6 mb-6 text-zinc-300 space-y-2">
+        <li>Sensors feed data to Jetson + Pixhawk</li>
+        <li>Thrusters and actuators are controlled by PWM from Pixhawk</li>
+        <li>Power is centrally managed and monitored</li>
+        <li>ROS 2 nodes coordinate mission tasks through Jetson</li>
+      </ul>
+      <hr className="border-zinc-700 mb-6" />
+      <p className="text-zinc-300 text-base"><span className="font-bold text-zinc-100">This layout ensures that <span className="font-black">Hangor 1.0 is fully autonomous, modular, and mission-ready</span></span>, capable of handling RoboSub 2025 tasks like navigation, object detection, manipulation, and interaction.</p>
       
     </section>
   );
