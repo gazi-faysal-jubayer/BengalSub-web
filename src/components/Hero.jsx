@@ -18,7 +18,7 @@ const Hero = () => {
               sentence="Tea BengaSu"
               manualMode={false}
               blurAmount={5}
-              borderColor="red"
+              borderColor="#804dee"
               animationDuration={2}
               pauseBetweenAnimations={1}
             />
