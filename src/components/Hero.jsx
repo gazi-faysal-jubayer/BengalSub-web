@@ -12,10 +12,9 @@ const Hero = () => {
       >
 
         <div>
-          {/* https://www.1001fonts.com/billionery-font.html */}
           <div className={styles.heroHeadText + " text-white"}>
             <TrueFocus
-              sentence="Tea BengaSu"
+              sentence="Team BengalSub"
               manualMode={false}
               blurAmount={5}
               borderColor="#804dee"

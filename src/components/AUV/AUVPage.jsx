@@ -9,11 +9,6 @@ import { FiArrowRight, FiMapPin } from "react-icons/fi";
 import { useRef, useState } from "react";
 import AUVCanvas from "../canvas/AUV";
 import BoldCopy from "./BoldCopy";
-import DesignWorkflow from "./DesignWorkflow";
-import MechanicalWorkflow from "./MechanicalWorkflow";
-import ElectricalWorkflow from "./ElectricalWorkflow";
-import SoftwareWorkflow from "./SoftwareWorkflow";
-import DocumentationWorkflow from "./DocumentationWorkflow";
 
 export const AUVPage = () => {
   return (
@@ -175,63 +170,37 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
   );
 };
 
-const workflowHeaders = [
-  "Design Workflow",
-  "Mechanical Workflow",
-  "Electrical Workflow",
-  "Software Workflow",
-  "Documentation Workflow",
-];
-
-const workflowComponents = [
-  <DesignWorkflow />,
-  <MechanicalWorkflow />,
-  <ElectricalWorkflow />,
-  <SoftwareWorkflow />,
-  <DocumentationWorkflow />,
-];
-
-const Workflows = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+// Reusable fullscreen image modal
+const FullscreenImageModal = ({ open, onClose, src, alt }) => {
+  if (!open) return null;
   return (
-    <section className="mx-auto max-w-5xl px-4 py-12 text-white">
-      <h2 className="mb-8 text-3xl font-black uppercase text-zinc-50">Subsystems</h2>
-      <div className="space-y-4">
-        {workflowHeaders.map((header, idx) => (
-          <div key={header} className="rounded-xl shadow-lg overflow-hidden transition-shadow duration-300">
-            <button
-              className={`w-full flex items-center justify-between px-3 py-5 text-left focus:outline-none font-semibold bg-zinc-900 transition-colors duration-300 border-l-4 ${openIndex === idx ? 'border-[#915EFF] bg-zinc-800' : 'border-zinc-800 hover:bg-zinc-800/80'} group`}
-              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-              aria-expanded={openIndex === idx}
-            >
-              <span className="text-xl text-zinc-50 font-bold tracking-wide">{header}</span>
-              <span className="flex items-center gap-2 text-sm uppercase text-zinc-500 font-medium">
-                WORKFLOW
-                <svg
-                  className={`w-5 h-5 transition-transform duration-300 ${openIndex === idx ? 'rotate-90 text-[#915EFF]' : 'rotate-0 text-zinc-500'} group-hover:text-[#915EFF]`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-              </span>
-            </button>
-            {openIndex === idx && (
-              <div className="px-4 py-4 bg-zinc-950 text-zinc-400 animate-fadeIn">
-                {workflowComponents[idx]}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </section>
+    <div
+      className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm animate-fadeIn"
+      onClick={onClose}
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-full max-w-full max-h-full object-contain rounded-lg shadow-2xl border-4 border-white"
+        onClick={e => e.stopPropagation()}
+      />
+      <button
+        className="absolute top-8 right-8 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full px-4 py-2 hover:bg-opacity-80 transition"
+        onClick={onClose}
+        aria-label="Close fullscreen image"
+      >
+        &times;
+      </button>
+    </div>
   );
 };
 
 const Specifications = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpenSystem, setModalOpenSystem] = useState(false);
+  const [modalOpenComputing, setModalOpenComputing] = useState(false);
+  const [modalOpenSensors, setModalOpenSensors] = useState(false);
+  const [modalOpenComm, setModalOpenComm] = useState(false);
+  const [modalOpenPower, setModalOpenPower] = useState(false);
   return (
     <section
       id="auv-specifications"
@@ -252,32 +221,100 @@ const Specifications = () => {
         src="/assets/System Design.webp" 
         alt="AUV Overview" 
         className="mx-auto mb-8 rounded-lg shadow-lg w-full max-w-3xl object-contain cursor-pointer transition-transform duration-200 hover:scale-105"
-        onClick={() => setModalOpen(true)}
+        onClick={() => setModalOpenSystem(true)}
       />
-      {modalOpen && (
-        <div
-          className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm animate-fadeIn"
-          onClick={() => setModalOpen(false)}
-        >
-          <img
-            src="/assets/System Design.webp"
-            alt="AUV Overview Fullscreen"
-            className="w-full h-full max-w-full max-h-full object-contain rounded-lg shadow-2xl border-4 border-white"
-            onClick={e => e.stopPropagation()}
-          />
-          <button
-            className="absolute top-8 right-8 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full px-4 py-2 hover:bg-opacity-80 transition"
-            onClick={() => setModalOpen(false)}
-            aria-label="Close fullscreen image"
-          >
-            &times;
-          </button>
-        </div>
-      )}
+      <FullscreenImageModal open={modalOpenSystem} onClose={() => setModalOpenSystem(false)} src="/assets/System Design.webp" alt="AUV Overview Fullscreen" />
       <p className="mb-16 text-lg text-zinc-300 max-w-3xl mx-auto text-justify">
         The system is divided into two main subsystems: the <span className="font-bold">Electrical and Control Subsystem</span> and the <span className="font-bold">Mechanical Subsystem</span>, working together to power, sense, and control the AUV during autonomous underwater operations.
       </p>
-      <Workflows />
+      <h2 className="mb-8 text-3xl font-black uppercase text-zinc-50">Electrical Subsystem</h2>
+      <p className="mb-16 text-lg text-zinc-300 max-w-5xl mx-auto text-justify">
+        This subsystem handles all computing, sensing, communication, and power distribution tasks:
+      </p>
+      <ul className="mb-16 max-w-5xl mx-auto text-zinc-300 space-y-10">
+        <li>
+          <h3 className="text-xl font-bold text-zinc-100 mb-2">Computing Units:</h3>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div className="md:w-1/2">
+              <ul className="list-disc list-inside ml-6 mb-2">
+                <li>The <span className="font-bold">Jetson Orin Nano</span> acts as the high-performance onboard computer, running ROS 2, image processing, and mission logic</li>
+                <li>A <span className="font-bold">Raspberry Pi</span> <span className="italic">(COM3)</span> assists in high-level control, tethered communication, and environmental sensing.</li>
+                <li><span className="font-bold">Pixhawk</span> <span className="italic">(COM1)</span> handles low-level control like sensor fusion, actuator commands, and PWM signals for thrusters.</li>
+              </ul>
+            </div>
+            <div className="md:w-1/2 flex-shrink-0 flex justify-center">
+              <img
+                src="/assets/Electronics setup.webp"
+                alt="Computing Units"
+                className="rounded-lg shadow-md w-full mb-2 md:mb-0 cursor-pointer transition-transform duration-200 hover:scale-105"
+                onClick={() => setModalOpenComputing(true)}
+              />
+              <FullscreenImageModal open={modalOpenComputing} onClose={() => setModalOpenComputing(false)} src="/assets/Electronics setup.webp" alt="Computing Units Fullscreen" />
+            </div>
+          </div>
+        </li>
+        <li>
+        <h3 className="text-xl font-bold text-zinc-100 mb-2">Sensors & Perception:</h3>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+          <div className="md:w-1/2 flex-shrink-0 flex justify-center">
+              <img
+                src="/assets/Sensors-Perceptio.webp"
+                alt="Computing Units"
+                className="rounded-lg shadow-md w-full mb-2 md:mb-0 cursor-pointer transition-transform duration-200 hover:scale-105"
+                onClick={() => setModalOpenSensors(true)}
+              />
+              <FullscreenImageModal open={modalOpenSensors} onClose={() => setModalOpenSensors(false)} src="/assets/Sensors-Perceptio.webp" alt="Computing Units Fullscreen" />
+            </div>
+            <div className="md:w-1/2">
+              <ul className="list-disc list-inside ml-6 mb-2">
+                <li>
+                  Visual data is captured through multiple cameras:
+                  <ul className="list-[square] ml-10 mt-1">
+                    <li><span className="font-bold">OAK-D-W (stereo depth + AI)</span></li>
+                    <li><span className="font-bold">Low Light USB Cam</span></li>
+                    <li><span className="font-bold">Bottom & Auxiliary Cameras</span></li>
+                  </ul>
+                </li>
+                <li>A <span className="font-bold">VectorNav VN-200</span> provides IMU and compass data.</li>
+                <li><span className="font-bold">Bar30 Pressure sensors</span> measure depth.</li>
+                <li><span className="font-bold">DHT22</span> monitors temperature and humidity inside the hull.</li>
+                <li>A <span className="font-bold">hydrophone array</span> (optional) may be used for acoustic localization.</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li>
+          <h3 className="text-xl font-bold text-zinc-100 mb-2">Power Distribution:</h3>
+          <ul className="list-disc list-inside ml-6 mb-2 w-full">
+            <li>A <span className="font-bold">tether interface</span> via CAT6/Ethernet enables PC-based testing, ROV mode, and debugging.</li>
+            <li>An <span className="font-bold">Xbox controller</span> or similar can be used during manual control/testing.</li>
+            <li><span className="font-bold">PWM signals</span> are sent from Pixhawk to the <span className="font-bold">eight T200 thrusters,</span> allowing full 6-DOF motion control.</li>
+            <li>Control signals for the marker dropper, torpedo launcher, and actuators are routed from the <span className="font-bold">Power Distribution System</span> via low-voltage lines.</li>
+          </ul>
+        </li>
+        <li>
+          <h3 className="text-xl font-bold text-zinc-100 mb-2">Computing Units:</h3>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div className="md:w-1/2">
+              <ul className="list-disc list-inside ml-6 mb-2">
+                <li>The central <span className="font-bold">Power Distribution</span> Module manages high-voltage and low-voltage power supply across components.</li>
+                <li>Power is split into buck (LV) and high voltage (HV) rails, protected by <span className="font-bold">fuses</span> and connected to ESCs, sensors, lights, and actuators.</li>
+                <li>A <span className="font-bold">Power Sensing Module</span> tracks current and voltage status in real time.</li>
+              </ul>
+            </div>
+            <div className="md:w-1/2 flex-shrink-0 flex justify-center">
+              <img
+                src="/assets/dgm.webp"
+                alt="Computing Units"
+                className="rounded-lg shadow-md w-full mb-2 md:mb-0 cursor-pointer transition-transform duration-200 hover:scale-105"
+                onClick={() => setModalOpenPower(true)}
+              />
+              <FullscreenImageModal open={modalOpenPower} onClose={() => setModalOpenPower(false)} src="/assets/dgm.webp" alt="Computing Units Fullscreen" />
+            </div>
+          </div>
+        </li>
+      </ul>
+      
     </section>
   );
 };
