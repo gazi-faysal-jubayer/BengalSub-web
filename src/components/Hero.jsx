@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { AUVCanvas } from "./canvas";
+import TrueFocus from './TrueFocus';
 
 const Hero = () => {
   return (
@@ -9,38 +10,20 @@ const Hero = () => {
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
-        </div>
 
         <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Team{" "}
-            <motion.span
-              className="text-[#915EFF] inline-block"
-              initial={{ opacity: 1 }}
-              animate={{
-                opacity: [1, 0.8, 1],
-                textShadow: [
-                  "2px 2px #ff0000",
-                  "-2px -2px #00ff00",
-                  "2px -2px #0000ff",
-                  "-2px 2px #ff0000",
-                ],
-                x: [0, -2, 2, -2, 0],
-                y: [0, 2, -2, 2, 0],
-              }}
-              transition={{
-                duration: 0.2,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            >
-              BengalSub
-            </motion.span>
-          </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
+          {/* https://www.1001fonts.com/billionery-font.html */}
+          <div className={styles.heroHeadText + " text-white"}>
+            <TrueFocus
+              sentence="Tea BengaSu"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="red"
+              animationDuration={2}
+              pauseBetweenAnimations={1}
+            />
+          </div>
+          <p className={`${styles.heroSubText} mt-2 text-white-100 text-center sm:text-left`}>
           Bangladesh in marine tech.<br className='sm:block hidden' />
           Driven by students.
           </p>
