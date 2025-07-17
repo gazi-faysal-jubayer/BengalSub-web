@@ -14,7 +14,7 @@ export default function BoldCopy({
   return (
     <div
       className={clsx(
-        "group relative flex items-center justify-center bg-background px-2 py-2 md:px-6 md:py-4 font-tourney",
+        "group relative flex items-center justify-center px-2 py-2 md:px-6 md:py-4 font-tourney",
         className
       )}
     >

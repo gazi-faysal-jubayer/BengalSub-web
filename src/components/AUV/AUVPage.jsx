@@ -51,7 +51,7 @@ const Nav = () => {
         }}
         className="flex items-center gap-1 text-xs text-zinc-400 hover:text-white transition-colors"
       >
-        SPECIFICATIONS <FiArrowRight />
+        Our AUV system overview<FiArrowRight />
       </button>
     </nav>
   );
@@ -195,7 +195,7 @@ const Workflows = () => {
   const [openIndex, setOpenIndex] = useState(null);
   return (
     <section className="mx-auto max-w-5xl px-4 py-12 text-white">
-      <h2 className="mb-8 text-3xl font-black uppercase text-zinc-50">Workflows</h2>
+      <h2 className="mb-8 text-3xl font-black uppercase text-zinc-50">Subsystems</h2>
       <div className="space-y-4">
         {workflowHeaders.map((header, idx) => (
           <div key={header} className="rounded-xl shadow-lg overflow-hidden transition-shadow duration-300">
@@ -231,6 +231,7 @@ const Workflows = () => {
 };
 
 const Specifications = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <section
       id="auv-specifications"
@@ -242,8 +243,40 @@ const Specifications = () => {
         transition={{ ease: "easeInOut", duration: 0.75 }}
         className="mb-20 text-4xl font-black uppercase text-zinc-50"
       >
-        AUV Specifications
+        Our AUV system overview
       </motion.h1>
+      <p className="mb-8 text-lg text-zinc-300 max-w-3xl mx-auto text-justify">
+        The AUV <span className="italic">Hangor 1.0</span> is a fully integrated robotic system combining advanced mechanical design with intelligent control architecture. It features a modular aluminum frame housing watertight electronics enclosures and mission tools like a torpedo launcher and marker dropper. The control system is built around a Jetson Orin Nano and Pixhawk controller, supported by multiple cameras, IMU, and depth sensors for perception and navigation. With eight T200 thrusters, a centralized power distribution system, and ROS 2-based autonomy, <span className="italic">Hangor 1.0</span> is engineered to perform complex underwater tasks with precision and reliability.
+      </p>
+      <img 
+        src="/assets/System Design.webp" 
+        alt="AUV Overview" 
+        className="mx-auto mb-8 rounded-lg shadow-lg w-full max-w-3xl object-contain cursor-pointer transition-transform duration-200 hover:scale-105"
+        onClick={() => setModalOpen(true)}
+      />
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-[1000] flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm animate-fadeIn"
+          onClick={() => setModalOpen(false)}
+        >
+          <img
+            src="/assets/System Design.webp"
+            alt="AUV Overview Fullscreen"
+            className="w-full h-full max-w-full max-h-full object-contain rounded-lg shadow-2xl border-4 border-white"
+            onClick={e => e.stopPropagation()}
+          />
+          <button
+            className="absolute top-8 right-8 text-white text-3xl font-bold bg-black bg-opacity-50 rounded-full px-4 py-2 hover:bg-opacity-80 transition"
+            onClick={() => setModalOpen(false)}
+            aria-label="Close fullscreen image"
+          >
+            &times;
+          </button>
+        </div>
+      )}
+      <p className="mb-16 text-lg text-zinc-300 max-w-3xl mx-auto text-justify">
+        The system is divided into two main subsystems: the <span className="font-bold">Electrical and Control Subsystem</span> and the <span className="font-bold">Mechanical Subsystem</span>, working together to power, sense, and control the AUV during autonomous underwater operations.
+      </p>
       <Workflows />
     </section>
   );
