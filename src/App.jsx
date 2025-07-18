@@ -29,6 +29,7 @@ const App = () => {
               </div>
             </>
           } />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/team" element={<Team />} />
           <Route path="/auv" element={<AUVPage />} />
           <Route path="/technical-documentation" element={<TechnicalDocumentation />} />

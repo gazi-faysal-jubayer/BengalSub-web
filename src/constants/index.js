@@ -83,7 +83,8 @@ import {
     },
     {
       id: "contact",
-      title: "Contact Us"
+      title: "Contact Us",
+      link: "/contact"
     }
   ];
   
