@@ -8,6 +8,7 @@ import Works from './Works';
 import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Footer from './Footer';
+import { Team } from './team';
 
 export {
   Hero,

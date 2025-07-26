@@ -213,7 +213,8 @@ const Specifications = () => {
   const [modalOpenSensors, setModalOpenSensors] = useState(false);
   const [modalOpenComm, setModalOpenComm] = useState(false);
   const [modalOpenPower, setModalOpenPower] = useState(false);
-  const [modalOpenMech, setModalOpenMech] = useState(false); // Add this line
+  const [modalOpenMech, setModalOpenMech] = useState(false);
+  const [modalOpenSoftware, setModalOpenSoftware] = useState(false);
   return (
     <section
       id="auv-specifications"
@@ -361,7 +362,7 @@ const Specifications = () => {
             visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
           }}
         >
-          <h3 className="text-xl font-bold text-zinc-100 mb-2">Computing Units:</h3>
+          <h3 className="text-xl font-bold text-zinc-100 mb-2">Power Distribution:</h3>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <div className="md:w-1/2">
               <ul className="list-disc list-inside ml-6 mb-2">
@@ -379,7 +380,7 @@ const Specifications = () => {
             <div className="md:w-1/2 flex-shrink-0 flex justify-center">
               <motion.img
                 src="/assets/dgm.webp"
-                alt="Computing Units"
+                alt="Power Distribution"
                 className="rounded-lg shadow-md w-full mb-2 md:mb-0 cursor-pointer transition-transform duration-200 hover:scale-105"
                 onClick={() => setModalOpenPower(true)}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -387,7 +388,46 @@ const Specifications = () => {
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 viewport={{ once: true }}
               />
-              <FullscreenImageModal open={modalOpenPower} onClose={() => setModalOpenPower(false)} src="/assets/dgm.webp" alt="Computing Units Fullscreen" />
+              <FullscreenImageModal open={modalOpenPower} onClose={() => setModalOpenPower(false)} src="/assets/dgm.webp" alt="Power Distribution Fullscreen" />
+            </div>
+          </div>
+        </motion.li>
+        <motion.li
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
+          }}
+        >
+          <h3 className="text-xl font-bold text-zinc-100 mb-2">Software Architecture:</h3>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div className="md:w-1/2 flex-shrink-0 flex justify-center">
+              <motion.img
+                src="/assets/software.webp"
+                alt="Software Architecture"
+                className="rounded-lg shadow-md w-full mb-2 md:mb-0 cursor-pointer transition-transform duration-200 hover:scale-105"
+                onClick={() => setModalOpenSoftware(true)}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                viewport={{ once: true }}
+              />
+              <FullscreenImageModal open={modalOpenSoftware} onClose={() => setModalOpenSoftware(false)} src="/assets/software.webp" alt="Software Architecture Fullscreen" />
+            </div>
+            <div className="md:w-1/2">
+              <ul className="list-disc list-inside ml-6 mb-2">
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5 } } }}>
+                  <span className="font-bold">Perception:</span> Real-time object detection with OpenCV and YOLOv8 from stereo/depth camera feeds.
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.1 } } }}>
+                  <span className="font-bold">Localization:</span> Sensor fusion using Extended Kalman Filter (EKF) for accurate underwater position and orientation.
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.2 } } }}>
+                  <span className="font-bold">Control System:</span> PID and LQR-based controllers for stable and precise 6-DOF movement.
+                </motion.li>
+                <motion.li variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.3 } } }}>
+                  <span className="font-bold">Mission Planning:</span> Autonomous state machine for task execution (e.g., gate traversal, object drop).
+                </motion.li>
+              </ul>
             </div>
           </div>
         </motion.li>
