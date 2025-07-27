@@ -211,18 +211,9 @@ export const blogData = [
           From building waterproof enclosures to developing intelligent navigation systems, our student-led effort is more than just a robotics project—it's a launchpad for future engineers, scientists, and innovators.
         </p>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-12">
+        <div class="my-12">
           <div class="bg-gray-800/50 rounded-lg overflow-hidden">
-            <img src="/assets/home/meet our auv.webp" alt="Bengal Sub Team" class="w-full h-32 object-cover"/>
-          </div>
-          <div class="bg-gray-800/50 rounded-lg overflow-hidden">
-            <img src="/assets/hangor.png" alt="Hangor AUV" class="w-full h-32 object-cover"/>
-          </div>
-          <div class="bg-gray-800/50 rounded-lg overflow-hidden">
-            <img src="/assets/Electronics setup.webp" alt="Electronics Setup" class="w-full h-32 object-cover"/>
-          </div>
-          <div class="bg-gray-800/50 rounded-lg overflow-hidden">
-            <img src="/assets/software.webp" alt="Software Development" class="w-full h-32 object-cover"/>
+            <img src="/assets/blog/blog1.webp" alt="Bengal Sub Team" class="w-full h-full object-cover"/>
           </div>
         </div>
         
@@ -483,7 +474,7 @@ export const blogData = [
     date: "December 20, 2024",
     readTime: 12,
     category: "Team",
-    image: "/assets/team-photo.webp",
+    image: "/assets/blog/blog1.webp",
     tags: ["Team", "Engineering", "Innovation", "Collaboration", "RoboSub"],
     featured: true
   },
@@ -491,7 +482,48 @@ export const blogData = [
     id: "blog2",
     title: "Machine Learning in Underwater Navigation",
     excerpt: "Discover how artificial intelligence and machine learning algorithms are revolutionizing the way autonomous underwater vehicles navigate through complex marine environments.",
-    content: null,
+    content: `
+      <div class="space-y-8">
+        <p class="text-xl leading-relaxed text-gray-300">
+          The underwater environment presents unique challenges for autonomous navigation that require sophisticated artificial intelligence solutions. Machine learning algorithms are revolutionizing how AUVs perceive, understand, and navigate through complex marine environments.
+        </p>
+        
+        <h2 id="introduction" class="text-3xl font-bold text-white mt-12 mb-6">The AI Revolution Beneath the Waves</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Traditional underwater navigation systems relied heavily on predefined waypoints and simple sensor feedback. Today's AUVs leverage advanced machine learning algorithms to make intelligent decisions in real-time, adapting to changing conditions and unexpected obstacles with unprecedented autonomy.
+        </p>
+        
+        <h2 id="computer-vision" class="text-3xl font-bold text-white mt-12 mb-6">Computer Vision in Murky Waters</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Computer vision underwater presents unique challenges: limited visibility, light attenuation, and color distortion. Modern AUVs use convolutional neural networks (CNNs) specifically trained on underwater imagery to identify objects, detect obstacles, and recognize navigation markers.
+        </p>
+        
+        <h3 id="deep-learning-vision" class="text-2xl font-semibold text-white mt-8 mb-4">Deep Learning for Object Detection</h3>
+        <p class="text-gray-300 leading-relaxed">
+          State-of-the-art object detection models like YOLO and R-CNN have been adapted for underwater environments. These networks can identify buoys, gates, marine life, and underwater structures with remarkable accuracy, even in challenging visibility conditions.
+        </p>
+        
+        <h2 id="slam-algorithms" class="text-3xl font-bold text-white mt-12 mb-6">SLAM: Mapping the Unknown</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Simultaneous Localization and Mapping (SLAM) algorithms enable AUVs to build maps of unknown environments while tracking their position within those maps. Modern implementations use particle filters, Kalman filters, and neural networks to achieve robust underwater SLAM.
+        </p>
+        
+        <h3 id="visual-slam" class="text-2xl font-semibold text-white mt-8 mb-4">Visual SLAM Techniques</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Visual SLAM uses camera data to extract features from the environment and track them over time. Advanced algorithms like ORB-SLAM3 have been adapted for underwater use, incorporating stereo vision and RGB-D sensors for enhanced depth perception.
+        </p>
+        
+        <h2 id="reinforcement-learning" class="text-3xl font-bold text-white mt-12 mb-6">Reinforcement Learning for Adaptive Navigation</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Reinforcement learning enables AUVs to learn optimal navigation strategies through trial and error. These systems can adapt to new environments, learn from previous missions, and continuously improve their performance without explicit programming.
+        </p>
+        
+        <h2 id="bengalsub-ai" class="text-3xl font-bold text-white mt-12 mb-6">BengalSub's AI Implementation</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Our Hangor 1.0 AUV integrates multiple AI components for robust underwater navigation. From real-time object detection to path planning optimization, machine learning algorithms form the backbone of our autonomous capabilities.
+        </p>
+      </div>
+    `,
     author: "Michael Rodriguez",
     authorImage: "/assets/team/2.png",
     date: "December 10, 2024",
@@ -505,7 +537,63 @@ export const blogData = [
     id: "blog3",
     title: "Building Hangor 1.0: Our Journey to RoboSub 2025",
     excerpt: "Follow our team's incredible journey as we design, build, and test Hangor 1.0, our first autonomous underwater vehicle for the prestigious RoboSub competition.",
-    content: null,
+    content: `
+      <div class="space-y-8">
+        <p class="text-xl leading-relaxed text-gray-300">
+          From concept to competition-ready vehicle, the development of Hangor 1.0 represents months of dedication, innovation, and collaborative engineering. This is the story of how Team BengalSub built Bangladesh's first competitive autonomous underwater vehicle.
+        </p>
+        
+        <h2 id="project-inception" class="text-3xl font-bold text-white mt-12 mb-6">Project Inception: A Dream Takes Shape</h2>
+        <p class="text-gray-300 leading-relaxed">
+          The journey began in early 2024 when a group of passionate engineering students from Bangladesh decided to compete in RoboSub, one of the world's most prestigious underwater robotics competitions. With no prior experience in AUV development, we started from scratch, learning and building simultaneously.
+        </p>
+        
+        <h2 id="design-phase" class="text-3xl font-bold text-white mt-12 mb-6">Design Phase: Engineering Excellence</h2>
+        <p class="text-gray-300 leading-relaxed">
+          The design phase involved extensive research, CAD modeling, and simulation. Our mechanical team worked tirelessly to create a modular, maintainable design that could withstand the rigors of underwater operation while remaining cost-effective for a student team.
+        </p>
+        
+        <h3 id="frame-design" class="text-2xl font-semibold text-white mt-8 mb-4">Aluminum Frame Architecture</h3>
+        <p class="text-gray-300 leading-relaxed">
+          We chose a precision-cut aluminum frame for its perfect balance of strength, weight, and affordability. The modular design allows for easy component access and future upgrades, essential for iterative development and maintenance.
+        </p>
+        
+        <h3 id="propulsion-system" class="text-2xl font-semibold text-white mt-8 mb-4">6-DOF Propulsion System</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Hangor 1.0 features a sophisticated six-degrees-of-freedom propulsion system, enabling precise movement in all directions. The thruster configuration was optimized through fluid dynamics simulations to maximize efficiency and maneuverability.
+        </p>
+        
+        <h2 id="software-development" class="text-3xl font-bold text-white mt-12 mb-6">Software Development: The Digital Brain</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Our software team developed a comprehensive ROS-based control system that integrates computer vision, navigation, and mission planning. The modular architecture allows for easy testing and debugging of individual components.
+        </p>
+        
+        <h3 id="vision-system" class="text-2xl font-semibold text-white mt-8 mb-4">Computer Vision Pipeline</h3>
+        <p class="text-gray-300 leading-relaxed">
+          We implemented advanced object detection algorithms specifically tuned for underwater environments. Our neural networks can identify competition elements like buoys, gates, and markers with high accuracy in various lighting conditions.
+        </p>
+        
+        <h2 id="testing-validation" class="text-3xl font-bold text-white mt-12 mb-6">Testing and Validation</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Extensive testing in controlled environments helped us refine Hangor 1.0's performance. From pool tests to open water trials, each testing phase revealed improvements and optimizations that enhanced our vehicle's capabilities.
+        </p>
+        
+        <h3 id="pool-testing" class="text-2xl font-semibold text-white mt-8 mb-4">Pool Testing Phase</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Initial testing in controlled pool environments allowed us to validate basic functionality, tune control parameters, and identify potential issues in a safe environment before moving to more challenging open water tests.
+        </p>
+        
+        <h2 id="challenges-overcome" class="text-3xl font-bold text-white mt-12 mb-6">Challenges Overcome</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Building an AUV as a first-time team presented numerous challenges: waterproofing electronics, achieving neutral buoyancy, integrating complex software systems, and coordinating between multidisciplinary teams. Each challenge taught us valuable lessons.
+        </p>
+        
+        <h2 id="competition-preparation" class="text-3xl font-bold text-white mt-12 mb-6">Preparing for RoboSub 2025</h2>
+        <p class="text-gray-300 leading-relaxed">
+          As we approach the competition, our focus shifts to fine-tuning performance, optimizing mission strategies, and ensuring reliability. Hangor 1.0 represents not just a technical achievement, but a stepping stone for future underwater robotics development in Bangladesh.
+        </p>
+      </div>
+    `,
     author: "Team BengalSub",
     authorImage: "/assets/team/0.png",
     date: "December 5, 2024",
@@ -519,7 +607,63 @@ export const blogData = [
     id: "blog4",
     title: "Sensor Fusion: The Eyes and Ears of AUVs",
     excerpt: "Understanding how multiple sensors work together to give autonomous underwater vehicles a comprehensive view of their environment, enabling precise navigation and task execution.",
-    content: null,
+    content: `
+      <div class="space-y-8">
+        <p class="text-xl leading-relaxed text-gray-300">
+          In the challenging underwater environment, no single sensor can provide complete environmental awareness. Sensor fusion combines data from multiple sensors to create a comprehensive and reliable understanding of the AUV's surroundings, enabling precise navigation and autonomous decision-making.
+        </p>
+        
+        <h2 id="fundamentals" class="text-3xl font-bold text-white mt-12 mb-6">Fundamentals of Sensor Fusion</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Sensor fusion is the process of combining sensory data from multiple sources to produce more accurate, complete, and reliable information than could be achieved using individual sensors alone. In underwater robotics, this becomes critical due to the limitations and uncertainties inherent in marine environments.
+        </p>
+        
+        <h2 id="sensor-types" class="text-3xl font-bold text-white mt-12 mb-6">Essential Sensor Types</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Modern AUVs integrate a diverse array of sensors, each contributing unique capabilities to the overall perception system. Understanding the strengths and limitations of each sensor type is crucial for effective fusion strategies.
+        </p>
+        
+        <h3 id="inertial-sensors" class="text-2xl font-semibold text-white mt-8 mb-4">Inertial Measurement Units (IMUs)</h3>
+        <p class="text-gray-300 leading-relaxed">
+          IMUs provide essential orientation and acceleration data through gyroscopes, accelerometers, and magnetometers. These sensors offer high-frequency updates but suffer from drift over time, making them ideal for short-term precise measurements that require correction from other sources.
+        </p>
+        
+        <h3 id="acoustic-sensors" class="text-2xl font-semibold text-White mt-8 mb-4">Acoustic Sensors</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Sonar systems and acoustic positioning networks provide long-range detection and mapping capabilities. Multi-beam sonar offers detailed bathymetric data, while Doppler Velocity Logs (DVL) provide precise velocity measurements relative to the seafloor.
+        </p>
+        
+        <h3 id="visual-sensors" class="text-2xl font-semibold text-white mt-8 mb-4">Vision Systems</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Cameras and light sources enable object recognition, navigation marker detection, and visual odometry. While limited by water clarity and lighting conditions, vision systems provide rich semantic information about the environment.
+        </p>
+        
+        <h2 id="fusion-algorithms" class="text-3xl font-bold text-white mt-12 mb-6">Fusion Algorithms and Techniques</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Effective sensor fusion requires sophisticated algorithms that can handle uncertain, noisy, and sometimes conflicting sensor data. Modern AUVs employ various mathematical frameworks to achieve robust state estimation.
+        </p>
+        
+        <h3 id="kalman-filtering" class="text-2xl font-semibold text-white mt-8 mb-4">Kalman Filtering</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Extended Kalman Filters (EKF) and Unscented Kalman Filters (UKF) are widely used for combining sensor data with predictive models. These algorithms provide optimal estimates of vehicle state by balancing sensor measurements with dynamic predictions.
+        </p>
+        
+        <h3 id="particle-filters" class="text-2xl font-semibold text-white mt-8 mb-4">Particle Filter Methods</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Particle filters excel in non-linear, non-Gaussian environments common in underwater robotics. By maintaining multiple hypotheses about vehicle state, these algorithms can handle complex sensor fusion scenarios and recover from temporary sensor failures.
+        </p>
+        
+        <h2 id="challenges" class="text-3xl font-bold text-white mt-12 mb-6">Underwater Fusion Challenges</h2>
+        <p class="text-gray-300 leading-relaxed">
+          The underwater environment presents unique challenges for sensor fusion: limited communication bandwidth, pressure effects on sensors, marine growth on sensor surfaces, and the absence of GPS signals create complex problems that require innovative solutions.
+        </p>
+        
+        <h2 id="hangor-implementation" class="text-3xl font-bold text-white mt-12 mb-6">Hangor 1.0's Sensor Fusion</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Our implementation combines IMU data, depth sensors, cameras, and acoustic positioning to create a robust navigation system. The fusion architecture prioritizes sensor reliability and provides graceful degradation when individual sensors fail or provide unreliable data.
+        </p>
+      </div>
+    `,
     author: "Emma Watson",
     authorImage: "/assets/team/3.png",
     date: "November 28, 2024",
@@ -533,7 +677,53 @@ export const blogData = [
     id: "blog5",
     title: "Environmental Impact: AUVs in Ocean Conservation",
     excerpt: "Learn how autonomous underwater vehicles are becoming crucial tools in marine conservation efforts, from monitoring coral reefs to tracking ocean pollution.",
-    content: null,
+    content: `
+      <div class="space-y-8">
+        <p class="text-xl leading-relaxed text-gray-300">
+          Autonomous underwater vehicles are revolutionizing marine conservation by providing researchers with unprecedented access to underwater ecosystems. These robotic platforms enable continuous monitoring, data collection, and environmental assessment with minimal impact on delicate marine habitats.
+        </p>
+        
+        <h2 id="conservation-role" class="text-3xl font-bold text-white mt-12 mb-6">AUVs as Conservation Tools</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Traditional marine research methods often require significant human presence underwater, which can disturb marine life and limit observation duration. AUVs provide a non-intrusive alternative that allows for extended monitoring periods and access to previously unreachable areas.
+        </p>
+        
+        <h2 id="coral-reef-monitoring" class="text-3xl font-bold text-white mt-12 mb-6">Coral Reef Health Assessment</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Coral reefs are among the most biodiverse ecosystems on Earth, yet they face unprecedented threats from climate change, pollution, and human activities. AUVs equipped with high-resolution cameras and specialized sensors can monitor reef health, track bleaching events, and assess biodiversity changes over time.
+        </p>
+        
+        <h3 id="automated-surveys" class="text-2xl font-semibold text-white mt-8 mb-4">Automated Reef Surveys</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Computer vision algorithms enable AUVs to automatically identify and classify coral species, measure coverage percentages, and detect signs of disease or bleaching. This automated approach provides consistent, objective data collection across large reef areas.
+        </p>
+        
+        <h2 id="pollution-tracking" class="text-3xl font-bold text-white mt-12 mb-6">Ocean Pollution Monitoring</h2>
+        <p class="text-gray-300 leading-relaxed">
+          AUVs play a crucial role in tracking various forms of ocean pollution, from plastic debris to chemical contamination. Equipped with specialized sensors, these vehicles can map pollution distribution, track pollution sources, and monitor remediation efforts.
+        </p>
+        
+        <h3 id="microplastic-detection" class="text-2xl font-semibold text-white mt-8 mb-4">Microplastic Detection</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Advanced imaging systems and particle counters enable AUVs to detect and map microplastic concentrations throughout the water column. This data is essential for understanding pollution pathways and assessing the effectiveness of reduction efforts.
+        </p>
+        
+        <h2 id="climate-research" class="text-3xl font-bold text-white mt-12 mb-6">Climate Change Research</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Ocean temperature, acidity, and circulation patterns are key indicators of climate change. AUVs provide the platform for long-term, high-resolution monitoring of these parameters, contributing to our understanding of global climate systems.
+        </p>
+        
+        <h2 id="biodiversity-studies" class="text-3xl font-bold text-white mt-12 mb-6">Marine Biodiversity Assessment</h2>
+        <p class="text-gray-300 leading-relaxed">
+          AUVs enable non-invasive wildlife observation and population studies. By reducing human disturbance, these platforms provide more accurate behavioral data and allow researchers to access sensitive habitats without disruption.
+        </p>
+        
+        <h2 id="bengalsub-contribution" class="text-3xl font-bold text-white mt-12 mb-6">BengalSub's Environmental Mission</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Through our AUV development, we aim to contribute to marine conservation efforts in the Bay of Bengal and beyond. Our technology can be adapted for environmental monitoring, supporting sustainable marine resource management and conservation initiatives.
+        </p>
+      </div>
+    `,
     author: "Dr. James Miller",
     authorImage: "/assets/team/4.png",
     date: "November 20, 2024",
