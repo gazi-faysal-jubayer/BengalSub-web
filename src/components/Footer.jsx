@@ -380,13 +380,13 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-6">
                 <a 
-                  href="/privacy" 
+                  href="#/privacy" 
                   className="text-gray-400 hover:text-cyan-400 text-sm font-mono transition-colors duration-300"
                 >
                   PRIVACY
                 </a>
                 <a 
-                  href="/terms" 
+                  href="#/terms" 
                   className="text-gray-400 hover:text-purple-400 text-sm font-mono transition-colors duration-300"
                 >
                   TERMS

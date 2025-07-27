@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 
-import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Team, AUVPage, Footer } from "./components";
+import { About, Contact, Experience, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas, Team, AUVPage, Footer, TermsAndConditions, PrivacyPolicy } from "./components";
 import MouseFollower from "./components/MouseFollower";
 import ScrollProgress from "./components/ScrollProgress";
 import { TechnicalDocumentation, BlogsPage, BlogDetail, GalleryPage } from "./components/library";
@@ -35,6 +35,8 @@ const App = () => {
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blogs/:id" element={<BlogDetail />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/terms" element={<TermsAndConditions />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </div>

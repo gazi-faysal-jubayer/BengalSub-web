@@ -9,6 +9,8 @@ import Feedbacks from './Feedbacks';
 import Contact from './Contact';
 import Footer from './Footer';
 import { Team } from './team';
+import TermsAndConditions from './TermsAndConditions';
+import PrivacyPolicy from './PrivacyPolicy';
 
 export {
   Hero,
@@ -25,6 +27,8 @@ export {
   BallCanvas, 
   AUVCanvas, 
   StarsCanvas,
+  TermsAndConditions,
+  PrivacyPolicy,
 };
 
 // Export all AUV-related components
