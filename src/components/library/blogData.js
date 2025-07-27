@@ -802,6 +802,516 @@ export const blogData = [
     image: "/assets/System Design.webp",
     tags: ["Bangladesh", "Blue Economy", "Innovation", "Future Tech"],
     featured: true
+  },
+  {
+    id: "blog8",
+    title: "Bengal Sub Beyond the Lab: Inspiring the Next Generation",
+    excerpt: "At Bengal Sub, our mission goes deeper than engineering an underwater robot—we're committed to building a future where science and technology are accessible to everyone. Discover how community outreach is at the heart of what we do.",
+    content: `
+      <div class="space-y-8">
+        <p class="text-xl leading-relaxed text-gray-300">
+          At Bengal Sub, our mission goes deeper than engineering an underwater robot—we're committed to building a future where science and technology are accessible to everyone. That's why community outreach is at the heart of what we do.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          This season, our team organized robotics workshops in local schools and universities, introducing students to underwater technology and the fundamentals of STEM. Through hands-on demos and interactive sessions, young minds were not just spectators—they got to build, code, and test their own mini-robots.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          We believe real impact begins when students can see themselves as future innovators. Bengal Sub is proud to be a catalyst for that journey.
+        </p>
+        
+        <div class="my-12">
+          <div class="bg-gray-800/50 rounded-lg overflow-hidden">
+            <img src="/assets/blog/Blog2.webp" alt="Bengal Sub Outreach Activities" class="w-full h-full object-cover"/>
+          </div>
+          <p class="text-center text-sm text-gray-500 mt-3">Bengal Sub team conducting robotics workshops and demonstrations across schools and universities</p>
+        </div>
+        
+        <h2 id="stem-outreach" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">🎓</span> From Classrooms to Oceans: Bengal Sub's STEM Outreach Initiative
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          We believe that every student deserves a chance to explore, experiment, and dream. Our STEM outreach program brings the underwater world to the classroom. This year, we visited several schools in Dhaka and beyond, giving students a front-row seat to the exciting world of autonomous robotics.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Our volunteers showcased components of our AUV, explained how sensors and thrusters work, and even allowed students to simulate underwater missions using basic software tools. The excitement in their eyes was the biggest reward.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          These sessions are designed not just to inform—but to inspire. After all, the next generation of innovators may be sitting in those very classrooms.
+        </p>
+        
+        <div class="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 rounded-lg p-8 my-12 border border-blue-500/30">
+          <h3 class="text-2xl font-bold text-blue-400 mb-6 text-center">Our School Outreach Impact</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="text-4xl font-bold text-white mb-2">50+</div>
+              <div class="text-blue-400 font-medium">Schools Visited</div>
+              <div class="text-sm text-gray-400 mt-1">Across Dhaka and surrounding areas</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-white mb-2">2,000+</div>
+              <div class="text-blue-400 font-medium">Students Reached</div>
+              <div class="text-sm text-gray-400 mt-1">Direct interaction and demos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl font-bold text-white mb-2">25+</div>
+              <div class="text-blue-400 font-medium">Interactive Sessions</div>
+              <div class="text-sm text-gray-400 mt-1">Hands-on robotics workshops</div>
+            </div>
+          </div>
+        </div>
+        
+        <hr class="border-gray-700 my-12"/>
+        
+        <h2 id="university-engagement" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">🎤</span> Tech Talks & University Engagements: Sharing Knowledge, Building Community
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Our commitment to outreach also extends to engaging with fellow university students. Through guest lectures, open labs, and student-led tech talks, we've opened up our AUV project to aspiring engineers from various disciplines.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          This cross-campus collaboration has led to new ideas, potential recruits, and a growing network of student researchers. We also offer mentoring to younger teams building their first autonomous systems—because we believe progress grows when knowledge is shared.
+        </p>
+        
+        <div class="bg-gradient-to-r from-purple-900/20 to-indigo-900/20 rounded-lg p-6 my-8 border border-purple-500/30">
+          <h4 class="text-lg font-semibold text-purple-400 mb-4">University Collaboration Highlights</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">1</div>
+              <div>
+                <h5 class="font-medium text-white">Guest Lectures</h5>
+                <p class="text-gray-300 text-sm">Technical presentations on underwater robotics and autonomous systems across multiple universities</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">2</div>
+              <div>
+                <h5 class="font-medium text-white">Open Labs</h5>
+                <p class="text-gray-300 text-sm">Hands-on workshops where students can interact with our AUV and learn about its subsystems</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">3</div>
+              <div>
+                <h5 class="font-medium text-white">Student Mentoring</h5>
+                <p class="text-gray-300 text-sm">Supporting younger teams in building their first autonomous systems and robotics projects</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <hr class="border-gray-700 my-12"/>
+        
+        <h2 id="diversity-inclusion" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">💛</span> Bengal Sub for All: Diversity, Access, and Opportunity in Engineering
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Bengal Sub is built on collaboration—and we strive to ensure everyone has the opportunity to contribute. Through partnerships with community tech hubs and university inclusion programs, we're actively working to make robotics accessible to underrepresented groups.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Our outreach events are open to all, with an emphasis on engaging young women, rural students, and first-generation learners. This isn't just about engineering—it's about empowering people through technology.
+        </p>
+        
+        <div class="bg-gradient-to-r from-amber-900/20 to-yellow-900/20 rounded-lg p-6 my-8 border border-amber-500/30">
+          <h4 class="text-lg font-semibold text-amber-400 mb-4">Diversity & Inclusion Initiatives</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-800/50 rounded-lg p-4">
+              <h5 class="font-medium text-white mb-2 flex items-center gap-2">
+                <span class="text-xl">👥</span> Community Partnerships
+              </h5>
+              <p class="text-gray-300 text-sm">Collaborating with local tech hubs and inclusion programs to reach underrepresented communities</p>
+            </div>
+            <div class="bg-gray-800/50 rounded-lg p-4">
+              <h5 class="font-medium text-white mb-2 flex items-center gap-2">
+                <span class="text-xl">🌟</span> Women in STEM
+              </h5>
+              <p class="text-gray-300 text-sm">Special focus on encouraging young women to pursue careers in engineering and technology</p>
+            </div>
+            <div class="bg-gray-800/50 rounded-lg p-4">
+              <h5 class="font-medium text-white mb-2 flex items-center gap-2">
+                <span class="text-xl">🌾</span> Rural Outreach
+              </h5>
+              <p class="text-gray-300 text-sm">Extending our programs to rural schools and communities beyond urban centers</p>
+            </div>
+            <div class="bg-gray-800/50 rounded-lg p-4">
+              <h5 class="font-medium text-white mb-2 flex items-center gap-2">
+                <span class="text-xl">🎓</span> First-Gen Support
+              </h5>
+              <p class="text-gray-300 text-sm">Mentoring first-generation learners and providing pathways into STEM education</p>
+            </div>
+          </div>
+        </div>
+        
+        <hr class="border-gray-700 my-12"/>
+        
+        <h2 id="digital-outreach" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">🌐</span> Outreach in the Digital Era: Going Global with Bengal Sub
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          In today's connected world, outreach isn't limited to physical events. Our social media campaigns, YouTube videos, and online tutorials have reached thousands of viewers across Bangladesh and beyond.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Through behind-the-scenes clips, build guides, and team interviews, we bring the Bengal Sub experience to students everywhere—no matter where they are. Whether it's a child in Barisal or a tech enthusiast in Chattogram, we're proud to be sparking curiosity across the map.
+        </p>
+        
+        <div class="bg-gradient-to-r from-green-900/20 to-emerald-900/20 rounded-lg p-6 my-8 border border-green-500/30">
+          <h4 class="text-lg font-semibold text-green-400 mb-4">Digital Reach & Impact</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">15K+</div>
+              <div class="text-sm text-gray-400">YouTube Views</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">5K+</div>
+              <div class="text-sm text-gray-400">Social Media Followers</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">20+</div>
+              <div class="text-sm text-gray-400">Educational Videos</div>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-bold text-white">8+</div>
+              <div class="text-sm text-gray-400">Online Tutorials</div>
+            </div>
+          </div>
+        </div>
+        
+        <blockquote class="border-l-4 border-violet-500 pl-6 my-8 italic text-gray-400 bg-gray-800/30 py-4 rounded-r-lg">
+          "Innovation in underwater robotics is not just about technology; it's about building curiosity, confidence, and connection in the community—that's a human achievement. At Bengal Sub, we believe that true innovation comes when knowledge flows freely and widely."
+        </blockquote>
+        
+        <hr class="border-gray-700 my-12"/>
+        
+        <h2 id="conclusion" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">🌟</span> Conclusion: Outreach is Our North Star
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Building an AUV is a technical achievement. But building curiosity, confidence, and connection in the community—that's a human one. At Bengal Sub, we believe that true innovation comes when knowledge flows freely and widely.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          As we prepare for RoboSub, our goal is clear: not just to compete, but to inspire. One student, one classroom, one community at a time.
+        </p>
+        
+        <div class="bg-gradient-to-r from-violet-600/20 to-pink-600/20 rounded-lg p-8 my-12 text-center border border-violet-500/30">
+          <h3 class="text-2xl font-bold text-white mb-4">Join Our Mission</h3>
+          <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+            Want to be part of our outreach initiatives? Whether you're a student, educator, or organization interested in STEM education, we'd love to collaborate with you in inspiring the next generation of innovators.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#contact" class="px-6 py-3 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
+              Partner With Us
+            </a>
+            <a href="/team" class="px-6 py-3 border border-violet-600 text-violet-400 rounded-lg hover:bg-violet-600/10 transition-colors">
+              Meet Our Team
+            </a>
+            <a href="https://youtube.com/@BengalSub" target="_blank" class="px-6 py-3 border border-pink-600 text-pink-400 rounded-lg hover:bg-pink-600/10 transition-colors">
+              Watch Our Content
+            </a>
+          </div>
+        </div>
+        
+        <div class="mt-12 p-6 bg-gray-800/30 rounded-lg border border-gray-700">
+          <h4 class="text-lg font-semibold text-white mb-4">Get Involved</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h5 class="font-medium text-violet-400 mb-2">For Schools & Universities:</h5>
+              <p class="text-gray-300">Invite us for workshops, demonstrations, and technical talks at your institution.</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-violet-400 mb-2">For Students:</h5>
+              <p class="text-gray-300">Follow our journey, participate in our online content, and join our community of future innovators.</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-violet-400 mb-2">For Organizations:</h5>
+              <p class="text-gray-300">Partner with us to expand STEM education and robotics accessibility in Bangladesh.</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-violet-400 mb-2">For Media:</h5>
+              <p class="text-gray-300">Cover our story and help us spread awareness about underwater robotics and STEM education.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    author: "Team BengalSub",
+    authorImage: "/assets/team/0.png",
+    date: "December 25, 2024",
+    readTime: 10,
+    category: "Outreach",
+    image: "/assets/blog/Blog2.webp",
+    tags: ["Outreach", "STEM Education", "Community", "Inspiration", "Social Impact"],
+    featured: true
+  },
+  {
+    id: "blog9",
+    title: "Why Underwater Matters: Bengal Sub's Message to the Nation",
+    excerpt: "When people think of innovation in Bangladesh, underwater robotics may not be the first thing that comes to mind. But at Bengal Sub, we are changing that narrative—one story at a time.",
+    content: `
+      <div class="space-y-8">
+        <p class="text-xl leading-relaxed text-gray-300">
+          When people think of innovation in Bangladesh, underwater robotics may not be the first thing that comes to mind. But at Bengal Sub, we are changing that narrative—one story at a time.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Through national media coverage, public exhibitions, and digital outreach, we are bringing attention to a powerful truth: <strong class="text-white">what lies beneath matters</strong>. Bangladesh is a riverine nation with vast coastlines, inland waterways, and submerged resources. Yet, much of this world remains <strong class="text-violet-400">unexplored and under-monitored</strong>.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Our AUV (Autonomous Underwater Vehicle) is more than a competition robot—it's a symbol of what Bangladeshi students can do for national development, coastal security, disaster resilience, and marine research. Through media partnerships, we're proud to make this vision visible to all.
+        </p>
+        
+        <div class="my-12">
+          <div class="bg-gray-800/50 rounded-lg overflow-hidden">
+            <img src="/assets/blog/blog3.webp" alt="Bengal Sub Media Coverage Collage" class="w-full h-full object-cover"/>
+          </div>
+          <p class="text-center text-sm text-gray-500 mt-3">Bengal Sub's media coverage across national platforms including television interviews, newspaper features, and digital publications</p>
+        </div>
+        
+        <hr class="border-gray-700 my-12"/>
+        
+        <h2 id="national-media" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">📺</span> Taking the Story Underwater: Bengal Sub in the National Media
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          From television interviews to newspaper features, Bengal Sub is using media as a bridge between our labs and the nation. Recent appearances on <strong class="text-violet-400">Jamuna Television</strong>, <strong class="text-violet-400">Prothom Alo</strong>, and <strong class="text-violet-400">MeshNews</strong> gave us a chance to share <strong class="text-white">why underwater exploration is crucial for a country like Bangladesh</strong>.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          We spoke about the risks of not mapping our rivers, the challenges of pollution and siltation, and the opportunities in marine biodiversity, underwater archaeology, and blue economy initiatives. As climate change raises sea levels and threatens coastlines, <strong class="text-violet-400">autonomous underwater vehicles can become key tools</strong> in the country's defense, data gathering, and disaster preparedness.
+        </p>
+        
+        <div class="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 rounded-lg p-8 my-12 border border-blue-500/30">
+          <h3 class="text-2xl font-bold text-blue-400 mb-6 text-center">Media Coverage Highlights</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="text-4xl mb-3">📺</div>
+              <div class="text-lg font-semibold text-white mb-2">Television Features</div>
+              <div class="text-sm text-gray-400">Jamuna TV, Channel i, and other major networks</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl mb-3">📰</div>
+              <div class="text-lg font-semibold text-white mb-2">Print Media</div>
+              <div class="text-sm text-gray-400">Prothom Alo, Daily Star, and leading newspapers</div>
+            </div>
+            <div class="text-center">
+              <div class="text-4xl mb-3">🌐</div>
+              <div class="text-lg font-semibold text-white mb-2">Digital Platforms</div>
+              <div class="text-sm text-gray-400">MeshNews, tech blogs, and online publications</div>
+            </div>
+          </div>
+        </div>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Our story is one of <strong class="text-white">technology with purpose</strong>, and media helps us take that story to the people who need to hear it.
+        </p>
+        
+        <hr class="border-gray-700 my-12"/>
+        
+        <h2 id="underwater-exploration" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">🌊</span> Beneath the Surface: Why Bangladesh Needs to Explore Its Waters
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Despite being surrounded by rivers and sea, Bangladesh lacks the tools to systematically explore its underwater environments. Hidden beneath the surface are vital clues about erosion, pollution, submerged infrastructure, and lost ecosystems.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Bengal Sub's mission is to put <strong class="text-violet-400">indigenous innovation</strong> into these waters—robots built by Bangladeshi students, for Bangladeshi challenges. Through media, we are urging policymakers, researchers, and the public to see underwater exploration as <strong class="text-white">a national priority</strong>—not just a scientific luxury.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          In a future shaped by rising tides and shifting deltas, what we don't know below the surface can hurt us. It's time we dive in.
+        </p>
+        
+        <div class="bg-gradient-to-r from-emerald-900/20 to-teal-900/20 rounded-lg p-6 my-8 border border-emerald-500/30">
+          <h4 class="text-lg font-semibold text-emerald-400 mb-4">Critical Areas for Underwater Exploration</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-800/50 rounded-lg p-4">
+              <h5 class="font-medium text-white mb-2 flex items-center gap-2">
+                <span class="text-xl">🏭</span> River Monitoring
+              </h5>
+              <p class="text-gray-300 text-sm">Tracking pollution, siltation, and erosion patterns in Bangladesh's extensive river systems</p>
+            </div>
+            <div class="bg-gray-800/50 rounded-lg p-4">
+              <h5 class="font-medium text-white mb-2 flex items-center gap-2">
+                <span class="text-xl">🏛️</span> Infrastructure Assessment
+              </h5>
+              <p class="text-gray-300 text-sm">Monitoring underwater bridges, ports, and coastal infrastructure for maintenance and security</p>
+            </div>
+            <div class="bg-gray-800/50 rounded-lg p-4">
+              <h5 class="font-medium text-white mb-2 flex items-center gap-2">
+                <span class="text-xl">🐟</span> Marine Biodiversity
+              </h5>
+              <p class="text-gray-300 text-sm">Studying fish populations, coral reefs, and marine ecosystems in the Bay of Bengal</p>
+            </div>
+            <div class="bg-gray-800/50 rounded-lg p-4">
+              <h5 class="font-medium text-white mb-2 flex items-center gap-2">
+                <span class="text-xl">🌀</span> Disaster Preparedness
+              </h5>
+              <p class="text-gray-300 text-sm">Post-cyclone damage assessment and emergency response in coastal areas</p>
+            </div>
+          </div>
+        </div>
+        
+        <hr class="border-gray-700 my-12"/>
+        
+        <h2 id="national-awareness" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">🏗️</span> Engineering Hope: Bengal Sub's Role in Raising National Awareness
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Every time our AUV makes the news, it's not just about robotics—it's about <strong class="text-violet-400">possibility</strong>. Bengal Sub has become a symbol of what young Bangladeshis can build when given the tools and trust.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          We use media to amplify this message: that underwater technology can serve our fishermen, protect our ports, monitor water quality, and even help in post-cyclone search and rescue. This is not science fiction—it's <strong class="text-white">science for survival</strong>.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          By engaging with journalists, hosting live demos, and creating educational content, Bengal Sub ensures that underwater robotics doesn't stay hidden in labs. It becomes part of <strong class="text-violet-400">the national conversation</strong>.
+        </p>
+        
+        <div class="bg-gradient-to-r from-purple-900/20 to-indigo-900/20 rounded-lg p-6 my-8 border border-purple-500/30">
+          <h4 class="text-lg font-semibold text-purple-400 mb-4">Key Messages We Share</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">1</div>
+              <div>
+                <h5 class="font-medium text-white">Practical Applications</h5>
+                <p class="text-gray-300 text-sm">How AUVs can support fisheries, port security, environmental monitoring, and disaster response</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">2</div>
+              <div>
+                <h5 class="font-medium text-white">Student Innovation</h5>
+                <p class="text-gray-300 text-sm">Showcasing how Bangladeshi students can contribute to cutting-edge technology development</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 text-white text-sm font-bold">3</div>
+              <div>
+                <h5 class="font-medium text-white">National Priorities</h5>
+                <p class="text-gray-300 text-sm">Positioning underwater exploration as essential for climate resilience and blue economy growth</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <hr class="border-gray-700 my-12"/>
+        
+        <h2 id="media-impact" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">📢</span> From Headlines to Harbors: Shaping the Future Through Awareness
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          The power of media lies in its reach—and we're using that reach to plant the seeds of underwater innovation. Whether it's a short news clip, a full-page feature, or a viral post, every mention of Bengal Sub pushes the idea of <strong class="text-violet-400">marine robotics for Bangladesh</strong> further into the public imagination.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          As we continue our journey, we invite media houses, educators, and policy makers to join hands. Let's make sure that the waters of Bangladesh are not just known for their surface beauty, but also for the <strong class="text-white">technology diving deep within them</strong>.
+        </p>
+        
+        <blockquote class="border-l-4 border-violet-500 pl-6 my-8 italic text-gray-400 bg-gray-800/30 py-4 rounded-r-lg">
+          "Every time our AUV makes the news, it's not just about robotics—it's about possibility. Bengal Sub has become a symbol of what young Bangladeshis can build when given the tools and trust."
+        </blockquote>
+        
+        <div class="bg-gradient-to-r from-orange-900/20 to-red-900/20 rounded-lg p-6 my-8 border border-orange-500/30">
+          <h4 class="text-lg font-semibold text-orange-400 mb-4">Media Engagement Strategy</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <h5 class="font-medium text-white mb-2">Television Interviews</h5>
+              <p class="text-gray-300 text-sm">Live demonstrations and technical discussions to educate the public about AUV capabilities</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-white mb-2">Print Features</h5>
+              <p class="text-gray-300 text-sm">In-depth articles exploring the potential of underwater robotics for Bangladesh's development</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-white mb-2">Digital Content</h5>
+              <p class="text-gray-300 text-sm">Educational videos, behind-the-scenes content, and technical explanations for online audiences</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-white mb-2">Public Demonstrations</h5>
+              <p class="text-gray-300 text-sm">Live events and exhibitions to showcase AUV technology to policymakers and the public</p>
+            </div>
+          </div>
+        </div>
+        
+        <h2 id="call-to-action" class="text-3xl font-bold text-white mt-12 mb-6 flex items-center gap-3">
+          <span class="text-4xl">🤝</span> Join the Movement: Media Partnership for National Progress
+        </h2>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Bengal Sub's story is bigger than a single team or competition. It's about demonstrating that Bangladesh can be at the forefront of marine technology innovation. We invite media organizations, journalists, and content creators to help us tell this story.
+        </p>
+        
+        <p class="text-gray-300 leading-relaxed">
+          Together, we can ensure that underwater robotics becomes part of Bangladesh's national development narrative, inspiring the next generation of innovators and positioning our country as a leader in blue economy technologies.
+        </p>
+        
+        <div class="bg-gradient-to-r from-violet-600/20 to-pink-600/20 rounded-lg p-8 my-12 text-center border border-violet-500/30">
+          <h3 class="text-2xl font-bold text-white mb-4">Partner With Us</h3>
+          <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+            Are you a journalist, media house, or content creator interested in covering Bangladesh's underwater robotics revolution? Let's work together to bring this important story to the nation.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#contact" class="px-6 py-3 bg-violet-600 text-white rounded-lg hover:bg-violet-700 transition-colors">
+              Media Inquiries
+            </a>
+            <a href="/auv" class="px-6 py-3 border border-violet-600 text-violet-400 rounded-lg hover:bg-violet-600/10 transition-colors">
+              Press Kit
+            </a>
+            <a href="/team" class="px-6 py-3 border border-pink-600 text-pink-400 rounded-lg hover:bg-pink-600/10 transition-colors">
+              Interview Requests
+            </a>
+          </div>
+        </div>
+        
+        <div class="mt-12 p-6 bg-gray-800/30 rounded-lg border border-gray-700">
+          <h4 class="text-lg font-semibold text-white mb-4">Media Contact Information</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <h5 class="font-medium text-violet-400 mb-2">For Television Features:</h5>
+              <p class="text-gray-300">Live demonstrations, technical interviews, and behind-the-scenes coverage available</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-violet-400 mb-2">For Print Articles:</h5>
+              <p class="text-gray-300">Detailed technical information, team profiles, and high-resolution images provided</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-violet-400 mb-2">For Digital Content:</h5>
+              <p class="text-gray-300 text-sm">Video content, infographics, and social media assets available for partnership</p>
+            </div>
+            <div>
+              <h5 class="font-medium text-violet-400 mb-2">For Policy Coverage:</h5>
+              <p class="text-gray-300 text-sm">Expert commentary on marine technology policy and blue economy development</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    author: "Team BengalSub",
+    authorImage: "/assets/blog/blog3.webp",
+    date: "December 30, 2024",
+    readTime: 8,
+    category: "Media",
+    image: "/assets/blog/blog3.webp",
+    tags: ["Media Coverage", "National Impact", "Blue Economy", "Innovation", "Public Awareness"],
+    featured: true
   }
 ];
 
