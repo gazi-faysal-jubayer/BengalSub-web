@@ -628,7 +628,7 @@ export const blogData = [
           IMUs provide essential orientation and acceleration data through gyroscopes, accelerometers, and magnetometers. These sensors offer high-frequency updates but suffer from drift over time, making them ideal for short-term precise measurements that require correction from other sources.
         </p>
         
-        <h3 id="acoustic-sensors" class="text-2xl font-semibold text-White mt-8 mb-4">Acoustic Sensors</h3>
+                 <h3 id="acoustic-sensors" class="text-2xl font-semibold text-white mt-8 mb-4">Acoustic Sensors</h3>
         <p class="text-gray-300 leading-relaxed">
           Sonar systems and acoustic positioning networks provide long-range detection and mapping capabilities. Multi-beam sonar offers detailed bathymetric data, while Doppler Velocity Logs (DVL) provide precise velocity measurements relative to the seafloor.
         </p>
@@ -737,7 +737,63 @@ export const blogData = [
     id: "blog6",
     title: "The Future of Underwater Robotics in Bangladesh",
     excerpt: "Exploring the potential of underwater robotics in Bangladesh's blue economy, from aquaculture monitoring to underwater infrastructure inspection.",
-    content: null,
+    content: `
+      <div class="space-y-8">
+        <p class="text-xl leading-relaxed text-gray-300">
+          Bangladesh, with its vast coastline and extensive river systems, presents enormous opportunities for underwater robotics applications. As the nation develops its blue economy, autonomous underwater vehicles could play a transformative role in sustainable marine resource management and infrastructure development.
+        </p>
+        
+        <h2 id="blue-economy-potential" class="text-3xl font-bold text-white mt-12 mb-6">Bangladesh's Blue Economy Vision</h2>
+        <p class="text-gray-300 leading-relaxed">
+          The blue economy represents a significant opportunity for Bangladesh, encompassing fisheries, aquaculture, renewable energy, shipping, and coastal tourism. Underwater robotics can support sustainable development across all these sectors through advanced monitoring, inspection, and data collection capabilities.
+        </p>
+        
+        <h2 id="aquaculture-applications" class="text-3xl font-bold text-white mt-12 mb-6">Revolutionizing Aquaculture</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Bangladesh is one of the world's leading aquaculture producers. AUVs can transform this industry by providing automated monitoring of fish farms, water quality assessment, and early disease detection, leading to improved yields and more sustainable practices.
+        </p>
+        
+        <h3 id="automated-monitoring" class="text-2xl font-semibold text-white mt-8 mb-4">Automated Farm Monitoring</h3>
+        <p class="text-gray-300 leading-relaxed">
+          AUVs equipped with cameras and sensors can continuously monitor fish behavior, detect signs of disease, assess feeding patterns, and optimize farm management practices. This technology could significantly improve productivity while reducing environmental impact.
+        </p>
+        
+        <h2 id="coastal-infrastructure" class="text-3xl font-bold text-white mt-12 mb-6">Coastal Infrastructure Inspection</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Bangladesh's extensive coastal infrastructure, including bridges, ports, and sea walls, requires regular inspection and maintenance. AUVs can provide cost-effective, detailed assessments of underwater structures, identifying potential issues before they become critical problems.
+        </p>
+        
+        <h3 id="bridge-inspection" class="text-2xl font-semibold text-white mt-8 mb-4">Bridge and Port Inspection</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Underwater inspection of bridge foundations, pier structures, and port facilities can be conducted more safely and efficiently using AUVs. High-resolution imaging and sonar mapping provide detailed condition assessments without the need for human divers.
+        </p>
+        
+        <h2 id="environmental-monitoring" class="text-3xl font-bold text-white mt-12 mb-6">Environmental Protection</h2>
+        <p class="text-gray-300 leading-relaxed">
+          The Sundarbans mangrove forest and Bay of Bengal ecosystem face environmental pressures from development and climate change. AUVs can support conservation efforts through continuous monitoring of water quality, biodiversity, and ecosystem health.
+        </p>
+        
+        <h2 id="disaster-response" class="text-3xl font-bold text-white mt-12 mb-6">Disaster Response and Recovery</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Bangladesh frequently faces natural disasters that affect coastal and riverine areas. AUVs can support rapid damage assessment, search and rescue operations, and post-disaster monitoring, providing crucial information for emergency response and recovery planning.
+        </p>
+        
+        <h2 id="technology-development" class="text-3xl font-bold text-white mt-12 mb-6">Building Local Expertise</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Developing underwater robotics capabilities in Bangladesh requires investment in education, research, and technology transfer. Universities and research institutions can play a key role in building local expertise and adapting technologies to local needs and conditions.
+        </p>
+        
+        <h2 id="economic-opportunities" class="text-3xl font-bold text-white mt-12 mb-6">Economic Impact and Opportunities</h2>
+        <p class="text-gray-300 leading-relaxed">
+          The underwater robotics industry could create new employment opportunities, attract investment, and position Bangladesh as a regional leader in marine technology. Support for research and development, coupled with international partnerships, could accelerate growth in this emerging sector.
+        </p>
+        
+        <h2 id="bengalsub-vision" class="text-3xl font-bold text-white mt-12 mb-6">BengalSub's Role in National Development</h2>
+        <p class="text-gray-300 leading-relaxed">
+          As pioneers in underwater robotics in Bangladesh, Team BengalSub is committed to contributing to the nation's blue economy development. Our work demonstrates the potential for locally developed technology to address national challenges and opportunities.
+        </p>
+      </div>
+    `,
     author: "Prof. Ahmed Rahman",
     authorImage: "/assets/team/5.png",
     date: "November 15, 2024",
