@@ -101,7 +101,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 transition-all duration-300 ${
-        scrolled ? "bg-primary/80 backdrop-blur-md" : "bg-transparent"
+        scrolled ? "bg-primary/20 backdrop-blur-md" : "bg-primary/20 backdrop-blur-md"
       }`}
       onMouseEnter={() => !isMobile && setIsCollapsed(false)}
       onMouseLeave={() => {
@@ -271,7 +271,7 @@ const Navbar = () => {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-primary/95 backdrop-blur-md rounded-xl shadow-2xl py-2 overflow-hidden"
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-56 bg-primary/20 backdrop-blur-md rounded-xl shadow-2xl py-2 overflow-hidden"
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-[#915EFF]/20 to-transparent" />
                     {nav.dropdown.map((item, index) => (
@@ -355,7 +355,7 @@ const Navbar = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 300 }}
                 transition={{ duration: 0.3 }}
-                className="fixed right-0 top-0 h-screen w-[70%] bg-primary/95 backdrop-blur-md p-6 shadow-2xl"
+                className="fixed right-0 top-0 h-screen w-[70%] bg-primary/20 backdrop-blur-md p-6 shadow-2xl"
               >
                 <div className="flex justify-end">
                   <motion.img

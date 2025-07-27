@@ -215,3 +215,98 @@
   --background: 222 47% 11%; /* Example dark bg */
   --foreground: 0 0% 100%;   /* Example white text */
 }
+
+/* Blog Page Animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animation-delay-150 {
+  animation-delay: 150ms;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Prose styling for blog content */
+.prose {
+  color: #e5e7eb;
+}
+
+.prose h2 {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.prose h3 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.prose blockquote {
+  font-style: italic;
+  border-left-color: #8b5cf6;
+}
+
+.prose a {
+  color: #a78bfa;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #c4b5fd;
+}
+
+/* Custom scrollbar for blog pages */
+.blog-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.blog-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.blog-scrollbar::-webkit-scrollbar-thumb {
+  background: #8b5cf6;
+  border-radius: 4px;
+}
+
+.blog-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
