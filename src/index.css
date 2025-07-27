@@ -310,3 +310,80 @@
 .blog-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #a78bfa;
 }
+
+/* Custom styles for timeline with videos */
+.vertical-timeline {
+  position: relative;
+  overflow: visible;
+}
+
+.vertical-timeline-element {
+  position: relative;
+  overflow: visible;
+}
+
+.vertical-timeline-element-content {
+  position: relative;
+  overflow: visible;
+}
+
+/* Ensure proper spacing for video positioning */
+@media (min-width: 1024px) {
+  .vertical-timeline::before {
+    left: 50%;
+  }
+  
+  .vertical-timeline-element {
+    margin: 4rem 0;
+  }
+  
+  .vertical-timeline-element.vertical-timeline-element--left .vertical-timeline-element-content {
+    margin-right: 2rem;
+  }
+  
+  .vertical-timeline-element.vertical-timeline-element--right .vertical-timeline-element-content {
+    margin-left: 2rem;
+  }
+}
+
+/* Gradient animation for button */
+@keyframes gradient-xy {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 6s ease infinite;
+}
+
+/* Video container responsive styles */
+.timeline-video-container {
+  position: absolute;
+  top: 0;
+  width: 320px;
+  z-index: 10;
+}
+
+.timeline-video-left {
+  right: 100%;
+  margin-right: 2rem;
+}
+
+.timeline-video-right {
+  left: 100%;
+  margin-left: 2rem;
+}
+
+@media (max-width: 1023px) {
+  .timeline-video-container {
+    position: static;
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+}

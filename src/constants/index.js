@@ -168,7 +168,7 @@ import {
       company_name: "Md Masrul Khan, Gazi Faysal Jubayer",
       icon: cad,
       iconBg: "#383E56",
-      date: "Nov 2024 - JAN 2025",
+      date: "Nov 2024 - JAN 2025",
       points: [
         "Analyzing Rulebook & Requirements",
         "Testing Basic Shape & Hydro",
@@ -177,14 +177,15 @@ import {
         "Simulating Fluid Flow",
         "Analyzing Buoyancy & Stability",
       ],
-      link: "/auv"
+      link: "/auv",
+      videoUrl: "https://youtu.be/HRAwwRpp0dY?feature=shared" // Replace with actual video URL
     },
     {
       title: "Mechanical Fabrication Workflow",
       company_name: "Mechanical Team",
       icon: tesla,
       iconBg: "#E6DEDD",
-      date: "Feb 2025 - April  2025",
+      date: "Feb 2025 - April  2025",
       points: [
         "Selecting Material & Component",
         "Calculating the required Weight to submerge.",
@@ -192,7 +193,8 @@ import {
         "Fabricating Structure, Legs & Clamps",
         "Sealing the hull using elastic materials and removal adhesives",
       ],
-      link: "/about/team"
+      link: "/about/team",
+      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Replace with actual video URL
     },
     {
       title: "Electrical Workflow",
@@ -207,7 +209,8 @@ import {
         "Integrating & Testing Sensors (IMU, Depth, Leak, Camera Power)",
         "Conducting Load Testing, Fusing & mergency Kill-Switch Setup",
       ],
-      link: "/library/technical-documentation"
+      link: "/library/technical-documentation",
+      videoUrl: "https://www.youtube.com/watch?v=IPc8a6FBKWw" // Replace with actual video URL
     },
     {
       title: "Software Workflow",
@@ -223,7 +226,8 @@ import {
         "Communicating with Pixhawk via MAVLink for Control & Feedback",
         "Logging Missions & Telemetry Data for Debugging and Analysis",
       ],
-      link: "/about/progress"
+      link: "/about/progress",
+      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Replace with actual video URL
     },
     {
       title: "Documentation Workflow",
@@ -239,7 +243,8 @@ import {
         "Preparing and managing official Paperworks",
         "Documenting Overall team's workflow",
       ],
-      link: "/about/progress"
+      link: "/about/progress",
+      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Replace with actual video URL
     },
   ];
   
