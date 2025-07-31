@@ -255,7 +255,7 @@ import {
       name: "Shish Haider Chowdhury, ndc, MCIPS",
       designation: "Secretary",
       company: "Information and Communication Division, Ministry of Posts, Telecommunication and Information Technology",
-      image: "https://media.licdn.com/dms/image/C4D03AQEpBQFei2OEtQ/profile-displayphoto-shrink_400_400/0/1650362145770?e=1694044800&v=beta&t=DQlFIbXqEC2uj_sx91baM_7e7QMpBKli03NgxYaQqbc",
+      image: "/assets/team/0.png",
     },
     {
       testimonial:
@@ -263,7 +263,7 @@ import {
       name: "Rasel Ahmed",
       designation: "Assistant Professor",
       company: "Department of ICT, Dhaka Residential Model College",
-      image: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+      image: "/assets/team/4.png",
     },
     {
       testimonial:

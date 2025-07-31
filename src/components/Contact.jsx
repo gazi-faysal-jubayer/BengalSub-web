@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
 import { SharkCanvas } from "./canvas";
@@ -28,45 +27,43 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-   //h3KKxdGO6oM1Cm55j
-//template_82ct9ps
-//service_ba86wds
-    
-    emailjs
-      .send(
-        'service_ba86wds',
-        'template_82ct9ps',
-        {
-          from_name: form.name,
-          to_name: "Priyansh Negi",
-          from_email: form.email,
-          to_email: "priyansh.negiji@gmail.com",
+    try {
+      const response = await fetch('/contact.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
           message: form.message,
-        },
-        'h3KKxdGO6oM1Cm55j'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
+        }),
+      });
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
+      const data = await response.json();
 
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+      if (data.success) {
+        setLoading(false);
+        alert("Thank you! Your message has been sent successfully.");
+        
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setLoading(false);
+        alert(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setLoading(false);
+      console.error('Error:', error);
+      alert("Network error. Please check your connection and try again.");
+    }
   };
 
   return (
