@@ -44,6 +44,10 @@ const Contact = () => {
         }),
       });
 
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
       const data = await response.json();
 
       if (data.success) {
@@ -62,7 +66,7 @@ const Contact = () => {
     } catch (error) {
       setLoading(false);
       console.error('Error:', error);
-      alert("Network error. Please check your connection and try again.");
+      alert(`Failed to send message. Error: ${error.message}. Make sure PHP server is running on localhost:8080`);
     }
   };
 

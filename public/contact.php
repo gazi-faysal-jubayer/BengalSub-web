@@ -1,8 +1,12 @@
 <?php
+// Enable error reporting for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+header('Access-Control-Allow-Methods: POST, OPTIONS, GET');
+header('Access-Control-Allow-Headers: Content-Type, X-Requested-With');
 
 // Handle preflight OPTIONS request
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
@@ -10,10 +14,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
-// Only allow POST requests
+// Debug: Log the request method
+error_log("Request method: " . $_SERVER['REQUEST_METHOD']);
+
+// Allow GET for testing purposes
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    echo json_encode([
+        'success' => true, 
+        'message' => 'PHP backend is working!',
+        'method' => $_SERVER['REQUEST_METHOD'],
+        'server_info' => [
+            'php_version' => phpversion(),
+            'server_software' => $_SERVER['SERVER_SOFTWARE'] ?? 'Unknown'
+        ]
+    ]);
+    exit();
+}
+
+// Only allow POST requests for actual form submission
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
-    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+    echo json_encode([
+        'success' => false, 
+        'message' => 'Method not allowed. Received: ' . $_SERVER['REQUEST_METHOD']
+    ]);
     exit();
 }
 
