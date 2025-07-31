@@ -103,7 +103,7 @@ const CenterImage = () => {
       }}
     >
       <img
-        src="/assets/hangor.png"
+        src="/assets/hangor.webp"
         alt="AUV"
         className="w-full h-full object-cover absolute inset-0 rounded-none shadow-none"
       />
@@ -115,28 +115,28 @@ const ParallaxImages = () => {
   return (
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
-        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="/assets/44JPG.webp"
         alt="Underwater exploration"
         start={-200}
         end={200}
         className="w-1/3"
       />
       <ParallaxImg
-        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="/assets/9.webp"
         alt="Ocean depths"
         start={200}
         end={-250}
         className="mx-auto w-2/3"
       />
       <ParallaxImg
-        src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="/assets/1.webp"
         alt="Marine technology"
         start={-200}
         end={200}
         className="ml-auto w-1/3"
       />
       <ParallaxImg
-        src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="/assets/2.webp"
         alt="Underwater robotics"
         start={0}
         end={-500}
