@@ -167,7 +167,7 @@ const Team = () => {
       members: [
         {
           name: "MD. Asique Iqbal",
-          role: "Advsior",
+          role: "Mentor",
           email: "asique.iqbaldrmc@gmail.com",
           description: "Assistant Professor, Dept. of ICT, Dhaka Residential Model College",
           github: "NULL",

@@ -307,7 +307,7 @@ const About = () => {
                   <div className="text-gray-500 text-sm">Year Built</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-400">5m</div>
+                  <div className="text-2xl font-bold text-blue-400">20m</div>
                   <div className="text-gray-500 text-sm">Max Depth</div>
                 </div>
               </motion.div>

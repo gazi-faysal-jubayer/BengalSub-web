@@ -72,7 +72,11 @@ const ExperienceCard = ({ experience, id, index }) => {
     return (match && match[2].length === 11) ? match[2] : null;
   };
 
-  const videoId = getYouTubeVideoId(experience.videoUrl);
+  // Check if video is a Rick Roll or placeholder
+  const isRickRoll = experience.videoUrl && experience.videoUrl.includes('dQw4w9WgXcQ');
+  const isPlaceholder = !experience.videoUrl || isRickRoll;
+  
+  const videoId = isPlaceholder ? null : getYouTubeVideoId(experience.videoUrl);
   const isEven = index % 2 === 0;
 
   return (
@@ -84,15 +88,79 @@ const ExperienceCard = ({ experience, id, index }) => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: index * 0.2 }}
       >
-        {videoId ? (
+        {videoId && !isPlaceholder ? (
           <YouTubePlayer videoId={videoId} title={experience.title} />
         ) : (
-          <div className="w-full h-64 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
-            <p className="text-white text-center">
-              Video Coming Soon
-              <br />
-              <span className="text-sm opacity-75">{experience.title}</span>
-            </p>
+          <div className="relative w-full h-64 rounded-lg overflow-hidden group">
+            {/* Animated gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-500 animate-gradient-x"></div>
+            
+            {/* Overlay with glassmorphism effect */}
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+            
+            {/* Animated particles */}
+            <div className="absolute inset-0">
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className="absolute w-2 h-2 bg-white/30 rounded-full animate-pulse"
+                  style={{
+                    left: `${20 + (i * 15)}%`,
+                    top: `${30 + (i % 2) * 20}%`,
+                    animationDelay: `${i * 0.5}s`,
+                    animationDuration: `${2 + (i % 3)}s`
+                  }}
+                />
+              ))}
+            </div>
+            
+            {/* Content */}
+            <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 text-center">
+              {/* Play icon with animation */}
+              <motion.div 
+                className="mb-4 p-4 rounded-full bg-white/20 backdrop-blur-sm border border-white/30"
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 5, -5, 0]
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </motion.div>
+              
+              {/* Text content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                <h3 className="text-xl font-bold text-white mb-2">
+                  Coming Soon
+                </h3>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  {experience.title}
+                </p>
+                <div className="mt-3 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30">
+                  <span className="text-xs text-white/90 font-medium">
+                    Video in Production
+                  </span>
+                </div>
+              </motion.div>
+              
+              {/* Subtle border animation */}
+              <div className="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 opacity-50 group-hover:opacity-100 transition-opacity duration-300" 
+                   style={{ mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', maskComposite: 'exclude' }} />
+            </div>
           </div>
         )}
       </motion.div>
@@ -135,14 +203,14 @@ const ExperienceCard = ({ experience, id, index }) => {
             ))}
           </ul>
 
-          {/* Action Button - redirects to video */}
+          {/* Action Button - redirects to video or learn more */}
           <motion.div 
             className="mt-6 flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            {experience.videoUrl ? (
+            {experience.videoUrl && !isRickRoll ? (
               <a
                 href={experience.videoUrl}
                 target="_blank"
