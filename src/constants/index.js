@@ -227,7 +227,7 @@ import {
         "Logging Missions & Telemetry Data for Debugging and Analysis",
       ],
       link: "/about/progress",
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Replace with actual video URL
+      videoUrl: "https://www.youtube.com/watch?v=ZoW7aieAFbw" // Replace with actual video URL
     },
     {
       title: "Documentation Workflow",
